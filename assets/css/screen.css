@@ -448,7 +448,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 }
 
 .post-card-excerpt {
-    font-family: Georgia, serif;
+    font-family: Georgia, Nanum Gothic,serif;
 }
 
 .post-card-meta {
@@ -471,6 +471,9 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     text-transform: uppercase;
 }
 
+.post-card-author >a{
+    color: grey;
+}
 .reading-time {
     font-size: 1.2rem;
     font-weight: 500;
