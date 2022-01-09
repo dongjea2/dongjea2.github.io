@@ -1,4 +1,10 @@
 
+.highlight *{
+  font-family: Ubuntu;
+  font-size: 18px;
+  font-weight: 600;
+}
+
 .highlight table td { padding: 5px; }
 .highlight table pre { margin: 0; }
 .highlight, .highlight .w {
@@ -81,13 +87,6 @@
 .highlight .ss {
   color: #a6e22e;
 }
-
 .highlight, pre.highlight{
   background-color: #1e1e1e;
-}
-
-.highlight *{
-  font-family: Ubuntu;
-  font-size: 18px;
-  font-weight: 600;
 }
