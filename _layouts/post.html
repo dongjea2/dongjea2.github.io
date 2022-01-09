@@ -41,10 +41,12 @@ into the {body} of the default.hbs template -->
                 <h1 class="post-full-title">{{ page.title }}</h1>
             </header>
 
+            <!--
             {% if page.cover %}
             <figure class="post-full-image" style="background-image: url({{ site.baseurl }}{{ page.cover }})">
             </figure>
             {% endif %}
+            -->
 
             <section class="post-full-content">
                 <div class="kg-card-markdown">
@@ -53,6 +55,7 @@ into the {body} of the default.hbs template -->
             </section>
 
             <!-- Email subscribe form at the bottom of the page -->
+            <!--
             {% if site.subscribers %}
                 <section class="subscribe-form">
                     <h3 class="subscribe-form-title">Subscribe to {{ site.title }}</h3>
@@ -60,6 +63,7 @@ into the {body} of the default.hbs template -->
                     {% include subscribe-form.html placeholder="youremail@example.com" %}
                 </section>
             {% endif %}
+            -->
 
             <footer class="post-full-footer">
                 <!-- Everything inside the #author tags pulls data from the author -->

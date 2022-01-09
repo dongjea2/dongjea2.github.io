@@ -1,16 +1,14 @@
-speeches:
-  name: speeches
-  description: Some of the greatest words ever spoken.
-  cover: assets/images/speeches.jpg
-fiction:
-  name: fiction
-  description: False
-  cover: False
-fables:
-  name: fables
-  description: A series of short stories that make you think.
-  cover: assets/images/fables.jpg
-getting-started:
-  name: getting-started
-  description: False
-  cover: False
+design-patterns:
+  name: design-patterns 
+  description: Lv 0 부터 시작하는 디자인 패턴
+  cover: assets/built/images/background-frontend.png
+
+spring:
+  name: spring 
+  description: Lv 0 부터 시작하는 스프링 프레임워크
+  cover: assets/built/images/background-frontend.png
+
+book:
+  name: book
+  description: Lv 0 부터 시작하는 독서연대기
+  cover: assets/built/images/background-frontend.png
