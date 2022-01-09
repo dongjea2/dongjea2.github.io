@@ -1,6 +1,11 @@
 # frozen_string_literal: true
 
 source "https://rubygems.org"
-gemspec
 
-gem "webrick", "~> 1.7"
+gemspec
+gem "github-pages", group: :jekyll_plugins
+
+gem "jekyll-seo-tag"
+gem "jekyll-sitemap"
+gem "wdm"
+gem"webrick"
