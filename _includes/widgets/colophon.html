@@ -1,0 +1,29 @@
+{%- if site.template.widgets contains "colophon" -%}
+<div class = "colophon rightElem shadowTile">
+    <h1 class = "lstH1">Colophon</h1>
+
+    <div class = "rightRow">
+        <h2>Copyright &copy; 2021 {{ site.author }}</h2>
+    </div>
+
+    <div class = "rightRow">
+        <h2>All Rights Reserved.</h2>
+    </div>
+
+    <div class = "rightRow">
+        <h2>Powered by <a href = "https://jekyllrb.com/">Jekyll</a> | Theme <a href = "https://github.com/SdtElectronics/jekyll-theme-antarctica">Antarctica</a></h2>
+    </div>
+</div>
+
+<style>
+    .colophon{
+        padding-bottom: 0.3rem;
+        flex-shrink: 0;
+    }
+
+    .colophon>.rightRow>*{
+        color: var(--foreground-light);
+        font-size: 0.9rem;
+    }
+</style>
+{%- endif -%}
