@@ -1,28 +1,53 @@
----
-layout: null
----
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>{{ site.name | xml_escape }} - Articles</title>
-    <description>{% if site.description %}{{ site.description | xml_escape }}{% endif %}</description>
+    <title> - Articles</title>
+    <description>IT기술 , 독서 서평 etc.</description>
     <link>
-    {{ site.url }}</link>
-    {% for post in site.posts %}
-      {% unless post.link %}
+    https://dongjea2.github.io</link>
+    
+      
       <item>
-        <title>{{ post.title | xml_escape }}</title>
-        {% if post.excerpt %}
-          <description>{{ post.excerpt | xml_escape }}</description>
-        {% else %}
-          <description>{{ post.content | xml_escape }}</description>
-        {% endif %}
-        <pubDate>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
+        <title>Strategy Pattern(스트레티지 패턴)</title>
+        
+          <description>&lt;p&gt;이 글은 스트레티지 패턴에 관한 학습 코드입니다.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Sat, 08 Jan 2022 19:18:00 +0900</pubDate>
         <link>
-        {{ site.url }}{{ post.url }}</link>
-        <guid isPermaLink="true">{{ site.url }}{{ post.url }}</guid>
+        https://dongjea2.github.io/strategy</link>
+        <guid isPermaLink="true">https://dongjea2.github.io/strategy</guid>
       </item>
-      {% endunless %}
-    {% endfor %}
+      
+    
+      
+      <item>
+        <title>존 메이너드 케인즈</title>
+        
+          <description>&lt;p&gt;이 글은 존메이너드 케인즈 에대한 서평입니다.&lt;/p&gt;
+</description>
+        
+        <pubDate>Sat, 08 Jan 2022 19:13:00 +0900</pubDate>
+        <link>
+        https://dongjea2.github.io/JOHN_MAYNARD_KEYNES</link>
+        <guid isPermaLink="true">https://dongjea2.github.io/JOHN_MAYNARD_KEYNES</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>스프링 MVC 아키텍처</title>
+        
+          <description>&lt;p&gt;이 글은 스트레티지 패턴에 관한 학습 코드입니다.&lt;/p&gt;
+</description>
+        
+        <pubDate>Mon, 03 Jan 2022 19:18:00 +0900</pubDate>
+        <link>
+        https://dongjea2.github.io/spring</link>
+        <guid isPermaLink="true">https://dongjea2.github.io/spring</guid>
+      </item>
+      
+    
   </channel>
 </rss>

@@ -11,7 +11,7 @@
 
 
 
-    <title>Lv0부터 시작하는 코딩라이프</title>
+    <title>태그별 게시물</title>
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -51,19 +51,19 @@
     <!-- This tag outputs SEO meta+structured data and other important settings -->
     <meta name="description" content="IT기술 , 독서 서평 etc." />
     <link rel="shortcut icon" href="https://dongjea2.github.io/assets/built/images/favicon.png" type="image/png" />
-    <link rel="canonical" href="https://dongjea2.github.io/" />
+    <link rel="canonical" href="https://dongjea2.github.io/author_archive" />
     <meta name="referrer" content="no-referrer-when-downgrade" />
 
      <!--title below is coming from _includes/dynamic_title-->
     <meta property="og:site_name" content="Lv0부터 시작하는 코딩라이프" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Lv0부터 시작하는 코딩라이프" />
+    <meta property="og:title" content="태그별 게시물" />
     <meta property="og:description" content="IT기술 , 독서 서평 etc." />
-    <meta property="og:url" content="https://dongjea2.github.io/" />
+    <meta property="og:url" content="https://dongjea2.github.io/author_archive" />
     <meta property="og:image" content="https://dongjea2.github.io/assets/built/images/background-frontend.png" />
     <meta property="article:publisher" content="https://www.facebook.com/" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Lv0부터 시작하는 코딩라이프" />
+    <meta name="twitter:title" content="태그별 게시물" />
     <meta name="twitter:description" content="IT기술 , 독서 서평 etc." />
     <meta name="twitter:url" content="https://dongjea2.github.io/" />
     <meta name="twitter:image" content="https://dongjea2.github.io/assets/built/images/background-frontend.png" />
@@ -83,7 +83,7 @@
         "name": "Lv0부터 시작하는 코딩라이프",
         "logo": "https://dongjea2.github.io/"
     },
-    "url": "https://dongjea2.github.io/",
+    "url": "https://dongjea2.github.io/author_archive",
     "image": {
         "@type": "ImageObject",
         "url": "https://dongjea2.github.io/assets/built/images/background-frontend.png",
@@ -92,7 +92,7 @@
     },
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://dongjea2.github.io/"
+        "@id": "https://dongjea2.github.io/author_archive"
     },
     "description": "IT기술 , 독서 서평 etc."
 }
@@ -107,11 +107,11 @@
     </script> -->
 
     <meta name="generator" content="Jekyll 3.6.2" />
-    <link rel="alternate" type="application/rss+xml" title="Lv0부터 시작하는 코딩라이프" href="/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="태그별 게시물" href="/feed.xml" />
 
 
 </head>
-<body class="home-template">
+<body class="page-template">
 
     <div class="site-wrapper">
         <!-- All the main content gets inserted here, index.hbs, post.hbs, etc -->
@@ -120,18 +120,14 @@
 into the {body} of the default.hbs template -->
 
 <!-- The big featured header, it uses blog cover image as a BG if available -->
-<header class="site-header outer " style="background-image:  url(/assets/built/images/background-frontend.png) ">
+<header class="site-header outer">
     <div class="inner">
-        <div class="site-header-content">
-            <h1 class="site-title">
-                
-                    Lv0부터 시작하는 코딩라이프
-                
-            </h1>
-            <h2 class="site-description">IT기술 , 독서 서평 etc.</h2>
-        </div>
         <nav class="site-nav">
     <div class="site-nav-left">
+        
+            
+                <a class="site-nav-logo" href="https://dongjea2.github.io/">Lv0부터 시작하는 코딩라이프</a>
+            
         
         
             <ul class="nav" role="menu">
@@ -163,162 +159,91 @@ into the {body} of the default.hbs template -->
     </div>
 </header>
 
-<!-- The main content area -->
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
+
 <main id="site-main" class="site-main outer" role="main">
     <div class="inner">
 
-        <div class="post-feed">
-            <!-- The tag below includes the markup for each post - partials/post-card.hbs -->
+        <article class="post-full  post page no-image">
+
+            <header class="post-full-header">
+                <h1 class="post-full-title">태그별 게시물</h1>
+            </header>
+
             
 
-
-    <article class="post-card home-template">
-        
-            <a class="post-card-image-link" href="/strategy">
-                <div class="post-card-image" style="background-image: url(/assets/built/images/design.jpg)"></div>
-            </a>
-        
-        <div class="post-card-content">
-            <a class="post-card-content-link" href="/strategy">
-                <header class="post-card-header">
-                    
-                        
-                            
-                                <span class="post-card-tags">Design-patterns</span>
-                            
-                        
-                    
-
-                    <h2 class="post-card-title">Strategy Pattern(스트레티지 패턴)</h2>
-                </header>
-                <section class="post-card-excerpt">
-                    
-                        <p>이 글은 스트레티지 패턴에 관한 학습 코드입니다.
-
-</p>
-                    
-                </section>
-            </a>
-            <footer class="post-card-meta">
-                
-                    
-                        
-                        <img class="author-profile-image" src="/assets/built/images/author-logo.jpg" alt="동재" />
-                        
-                        <span class="post-card-author">
-                            <a href="/author/dongjae/">동재</a>
-                        </span>
-                    
-                
-                <span class="reading-time">
-                    
-                    
-                      1 min read
-                    
-                </span>
-            </footer>
-        </div>
-    </article>
-
-    <article class="post-card home-template">
-        
-            <a class="post-card-image-link" href="/JOHN_MAYNARD_KEYNES">
-                <div class="post-card-image" style="background-image: url(/MI/keynes.jpg)"></div>
-            </a>
-        
-        <div class="post-card-content">
-            <a class="post-card-content-link" href="/JOHN_MAYNARD_KEYNES">
-                <header class="post-card-header">
-                    
-                        
-                            
-                                <span class="post-card-tags">Book</span>
-                            
-                        
-                    
-
-                    <h2 class="post-card-title">존 메이너드 케인즈</h2>
-                </header>
-                <section class="post-card-excerpt">
-                    
-                        <p>이 글은 존메이너드 케인즈 에대한 서평입니다.
-</p>
-                    
-                </section>
-            </a>
-            <footer class="post-card-meta">
-                
-                    
-                        
-                        <img class="author-profile-image" src="/assets/built/images/author-logo.jpg" alt="동재" />
-                        
-                        <span class="post-card-author">
-                            <a href="/author/dongjae/">동재</a>
-                        </span>
-                    
-                
-                <span class="reading-time">
-                    
-                    
-                      1 min read
-                    
-                </span>
-            </footer>
-        </div>
-    </article>
-
-    <article class="post-card home-template">
-        
-            <a class="post-card-image-link" href="/spring">
-                <div class="post-card-image" style="background-image: url(/assets/built/images/spring.jpg)"></div>
-            </a>
-        
-        <div class="post-card-content">
-            <a class="post-card-content-link" href="/spring">
-                <header class="post-card-header">
-                    
-                        
-                            
-                                <span class="post-card-tags">Spring</span>
-                            
-                        
-                    
-
-                    <h2 class="post-card-title">스프링 MVC 아키텍처</h2>
-                </header>
-                <section class="post-card-excerpt">
-                    
-                        <p>이 글은 스트레티지 패턴에 관한 학습 코드입니다.
-</p>
-                    
-                </section>
-            </a>
-            <footer class="post-card-meta">
-                
-                    
-                        
-                        <img class="author-profile-image" src="/assets/built/images/author-logo.jpg" alt="동재" />
-                        
-                        <span class="post-card-author">
-                            <a href="/author/dongjae/">동재</a>
-                        </span>
-                    
-                
-                <span class="reading-time">
-                    
-                    
-                      1 min read
-                    
-                </span>
-            </footer>
-        </div>
-    </article>
+            <section class="post-full-content">
+                <div id="post-index" class="well article">
 
 
-        </div>
+
+<ul class="entry-meta inline-list">
+  
+    
+  	<li><a href="#book" class="tag"><span class="term alltags">book</span> <span class="count alltags">1</span></a></li>
+  
+    
+  	<li><a href="#design-patterns" class="tag"><span class="term alltags">design-patterns</span> <span class="count alltags">1</span></a></li>
+  
+    
+  	<li><a href="#spring" class="tag"><span class="term alltags">spring</span> <span class="count alltags">1</span></a></li>
+  
+</ul>
+
+
+  
+	<article>
+	<h2 id="book" class="tag-heading">BOOK</h2>
+		<ul>
+    
+      <!-- <li class="entry-title"><a href="https://dongjea2.github.io/JOHN_MAYNARD_KEYNES" target="_blank" title="존 메이너드 케인즈">존 메이너드 케인즈</a></li> -->
+      <li class="entry-title"><a href="/JOHN_MAYNARD_KEYNES" target="_blank" title="존 메이너드 케인즈">존 메이너드 케인즈</a></li>
+    
+		</ul>
+	</article><!-- /.hentry -->
+
+  
+	<article>
+	<h2 id="design-patterns" class="tag-heading">DESIGN-PATTERNS</h2>
+		<ul>
+    
+      <!-- <li class="entry-title"><a href="https://dongjea2.github.io/strategy" target="_blank" title="Strategy Pattern(스트레티지 패턴)">Strategy Pattern(스트레티지 패턴)</a></li> -->
+      <li class="entry-title"><a href="/strategy" target="_blank" title="Strategy Pattern(스트레티지 패턴)">Strategy Pattern(스트레티지 패턴)</a></li>
+    
+		</ul>
+	</article><!-- /.hentry -->
+
+  
+	<article>
+	<h2 id="spring" class="tag-heading">SPRING</h2>
+		<ul>
+    
+      <!-- <li class="entry-title"><a href="https://dongjea2.github.io/spring" target="_blank" title="스프링 MVC 아키텍처">스프링 MVC 아키텍처</a></li> -->
+      <li class="entry-title"><a href="/spring" target="_blank" title="스프링 MVC 아키텍처">스프링 MVC 아키텍처</a></li>
+    
+		</ul>
+	</article><!-- /.hentry -->
+
+</div>
+
+            </section>
+
+        </article>
 
     </div>
 </main>
+
+<!-- /post -->
+
+<!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs -->
+<script>
+$(function() {
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+});
+</script>
+
 
 
         <!-- Previous/next page links - displayed on every page -->
@@ -385,7 +310,7 @@ into the {body} of the default.hbs template -->
     <!-- Paginator increased to "infinit" in _config.yml -->
     <!-- if paginator.posts  -->
     <!-- <script>
-        var maxPages = parseInt('1');
+        var maxPages = parseInt('');
     </script>
     <script src="/assets/js/infinitescroll.js"></script> -->
     <!-- /endif -->
@@ -408,6 +333,14 @@ into the {body} of the default.hbs template -->
 
 
     <!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. -->
+    
+        <script>
+$(function() {
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+});
+</script>
+
     
 
     <!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag -->
