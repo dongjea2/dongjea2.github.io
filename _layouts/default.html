@@ -11,10 +11,25 @@
     <title>{% if title %}{{ title }}{% elsif page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <!-- Styles'n'Scripts -->
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}assets/built/screen.css" />
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}assets/built/screen.edited.css" />
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}assets/built/syntax.css" />
+
+    <!--custom.css-->
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}assets/built/custom.css" />
+    <!--syntax.css 추가-->
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}assets/built/syntax.css" />
+
+
+    <!--웹폰트-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothic.css">
+    <link href="http://cdn.jsdelivr.net/gh/joungkyun/font-d2coding/d2coding.css" rel="stylesheet" type="text/css">
+    <!--어썸폰트-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/7894fe677d.js" crossorigin="anonymous"></script>
+
     <!-- highlight.js -->
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
     <style>.hljs { background: none; }</style>

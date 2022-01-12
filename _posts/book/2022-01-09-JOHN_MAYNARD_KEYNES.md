@@ -1,7 +1,7 @@
 ---
 layout: post
 current: post
-cover: assets/images/bus.jpg
+cover: MI/keynes.jpg
 navigation: True
 title: 존 메이너드 케인즈
 date: 2022-01-08 10:13:00

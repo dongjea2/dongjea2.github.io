@@ -48,10 +48,10 @@ baseurl: /
 title: Lv0부터 시작하는 코딩라이프
 # 자신의 blog title.
 
-description: IT기술 공부 , 독서 서평 etc..
+description: IT기술 , 독서 서평 etc.
 # blog home에 표시될 blog에 대한 전반적인 설명.
 
-cover: assets/built/images/blog-cover1.png
+cover: assets/built/images/background-frontend.png
 # blog home에 표시될 blog cover image.
 
 logo:
@@ -121,7 +121,7 @@ branch: master
 
 relative_source:
 
-destination: ../[GitHubPage]/
+destination: ../dongjea2.github.io/
 # compile된 결과가 생성되는 폴더
 # 이 폴더안의 내용이 우리가 운영하는 블로그 내용이 컴파일되서 들어간다.
 # 이 폴더안의 내용을 github repository(https://username.github.io)에 push
