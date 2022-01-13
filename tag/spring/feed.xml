@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator>
   <link href="https://dongjea2.github.io/tag/spring/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://dongjea2.github.io/" rel="alternate" type="text/html" />
-  <updated>2022-01-13T10:19:00+09:00</updated>
+  <updated>2022-01-14T03:03:09+09:00</updated>
   <id>https://dongjea2.github.io/tag/spring/feed.xml</id>
 
   
@@ -33,174 +33,144 @@
   
     <entry>
       <title type="html">mybatis 실행연습</title>
-      <link href="https://dongjea2.github.io/spring" rel="alternate" type="text/html" title="mybatis 실행연습" />
+      <link href="https://dongjea2.github.io/%EB%B0%B1%EC%97%94%EB%93%9C%EC%B4%88%EA%B8%B0%EC%84%A4%EC%A0%95" rel="alternate" type="text/html" title="mybatis 실행연습" />
       <published>2022-01-12T10:18:00+09:00</published>
       <updated>2022-01-12T10:18:00+09:00</updated>
-      <id>https://dongjea2.github.io/spring</id>
-      <content type="html" xml:base="https://dongjea2.github.io/spring">&lt;h1&gt;백엔드 프로젝트 초기설정&lt;/h1&gt;
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1&gt;0.프로젝트 메이븐 프로젝트로 만들고 pom.xml에 아래내용 추가 &lt;/h1&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &amp;lt;packaging&amp;gt;war&amp;lt;/packaging&amp;gt;여기 밑에 아래내용 붙여넣기!!
+      <id>https://dongjea2.github.io/%EB%B0%B1%EC%97%94%EB%93%9C%EC%B4%88%EA%B8%B0%EC%84%A4%EC%A0%95</id>
+      <content type="html" xml:base="https://dongjea2.github.io/%EB%B0%B1%EC%97%94%EB%93%9C%EC%B4%88%EA%B8%B0%EC%84%A4%EC%A0%95">&lt;h1&gt;백엔드 프로젝트 초기설정&lt;/h1&gt;
+&lt;p&gt;&lt;br /&gt; &lt;br /&gt; &lt;br /&gt; &lt;br /&gt; &lt;br /&gt;&lt;/p&gt;
+&lt;h1&gt;0. pom.xml 추가 &lt;/h1&gt;
+&lt;h6&gt;이클립스 에서 프로젝트 우클릭후 메이븐 프로젝트로 변경&lt;/h6&gt;
+&lt;p&gt;&lt;br /&gt; &lt;br /&gt;&lt;/p&gt;
+&lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;	  &lt;span class=&quot;nt&quot;&gt;&amp;lt;packaging&amp;gt;&lt;/span&gt;war&lt;span class=&quot;nt&quot;&gt;&amp;lt;/packaging&amp;gt;&lt;/span&gt;여기 밑에 아래내용 붙여넣기!!
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
 
 &lt;details&gt;
-    &lt;summary&gt;pom.xml dependencies 태그(클릭시 펼쳐짐)&lt;/summary&gt;
-
-
-
-~~~xml
-   
-&lt;dependencies&gt;
-	&lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-context --&gt;
-	&lt;dependency&gt;
-		&lt;groupId&gt;org.springframework&lt;/groupId&gt;
-		&lt;artifactId&gt;spring-context&lt;/artifactId&gt;
-		&lt;version&gt;5.2.9.RELEASE&lt;/version&gt;
-	&lt;/dependency&gt;
+	
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-xml&quot; data-lang=&quot;xml&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;dependencies&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-context --&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.springframework&lt;span class=&quot;nt&quot;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;spring-context&lt;span class=&quot;nt&quot;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;5.2.9.RELEASE&lt;span class=&quot;nt&quot;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
   
-	&lt;!-- https://mvnrepository.com/artifact/com.oracle.database.jdbc/ojdbc8 --&gt;
-	&lt;dependency&gt;
-		&lt;groupId&gt;com.oracle.database.jdbc&lt;/groupId&gt;
-		&lt;artifactId&gt;ojdbc8&lt;/artifactId&gt;
-		&lt;version&gt;21.1.0.0&lt;/version&gt;
-	&lt;/dependency&gt;
+	&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- https://mvnrepository.com/artifact/com.oracle.database.jdbc/ojdbc8 --&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;com.oracle.database.jdbc&lt;span class=&quot;nt&quot;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;ojdbc8&lt;span class=&quot;nt&quot;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;21.1.0.0&lt;span class=&quot;nt&quot;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
   
-  &lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc --&gt;
-	&lt;dependency&gt;
-		&lt;groupId&gt;org.springframework&lt;/groupId&gt;
-		&lt;artifactId&gt;spring-jdbc&lt;/artifactId&gt;
-		&lt;version&gt;5.2.9.RELEASE&lt;/version&gt;
-	&lt;/dependency&gt;
+  &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc --&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.springframework&lt;span class=&quot;nt&quot;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;spring-jdbc&lt;span class=&quot;nt&quot;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;5.2.9.RELEASE&lt;span class=&quot;nt&quot;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
 	
-	&lt;!-- https://mvnrepository.com/artifact/log4j/log4j --&gt;
-	&lt;dependency&gt;
-		&lt;groupId&gt;log4j&lt;/groupId&gt;
-		&lt;artifactId&gt;log4j&lt;/artifactId&gt;
-		&lt;version&gt;1.2.17&lt;/version&gt;
-	&lt;/dependency&gt;
+	&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- https://mvnrepository.com/artifact/log4j/log4j --&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;log4j&lt;span class=&quot;nt&quot;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;log4j&lt;span class=&quot;nt&quot;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;1.2.17&lt;span class=&quot;nt&quot;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
 	
-	&lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc --&gt;
-	&lt;dependency&gt;
-		&lt;groupId&gt;org.springframework&lt;/groupId&gt;
-		&lt;artifactId&gt;spring-webmvc&lt;/artifactId&gt;
-		&lt;version&gt;5.2.9.RELEASE&lt;/version&gt;
-	&lt;/dependency&gt;
+	&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc --&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.springframework&lt;span class=&quot;nt&quot;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;spring-webmvc&lt;span class=&quot;nt&quot;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;5.2.9.RELEASE&lt;span class=&quot;nt&quot;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
 	
-&lt;!-- 마이바티스+ 마이바티스 스프링(SqlSession 받기 편해짐)--&gt;
-	&lt;!-- https://mvnrepository.com/artifact/org.mybatis/mybatis --&gt;
-	&lt;dependency&gt;
-		&lt;groupId&gt;org.mybatis&lt;/groupId&gt;
-		&lt;artifactId&gt;mybatis&lt;/artifactId&gt;
-		&lt;version&gt;3.5.6&lt;/version&gt;
-	&lt;/dependency&gt;
+&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- 마이바티스+ 마이바티스 스프링(SqlSession 받기 편해짐)--&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- https://mvnrepository.com/artifact/org.mybatis/mybatis --&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.mybatis&lt;span class=&quot;nt&quot;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;mybatis&lt;span class=&quot;nt&quot;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;3.5.6&lt;span class=&quot;nt&quot;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
 	
-	&lt;!-- https://mvnrepository.com/artifact/org.mybatis/mybatis-spring --&gt;
-	&lt;dependency&gt;
-		&lt;groupId&gt;org.mybatis&lt;/groupId&gt;
-		&lt;artifactId&gt;mybatis-spring&lt;/artifactId&gt;
-		&lt;version&gt;2.0.6&lt;/version&gt;
-	&lt;/dependency&gt;
-	
-	
-	
-	&lt;!-- 제이유닛 스프링에서 돌아가게 하는거 --&gt;
-	&lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-test --&gt;
-	&lt;dependency&gt;
-		&lt;groupId&gt;org.springframework&lt;/groupId&gt;
-		&lt;artifactId&gt;spring-test&lt;/artifactId&gt;
-		&lt;version&gt;5.2.9.RELEASE&lt;/version&gt;
-    &lt;/dependency&gt;
-    &lt;!--     &lt;scope&gt;test&lt;scope&gt; --&gt;
+	&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- https://mvnrepository.com/artifact/org.mybatis/mybatis-spring --&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.mybatis&lt;span class=&quot;nt&quot;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;mybatis-spring&lt;span class=&quot;nt&quot;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;2.0.6&lt;span class=&quot;nt&quot;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
 	
 	
-	&lt;!-- 히카리cp -커넥션 풀 라이브러리 --&gt;
-	&lt;!-- https://mvnrepository.com/artifact/com.zaxxer/HikariCP --&gt;
-	&lt;dependency&gt;
-		&lt;groupId&gt;com.zaxxer&lt;/groupId&gt;
-		&lt;artifactId&gt;HikariCP&lt;/artifactId&gt;
-		&lt;version&gt;3.4.5&lt;/version&gt;
-	&lt;/dependency&gt;
 	
-	&lt;!--히카리용 로그포제이  --&gt;
-	&lt;!-- Logging --&gt;
-		&lt;dependency&gt;
-			&lt;groupId&gt;org.slf4j&lt;/groupId&gt;
-			&lt;artifactId&gt;slf4j-api&lt;/artifactId&gt;
-			&lt;version&gt;1.6.6&lt;/version&gt;
-		&lt;/dependency&gt;
-		&lt;dependency&gt;
-			&lt;groupId&gt;org.slf4j&lt;/groupId&gt;
-			&lt;artifactId&gt;jcl-over-slf4j&lt;/artifactId&gt;
-			&lt;version&gt;1.6.6&lt;/version&gt;
-			&lt;!-- &lt;scope&gt;runtime&lt;/scope&gt; --&gt;
-		&lt;/dependency&gt;
-		&lt;dependency&gt;
-			&lt;groupId&gt;org.slf4j&lt;/groupId&gt;
-			&lt;artifactId&gt;slf4j-log4j12&lt;/artifactId&gt;
-			&lt;version&gt;1.6.6&lt;/version&gt;
-			&lt;!-- &lt;scope&gt;runtime&lt;/scope&gt; --&gt;
-		&lt;/dependency&gt;
+	&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- 제이유닛 스프링에서 돌아가게 하는거 --&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-test --&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.springframework&lt;span class=&quot;nt&quot;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;spring-test&lt;span class=&quot;nt&quot;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;5.2.9.RELEASE&lt;span class=&quot;nt&quot;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;&amp;lt;!--     &amp;lt;scope&amp;gt;test&amp;lt;scope&amp;gt; --&amp;gt;&lt;/span&gt;
 	
-		&lt;dependency&gt;
-			&lt;groupId&gt;org.bgee.log4jdbc-log4j2&lt;/groupId&gt;
-			&lt;artifactId&gt;log4jdbc-log4j2-jdbc4&lt;/artifactId&gt;
-			&lt;version&gt;1.16&lt;/version&gt;
-		&lt;/dependency&gt;
 	
-		 &lt;!--스프링용 JSON 라이브러리 (자동으로 Map값 리턴하면 맞춰줌) --&gt;
+	&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- 히카리cp -커넥션 풀 라이브러리 --&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- https://mvnrepository.com/artifact/com.zaxxer/HikariCP --&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;com.zaxxer&lt;span class=&quot;nt&quot;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;HikariCP&lt;span class=&quot;nt&quot;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;3.4.5&lt;span class=&quot;nt&quot;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
+	
+	&lt;span class=&quot;c&quot;&gt;&amp;lt;!--히카리용 로그포제이  --&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- Logging --&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
+			&lt;span class=&quot;nt&quot;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.slf4j&lt;span class=&quot;nt&quot;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+			&lt;span class=&quot;nt&quot;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;slf4j-api&lt;span class=&quot;nt&quot;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+			&lt;span class=&quot;nt&quot;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;1.6.6&lt;span class=&quot;nt&quot;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
+			&lt;span class=&quot;nt&quot;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.slf4j&lt;span class=&quot;nt&quot;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+			&lt;span class=&quot;nt&quot;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;jcl-over-slf4j&lt;span class=&quot;nt&quot;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+			&lt;span class=&quot;nt&quot;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;1.6.6&lt;span class=&quot;nt&quot;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
+			&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- &amp;lt;scope&amp;gt;runtime&amp;lt;/scope&amp;gt; --&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
+			&lt;span class=&quot;nt&quot;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.slf4j&lt;span class=&quot;nt&quot;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+			&lt;span class=&quot;nt&quot;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;slf4j-log4j12&lt;span class=&quot;nt&quot;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+			&lt;span class=&quot;nt&quot;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;1.6.6&lt;span class=&quot;nt&quot;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
+			&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- &amp;lt;scope&amp;gt;runtime&amp;lt;/scope&amp;gt; --&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
+	
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
+			&lt;span class=&quot;nt&quot;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.bgee.log4jdbc-log4j2&lt;span class=&quot;nt&quot;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+			&lt;span class=&quot;nt&quot;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;log4jdbc-log4j2-jdbc4&lt;span class=&quot;nt&quot;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+			&lt;span class=&quot;nt&quot;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;1.16&lt;span class=&quot;nt&quot;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
+	
+		 &lt;span class=&quot;c&quot;&gt;&amp;lt;!--스프링용 JSON 라이브러리 (자동으로 Map값 리턴하면 맞춰줌) --&amp;gt;&lt;/span&gt;
 
-		&lt;!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind --&gt;
-		&lt;dependency&gt;
-			&lt;groupId&gt;com.fasterxml.jackson.core&lt;/groupId&gt;
-			&lt;artifactId&gt;jackson-databind&lt;/artifactId&gt;
-			&lt;version&gt;2.12.5&lt;/version&gt;
-		&lt;/dependency&gt;
-&lt;/dependencies&gt;
-~~~
+		&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind --&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
+			&lt;span class=&quot;nt&quot;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;com.fasterxml.jackson.core&lt;span class=&quot;nt&quot;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+			&lt;span class=&quot;nt&quot;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;jackson-databind&lt;span class=&quot;nt&quot;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+			&lt;span class=&quot;nt&quot;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;2.12.5&lt;span class=&quot;nt&quot;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/dependencies&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;/details&gt;
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
+&lt;h1&gt;1. src/test 폴더 만들기 &lt;/h1&gt;
+
+&lt;h3&gt;1-1) src/test/java폴더 생성&lt;/h3&gt;
+&lt;h3&gt;1-2) src/test/resources 폴더 생성&lt;/h3&gt;
+&lt;p&gt;&lt;br /&gt; &lt;br /&gt; &lt;br /&gt; &lt;br /&gt;&lt;/p&gt;
+
+&lt;h1&gt;2. src/main/resources 폴더 생성 &lt;/h1&gt;
 &lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-&lt;h1&gt;1.src-&amp;gt;test 폴더 만들기 &lt;/h1&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;그 속에 java, resources 폴더 각각 생성 (src/test/java) , (src/test/resources)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-&lt;h1&gt;2.src-&amp;gt;main -&amp;gt; resources (위에꺼랑 경로 다름)폴더 생성 &lt;/h1&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;이 폴더속에는 log4j.xml , mybatis-config.xml , 매퍼xml 등등..이 들어간다.
-(src/main/resources함
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
+	이 폴더속에는 log4j.xml , mybatis-config.xml , Mapper.xml 등등..
+	들어갈 위치
+&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;h1&gt;3. 빌드패스 등록&lt;/h1&gt;
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;이제 1번, 2번에서 만든 폴더들을 빌드패스 등록해야한다.
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;이제 1번, 2번에서 만든 폴더들을 빌드패스 등록해야함
 
 1.프로젝트를 우클릭 하여 Build Path -&amp;gt;Configure Build Path 클릭
 2.Source 탭 클릭
@@ -215,16 +185,12 @@
    {자기가만든 프로젝트이름}/src/main/resources 가 소스탭에 추가되어야함
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt; &lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
+&lt;h1&gt;3.web.xml만들기&lt;/h1&gt;
+&lt;h6&gt;src/main/webapp/WEN_INF/web.xml&lt;/h6&gt;
 
-&lt;h1&gt;3. src/main/webapp/WEN_INF 폴더에 -&amp;gt; web.xml만들기&lt;/h1&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;xml파일 생성후 아래 구문 복사해서 붙여넣고 저장.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;xml파일 생성후 아래 구문 복사해서 붙여넣고 저장.&lt;/p&gt;
 
 &lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;web-app&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://xmlns.jcp.org/xml/ns/javaee&quot;&lt;/span&gt;
               &lt;span class=&quot;na&quot;&gt;xmlns:xsi=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&lt;/span&gt;              
@@ -246,207 +212,227 @@
 	&lt;span class=&quot;nt&quot;&gt;&amp;lt;/servlet-mapping&amp;gt;&lt;/span&gt;
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/web-app&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
 &lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;	이제 추가로 위의 web.xml파일의 내용인
-			&lt;span class=&quot;nt&quot;&gt;&amp;lt;param-name&amp;gt;&lt;/span&gt;contextConfigLocation&lt;span class=&quot;nt&quot;&gt;&amp;lt;/param-name&amp;gt;&lt;/span&gt;
-			&lt;span class=&quot;nt&quot;&gt;&amp;lt;param-value&amp;gt;&lt;/span&gt;/WEB-INF/spring/appServlet/servlet-context.xml&lt;span class=&quot;nt&quot;&gt;&amp;lt;/param-value&amp;gt;&lt;/span&gt;
-			이 경로에 실제 폴더와 파일(servlet_context.xml) 만들기
+직접 servlet-context의 위치 수정가능(아래 param-value 경로)&lt;/p&gt;
+&lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;		&lt;span class=&quot;nt&quot;&gt;&amp;lt;param-name&amp;gt;&lt;/span&gt;contextConfigLocation&lt;span class=&quot;nt&quot;&gt;&amp;lt;/param-name&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;param-value&amp;gt;&lt;/span&gt;/WEB-INF/spring/appServlet/servlet-context.xml&lt;span class=&quot;nt&quot;&gt;&amp;lt;/param-value&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-&lt;h2&gt;꼭 폴더 경로와 , servelt-context.xml 만들것&lt;/h2&gt;
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
+&lt;h1&gt;4.servlet-context.xml 만들기&lt;/h1&gt;
+&lt;h6&gt;(WEB-INF/spring/appServlet/servlet-context.xml)&lt;/h6&gt;
+&lt;p&gt;없는 폴더들은 만들어주기&lt;/p&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1&gt;4.(WEB-INF/spring/appServlet )servlet-context.xml 내용&lt;/h1&gt;
-
-&lt;details&gt;
-
-~~~xml
-&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:context=&quot;http://www.springframework.org/schema/context&quot; xmlns:mvc=&quot;http://www.springframework.org/schema/mvc&quot; xsi:schemaLocation=&quot;http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+&lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;beans&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://www.springframework.org/schema/beans&quot;&lt;/span&gt;
+	&lt;span class=&quot;na&quot;&gt;xmlns:xsi=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&lt;/span&gt;
+	&lt;span class=&quot;na&quot;&gt;xmlns:context=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://www.springframework.org/schema/context&quot;&lt;/span&gt;
+	&lt;span class=&quot;na&quot;&gt;xmlns:mvc=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://www.springframework.org/schema/mvc&quot;&lt;/span&gt;
+	&lt;span class=&quot;na&quot;&gt;xsi:schemaLocation=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd&quot;&gt;
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
 
-&lt;context:annotation-config&gt;&lt;/context:annotation-config&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;context:annotation-config&amp;gt;&amp;lt;/context:annotation-config&amp;gt;&lt;/span&gt;
 
-&lt;!--DataSource 히카리 cp  --&gt;
-	&lt;bean id=&quot;hikariConfig&quot; class=&quot;com.zaxxer.hikari.HikariConfig&quot;&gt;
-		&lt;!--  이렇게 하면 스프링 컨테이너에서 작동하는 sql 구문을 로그로 볼수 있게됨--&gt;
-		&lt;property name=&quot;driverClassName&quot; value=&quot;net.sf.log4jdbc.sql.jdbcapi.DriverSpy&quot; /&gt; 
-		&lt;property name=&quot;jdbcUrl&quot; value=&quot;jdbc:log4jdbc:oracle:thin:@127.0.0.1:1521:XE&quot; /&gt;
+&lt;span class=&quot;c&quot;&gt;&amp;lt;!--히카리cp config + 커넥션풀 --&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;bean&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;hikariConfig&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;com.zaxxer.hikari.HikariConfig&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;c&quot;&gt;&amp;lt;!--  이렇게 하면 스프링 컨테이너에서 작동하는 sql 구문을 로그로 볼수 있게됨--&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;property&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;driverClassName&quot;&lt;/span&gt; 	&lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;net.sf.log4jdbc.sql.jdbcapi.DriverSpy&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt; 
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;property&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;jdbcUrl&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;jdbc:log4jdbc:oracle:thin:@127.0.0.1:1521:XE&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
 		
-		&lt;property name=&quot;username&quot; value=&quot;hr&quot;&gt;&lt;/property&gt;
-		&lt;property name=&quot;password&quot; value=&quot;hr&quot;&gt;&lt;/property&gt;
-		&lt;property name=&quot;maximumPoolSize&quot; value=&quot;10&quot;&gt;&lt;/property&gt;
-		&lt;property name=&quot;minimumIdle&quot; value=&quot;2&quot;&gt;&lt;/property&gt;
-	&lt;/bean&gt;
-	
-&lt;bean id=&quot;dataSource&quot; class=&quot;com.zaxxer.hikari.HikariDataSource&quot;&gt;
-		&lt;constructor-arg ref=&quot;hikariConfig&quot;&gt;&lt;/constructor-arg&gt;
-	&lt;/bean&gt;
-
-
-&lt;!--Mybatis-spring용 SqlSessionFactoryBean--&gt;
-	&lt;bean id=&quot;sqlSessionFactory&quot; class=&quot;org.mybatis.spring.SqlSessionFactoryBean&quot;&gt;
-	&lt;property name=&quot;dataSource&quot; ref=&quot;dataSource&quot;&gt;&lt;/property&gt;
-	&lt;property name=&quot;configLocation&quot; value=&quot;classpath:mybatis-config.xml&quot;&gt;
-	&lt;/property&gt;
-	&lt;/bean&gt;
-
-&lt;!--com.my.board.dao패키지의 @Repository클래스들--&gt;
-	&lt;context:component-scan base-package=&quot;com.my.board.dao&quot; /&gt;
+		&lt;span class=&quot;c&quot;&gt;&amp;lt;!--자기가 사용하는 db의 아이디와 패스워드--&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;property&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;username&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;hr&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/property&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;property&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;password&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;hr&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/property&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;c&quot;&gt;&amp;lt;!--최대 풀 갯수와, 최소풀 갯수--&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;property&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;maximumPoolSize&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;10&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/property&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;property&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;minimumIdle&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;2&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/property&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;/bean&amp;gt;&lt;/span&gt;
 	
 
-&lt;/beans&gt;
-~~~
-&lt;br /&gt;
-&lt;br /&gt;
+&lt;span class=&quot;c&quot;&gt;&amp;lt;!--dataSource--&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;bean&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;dataSource&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;com.zaxxer.hikari.HikariDataSource&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;constructor-arg&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;ref=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;hikariConfig&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/constructor-arg&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;/bean&amp;gt;&lt;/span&gt;
 
-&lt;/details&gt;
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;	xml 내용 설명
-	    1.dateSource -&amp;gt;히카리데이터소스(class)
+&lt;span class=&quot;c&quot;&gt;&amp;lt;!--Mybatis-spring용 SqlSessionFactoryBean--&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;c&quot;&gt;&amp;lt;!--SqlSessionFactory 쓸때 편하게 사용가능--&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;bean&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;sqlSessionFactory&quot;&lt;/span&gt;
+		&lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;org.mybatis.spring.SqlSessionFactoryBean&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;property&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;dataSource&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;ref=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;dataSource&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/property&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;property&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;configLocation&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;classpath:mybatis-config.xml&apos;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;/property&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;/bean&amp;gt;&lt;/span&gt;
 
-		2.construc-arg-&amp;gt; (히카리config 참조)
+&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- 여기에 패키지 경로들을 등록해줘야 스프링 컨테이너에서 관리 가능--&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- @Repository, @Controller, @ResponseMapping--&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;context:component-scan&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;base-package=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;com.my.board.dao&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;context:component-scan&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;base-package=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;com.my.board.service&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;context:component-scan&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;base-package=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;com.my.board.controller&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+	
+&lt;span class=&quot;c&quot;&gt;&amp;lt;!--Namespace탭에 mvc 체크하면 자동으로 생김--&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- 왜 추가해주냐면 원래 spring에선 ModelAndView 타입을 반환 --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&amp;lt;!--근데  Objcet 를 JSON으로  return할려면 이거 사용해야함--&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;mvc:annotation-driven&amp;gt;&amp;lt;/mvc:annotation-driven&amp;gt;&lt;/span&gt;
 
-	    3.sqlSessionFactory -&amp;gt;SqlSessionBean Class
-			(프로퍼티1+ 이름=dataSource 참조=datasoucre
-			(프로퍼티2+ 이름=configLocation 값=classpath:mybatis-config.xml
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/beans&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-&lt;h1&gt;5.src/main/resources에 log4j.xml+ mybatis-confg 추가&lt;/h1&gt;
+&lt;h4&gt;xml 내용 설명&lt;/h4&gt;
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;	      log4jdbc.log4j2.propreties추가
-	      mybatis-config.xml추가
-	      알아서 마이바티스 홈페이지 가서 참고한 후 여러가지 매퍼들 추가
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1.dateSource -&amp;gt;히카리데이터소스(class)
+
+2.construc-arg-&amp;gt; (히카리config 참조)
+
+
+
+3.sqlSessionFactory -&amp;gt;SqlSessionBean Class
+
+		(프로퍼티1+ 이름=dataSource 참조=datasoucre
+
+		(프로퍼티2+ 이름=configLocation 값=classpath:mybatis-config.xml
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h4&gt;만약 프론트 / 백 분리 안할시 참고&lt;/h4&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;	&amp;lt;/bean&amp;gt; 태그 아래에 해당 코드 추가하면 자동으로 jsp쓸때 매핑해줌
+
+/resources 폴더로 경로를 설정해 주면 Client가 해당 파일들을 직접 열수 없음
+
+아래 코드는	        src/main/webapp/resources/css
+
+			src/main/webapp/resources/js
+
+			src/main/webapp/resources/html
+
+			src/main/webapp/resources/imgaes 매핑해준거
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;	&lt;span class=&quot;nt&quot;&gt;&amp;lt;mvc:resources&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;location=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/resources/images/&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;mapping=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/images/**&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/mvc:resources&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;mvc:resources&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;location=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/resources/css/&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;mapping=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/css/**&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/mvc:resources&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;mvc:resources&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;location=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/resources/js/&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;mapping=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/js/**&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/mvc:resources&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;mvc:resources&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;location=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/resources/html/&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;mapping=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/html/**&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/mvc:resources&amp;gt;&lt;/span&gt;
+	
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h4&gt;히카리cp+커넥션풀 안쓰고 SimpleDataSource사용시 참고&lt;/h4&gt;
+
+&lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;	&lt;span class=&quot;c&quot;&gt;&amp;lt;!--커넥션 풀+히카리 cp 사용 안할거면 아래의 SimpleDricerDataSource사용--&amp;gt;&lt;/span&gt;
+ 	&lt;span class=&quot;nt&quot;&gt;&amp;lt;bean&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;dataSource&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;org.springframework.jdbc.datasource.SimpleDriverDataSource&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;property&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;driverClass&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;oracle.jdbc.driver.OracleDriver&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;/property&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;property&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;url&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;jdbc:oracle:thin:@localhost:1521:xe&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;property&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;username&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;hr&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;property&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;password&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;hr&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;/bean&amp;gt;&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h1&gt;5.log4j.xml  &amp;amp; mybatis-config 추가&lt;/h1&gt;
+
+&lt;h6&gt;src/main/resources/log4j.xml&lt;/h6&gt;
+&lt;h6&gt;src/main/resources/mybatis-config.xml&lt;/h6&gt;
+
 &lt;p&gt;&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
-&lt;h1&gt;log4j.xml &lt;/h1&gt;
+&lt;h1&gt;5-1)log4j.xml &lt;/h1&gt;
 
 &lt;details&gt;
 
-~~~xml
-&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;!-- &lt;!DOCTYPE log4j:configuration PUBLIC &quot;-//APACHE//DTD LOG4J 1.2//EN&quot; &quot;log4j.dtd&quot;&gt; --&gt;
-&amp;lt;!DOCTYPE log4j:configuration SYSTEM    &quot;http://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/xml/doc-files/log4j.dtd&quot;&amp;gt;
 
-&lt;log4j:configuration xmlns:log4j=&quot;http://jakarta.apache.org/log4j/&quot;&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-xml&quot; data-lang=&quot;xml&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- &amp;lt;!DOCTYPE log4j:configuration PUBLIC &quot;-//APACHE//DTD LOG4J 1.2//EN&quot; &quot;log4j.dtd&quot;&amp;gt; --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE log4j:configuration SYSTEM  &quot;http://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/xml/doc-files/log4j.dtd&quot;&amp;gt;&lt;/span&gt;
 
-	&lt;!-- Appenders --&gt;
-	&lt;appender name=&quot;console&quot; class=&quot;org.apache.log4j.ConsoleAppender&quot;&gt;
-		&lt;param name=&quot;Target&quot; value=&quot;System.out&quot; /&gt;
-		&lt;layout class=&quot;org.apache.log4j.PatternLayout&quot;&gt;
-			&lt;param name=&quot;ConversionPattern&quot; value=&quot;%-5p: %c - %m%n&quot; /&gt;
-									&lt;!-- 소문자c 카테고리 , %m로그.인포의 메시지  --&gt;
-		&lt;/layout&gt;
-	&lt;/appender&gt;
-	
-	&lt;!-- Application Loggers --&gt;
-	&lt;logger name=&quot;com.my.vo&quot;&gt;
-		&lt;level value=&quot;error&quot; /&gt;
-	&lt;/logger&gt;
-	
-	&lt;!-- 3rdparty Loggers --&gt;
-	&lt;logger name=&quot;org.springframework.core&quot;&gt;
-		&lt;level value=&quot;info&quot; /&gt;
-	&lt;/logger&gt;	
-	
-	&lt;logger name=&quot;org.springframework.beans&quot;&gt;
-		&lt;level value=&quot;info&quot; /&gt;
-	&lt;/logger&gt;
-	
-	&lt;logger name=&quot;org.springframework.context&quot;&gt;
-		&lt;level value=&quot;info&quot; /&gt;
-	&lt;/logger&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;log4j:configuration&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns:log4j=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://jakarta.apache.org/log4j/&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
 
-	&lt;logger name=&quot;org.springframework.web&quot;&gt;
-		&lt;level value=&quot;info&quot; /&gt;
-	&lt;/logger&gt;
+	&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- Appenders --&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;appender&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;console&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;org.apache.log4j.ConsoleAppender&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;param&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Target&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;System.out&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;layout&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;org.apache.log4j.PatternLayout&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+			&lt;span class=&quot;nt&quot;&gt;&amp;lt;param&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ConversionPattern&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;%-5p: %c - %m%n&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+									&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- 소문자c 카테고리 , %m로그.인포의 메시지  --&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;/layout&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;/appender&amp;gt;&lt;/span&gt;
+	
+	&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- Application Loggers --&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;logger&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;com.my.vo&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;level&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;error&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;/logger&amp;gt;&lt;/span&gt;
+	
+	&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- 3rdparty Loggers --&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;logger&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;org.springframework.core&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;level&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;info&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;/logger&amp;gt;&lt;/span&gt;	
+	
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;logger&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;org.springframework.beans&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;level&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;info&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;/logger&amp;gt;&lt;/span&gt;
+	
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;logger&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;org.springframework.context&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;level&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;info&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;/logger&amp;gt;&lt;/span&gt;
 
-	&lt;!-- Root Logger --&gt;
-	&lt;root&gt;
-		&lt;priority value=&quot;info&quot; /&gt;
-		&lt;!-- 실제 배포떄는 info에서 프라이어티레벨을 에러단계로 올리면 에러만 표기ㅏ됨  --&gt;
-		&lt;appender-ref ref=&quot;console&quot; /&gt;
-	&lt;/root&gt;	
-&lt;/log4j:configuration&gt;
-~~~
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;logger&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;org.springframework.web&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;level&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;info&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;/logger&amp;gt;&lt;/span&gt;
+
+	&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- Root Logger --&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;root&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;priority&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;info&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- 실제 배포떄는 info에서 프라이어티레벨을 에러단계로 올리면 에러만 표기  --&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;appender-ref&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;ref=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;console&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;/root&amp;gt;&lt;/span&gt;	
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/log4j:configuration&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;/details&gt;
 
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-&lt;h1&gt;mybatis-config.xml &lt;/h1&gt;
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h1&gt;5-2)mybatis-config.xml &lt;/h1&gt;
 
 &lt;details&gt;
 
-~~~xml
-&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
-&amp;lt;!DOCTYPE configuration
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-xml&quot; data-lang=&quot;xml&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE configuration
   PUBLIC &quot;-//mybatis.org//DTD Config 3.0//EN&quot;
-  &quot;http://mybatis.org/dtd/mybatis-3-config.dtd&quot;&amp;gt;
-&lt;configuration&gt;
-	&lt;settings&gt;
-		&lt;!-- 언더스코어를 자동으로 카멜케이스로 매핑해주는 기능 --&gt;
-		&lt;setting name=&quot;mapUnderscoreToCamelCase&quot; value=&quot;true&quot; /&gt;
-		&lt;setting name=&quot;jdbcTypeForNull&quot; value=&quot;NULL&quot; /&gt;
-	&lt;/settings&gt;
+  &quot;http://mybatis.org/dtd/mybatis-3-config.dtd&quot;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;configuration&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;settings&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- 언더스코어를 자동으로 카멜케이스로 매핑해주는 기능 --&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;setting&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;mapUnderscoreToCamelCase&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;true&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;c&quot;&gt;&amp;lt;!--자동으로 널값이 들어오면 value=Null로 변경해주는 기능--&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;setting&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;jdbcTypeForNull&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;NULL&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;/settings&amp;gt;&lt;/span&gt;
 
-	&lt;typeAliases&gt;
-		&lt;!-- 프로덕트vo 경로 매번 설정하기 귀찮을떈 Alias 생성 --&gt;
-		&lt;typeAlias type=&quot;com.my.customer.vo.Customer&quot; alias=&quot;Customer&quot; /&gt;
-		&lt;typeAlias type=&quot;com.my.board.vo.RepBoard&quot; alias=&quot;RepBoard&quot; /&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;typeAliases&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- 프로덕트vo 경로 매번 설정하기 귀찮을떈 Alias 생성 --&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;typeAlias&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;com.my.customer.vo.Customer&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;alias=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Customer&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;typeAlias&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;com.my.board.vo.RepBoard&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;alias=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;RepBoard&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
 
-	&lt;/typeAliases&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;/typeAliases&amp;gt;&lt;/span&gt;
 
-  &lt;environments default=&quot;development&quot;&gt;
-    &lt;environment id=&quot;development&quot;&gt;
-      &lt;transactionManager type=&quot;JDBC&quot; /&gt;
-      &lt;dataSource type=&quot;POOLED&quot;&gt;
-        &lt;property name=&quot;driver&quot; value=&quot;oracle.jdbc.driver.OracleDriver&quot; /&gt;
-        &lt;property name=&quot;url&quot; value=&quot;jdbc:oracle:thin:@localhost:1521:xe&quot; /&gt;
-        &lt;property name=&quot;username&quot; value=&quot;hr&quot; /&gt;
-        &lt;property name=&quot;password&quot; value=&quot;hr&quot; /&gt;
-      &lt;/dataSource&gt;
-    &lt;/environment&gt;
-  &lt;/environments&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;environments&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;default=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;development&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;environment&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;development&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;transactionManager&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;JDBC&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;dataSource&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;POOLED&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;property&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;driver&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;oracle.jdbc.driver.OracleDriver&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;property&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;url&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;jdbc:oracle:thin:@localhost:1521:xe&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;property&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;username&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;hr&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;property&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;password&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;hr&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;/dataSource&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/environment&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/environments&amp;gt;&lt;/span&gt;
 
-  &lt;mappers&gt;
-    &lt;mapper resource=&quot;RepBoardMapper.xml&quot; /&gt;
-  &lt;/mappers&gt;
-&lt;/configuration&gt;
-~~~
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;mappers&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;mapper&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;resource=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;RepBoardMapper.xml&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/mappers&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/configuration&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;/details&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-&lt;h1&gt;6. src/test/resources/   log4jdbc.log4j2.properties파일 생성&lt;/h1&gt;
+&lt;p&gt;&lt;br /&gt; &lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h1&gt;6. log4jdbc.log4j2.properties파일 생성&lt;/h1&gt;
+&lt;h6&gt;src/test/resources/log4jdbc.log4j2.properties   밑에는  파일내용&lt;/h6&gt;
 
 &lt;div class=&quot;language-properties highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;py&quot;&gt;log4jdbc.spylogdelegator.name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;net.sf.log4jdbc.log.slf4j.Slf4jSpyLogDelegator&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
@@ -455,14 +441,17 @@
 
 &lt;h1&gt;7. Junit4 임포트 &lt;/h1&gt;
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;	src/test/java 패키지에 new -&amp;gt;others..-&amp;gt; JAVA-&amp;gt; JUnit 
-												
-											-&amp;gt;JUint Test Case
-클릭후 아무 이름 생성 후 next
+&lt;p&gt;src/test/java 패키지에 new -&amp;gt;others..-&amp;gt; JAVA-&amp;gt; JUnit -&amp;gt;JUint Test Case&lt;/p&gt;
 
-&amp;lt;중요&amp;gt; New JUint 4 test( o ) 라디오 버튼 클릭후 생성하면
-자동으로 임포트됨
+&lt;p&gt;클릭후 아무 이름 생성 후 next (바로 피니쉬 누르지 말것)&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;중요&amp;gt; New JUint 4 test( o ) 라디오 버튼 클릭후 생성하면
+자동으로 임포트됨 
+톰켓9.0버전 기준 JUint4 사용
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1&gt;8. test.java 생성&lt;/h1&gt;
+&lt;h6&gt;src/test/java (자동으로 만들지는 폴더들)에 test.java 만들기&lt;/h6&gt;
 
 &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;	
 &lt;span class=&quot;kn&quot;&gt;package&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;com.my.board.dao&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
@@ -484,15 +473,19 @@
 &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;RepBoardDAOOracleTest&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
 
 	
+	&lt;span class=&quot;c1&quot;&gt;//자기가 테스트 하고 싶은 클레스&lt;/span&gt;
 	&lt;span class=&quot;nd&quot;&gt;@Autowired&lt;/span&gt;
 	&lt;span class=&quot;nc&quot;&gt;RepBoardDAOOracle&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dao&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
 	
+
+	&lt;span class=&quot;c1&quot;&gt;//꼭 테스트 어노테이션 붙일것!&lt;/span&gt;
 	&lt;span class=&quot;nd&quot;&gt;@Test&lt;/span&gt;
 	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;testFindAll&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;throws&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ModifyException&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;FindException&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-	
-		
+		&lt;span class=&quot;c1&quot;&gt;//테스트 하고 싶은 코드...&lt;/span&gt;
 		&lt;span class=&quot;nc&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;RepBoard&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;
 					&lt;span class=&quot;n&quot;&gt;dao&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;findByNo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+					
+		&lt;span class=&quot;c1&quot;&gt;//aserEquls로 자기가 예상하는 결과&lt;/span&gt;
 		&lt;span class=&quot;n&quot;&gt;assertEquals&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;제목2&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getBoardTitle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
 	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
@@ -531,41 +524,7 @@
       
 
       
-        <summary type="html">백엔드 프로젝트 초기설정</summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">스프링 MVC 아키텍처</title>
-      <link href="https://dongjea2.github.io/spring" rel="alternate" type="text/html" title="스프링 MVC 아키텍처" />
-      <published>2022-01-03T19:18:00+09:00</published>
-      <updated>2022-01-03T19:18:00+09:00</updated>
-      <id>https://dongjea2.github.io/spring</id>
-      <content type="html" xml:base="https://dongjea2.github.io/spring"></content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>동재</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="spring" />
-      
-
-      
-        <summary type="html"></summary>
+        <summary type="html">백엔드 프로젝트 초기설정 0. pom.xml 추가 이클립스 에서 프로젝트 우클릭후 메이븐 프로젝트로 변경 &amp;lt;packaging&amp;gt;war&amp;lt;/packaging&amp;gt;여기 밑에 아래내용 붙여넣기!!</summary>
       
 
       
