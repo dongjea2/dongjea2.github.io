@@ -11,7 +11,7 @@
 
 
 
-    <title>스프링 Client 파일 업로드</title>
+    <title>스프링 Client 파일 업로드(1)</title>
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -51,15 +51,15 @@
     <!-- This tag outputs SEO meta+structured data and other important settings -->
     <meta name="description" content="기술 , 서평 etc." />
     <link rel="shortcut icon" href="https://dongjea2.github.io/assets/built/images/favicon.png" type="image/png" />
-    <link rel="canonical" href="https://dongjea2.github.io/%EC%8A%A4%ED%94%84%EB%A7%81%ED%8C%8C%EC%9D%BC%EC%97%85%EB%A1%9C%EB%93%9C" />
+    <link rel="canonical" href="https://dongjea2.github.io/%EC%8A%A4%ED%94%84%EB%A7%81%ED%8C%8C%EC%9D%BC%EC%97%85%EB%A1%9C%EB%93%9C1" />
     <meta name="referrer" content="no-referrer-when-downgrade" />
 
      <!--title below is coming from _includes/dynamic_title-->
     <meta property="og:site_name" content="Lv0부터 시작하는 코딩생활" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="스프링 Client 파일 업로드" />
-    <meta property="og:description" content="1. Commons-fileupload 설치 pom.xml파일에 해당내용 추가( &lt;dependencies&gt; 태그안에 ) &lt;!-- 파일업로드 --&gt; &lt;!-- https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload --&gt; &lt;dependency&gt; &lt;groupId&gt;commons-fileupload&lt;/groupId&gt; &lt;artifactId&gt;commons-fileupload&lt;/artifactId&gt; &lt;version&gt;1.4&lt;/version&gt; &lt;/dependency&gt; 2. servlet-context.xml &lt;bean&gt; 추가 src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml &lt;bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"&gt; &lt;property name="defaultEncoding" value="UTF-8"/&gt; &lt;property name="maxUploadSize" value="104857568"/&gt; &lt;property name="maxUploadSizePerFile" value="2097152"/&gt; &lt;/bean&gt; 3. BackEnd Controller 파일 예시 log는 log4J 설정후 사용 Logger log =" />
-    <meta property="og:url" content="https://dongjea2.github.io/%EC%8A%A4%ED%94%84%EB%A7%81%ED%8C%8C%EC%9D%BC%EC%97%85%EB%A1%9C%EB%93%9C" />
+    <meta property="og:title" content="스프링 Client 파일 업로드(1)" />
+    <meta property="og:description" content="스프링 목록 Spring(1) - 백엔드 초기설정 Spring(2) -스프링 Client 파일 업로드(1) Spring(3) -스프링 Client 파일 업로드(2) 1. Commons-fileupload 설치 pom.xml파일에 해당내용 추가( &lt;dependencies&gt; 태그안에 ) &lt;!-- 파일업로드 --&gt; &lt;!-- https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload --&gt; &lt;dependency&gt; &lt;groupId&gt;commons-fileupload&lt;/groupId&gt; &lt;artifactId&gt;commons-fileupload&lt;/artifactId&gt; &lt;version&gt;1.4&lt;/version&gt; &lt;/dependency&gt; 2. servlet-context.xml &lt;bean&gt; 추가 src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml &lt;bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"&gt; &lt;property name="defaultEncoding" value="UTF-8"/&gt; &lt;property name="maxUploadSize" value="104857568"/&gt;" />
+    <meta property="og:url" content="https://dongjea2.github.io/%EC%8A%A4%ED%94%84%EB%A7%81%ED%8C%8C%EC%9D%BC%EC%97%85%EB%A1%9C%EB%93%9C1" />
     <meta property="og:image" content="https://dongjea2.github.io/assets/built/images/spring.jpg" />
     <meta property="article:publisher" content="https://www.facebook.com/" />
     <meta property="article:author" content="https://www.facebook.com/" />
@@ -67,8 +67,8 @@
     <meta property="article:modified_time" content="2022-01-14T11:00:00+09:00" />
     <meta property="article:tag" content="Spring" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="스프링 Client 파일 업로드" />
-    <meta name="twitter:description" content="1. Commons-fileupload 설치 pom.xml파일에 해당내용 추가( &lt;dependencies&gt; 태그안에 ) &lt;!-- 파일업로드 --&gt; &lt;!-- https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload --&gt; &lt;dependency&gt; &lt;groupId&gt;commons-fileupload&lt;/groupId&gt; &lt;artifactId&gt;commons-fileupload&lt;/artifactId&gt; &lt;version&gt;1.4&lt;/version&gt; &lt;/dependency&gt; 2. servlet-context.xml &lt;bean&gt; 추가 src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml &lt;bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"&gt; &lt;property name="defaultEncoding" value="UTF-8"/&gt; &lt;property name="maxUploadSize" value="104857568"/&gt; &lt;property name="maxUploadSizePerFile" value="2097152"/&gt; &lt;/bean&gt; 3. BackEnd Controller 파일 예시 log는 log4J 설정후 사용 Logger log =" />
+    <meta name="twitter:title" content="스프링 Client 파일 업로드(1)" />
+    <meta name="twitter:description" content="스프링 목록 Spring(1) - 백엔드 초기설정 Spring(2) -스프링 Client 파일 업로드(1) Spring(3) -스프링 Client 파일 업로드(2) 1. Commons-fileupload 설치 pom.xml파일에 해당내용 추가( &lt;dependencies&gt; 태그안에 ) &lt;!-- 파일업로드 --&gt; &lt;!-- https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload --&gt; &lt;dependency&gt; &lt;groupId&gt;commons-fileupload&lt;/groupId&gt; &lt;artifactId&gt;commons-fileupload&lt;/artifactId&gt; &lt;version&gt;1.4&lt;/version&gt; &lt;/dependency&gt; 2. servlet-context.xml &lt;bean&gt; 추가 src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml &lt;bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"&gt; &lt;property name="defaultEncoding" value="UTF-8"/&gt; &lt;property name="maxUploadSize" value="104857568"/&gt;" />
     <meta name="twitter:url" content="https://dongjea2.github.io/" />
     <meta name="twitter:image" content="https://dongjea2.github.io/assets/built/images/spring.jpg" />
     <meta name="twitter:label1" content="Written by" />
@@ -89,7 +89,7 @@
         "name": "Lv0부터 시작하는 코딩생활",
         "logo": "https://dongjea2.github.io/"
     },
-    "url": "https://dongjea2.github.io/%EC%8A%A4%ED%94%84%EB%A7%81%ED%8C%8C%EC%9D%BC%EC%97%85%EB%A1%9C%EB%93%9C",
+    "url": "https://dongjea2.github.io/%EC%8A%A4%ED%94%84%EB%A7%81%ED%8C%8C%EC%9D%BC%EC%97%85%EB%A1%9C%EB%93%9C1",
     "image": {
         "@type": "ImageObject",
         "url": "https://dongjea2.github.io/assets/built/images/spring.jpg",
@@ -98,9 +98,9 @@
     },
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://dongjea2.github.io/%EC%8A%A4%ED%94%84%EB%A7%81%ED%8C%8C%EC%9D%BC%EC%97%85%EB%A1%9C%EB%93%9C"
+        "@id": "https://dongjea2.github.io/%EC%8A%A4%ED%94%84%EB%A7%81%ED%8C%8C%EC%9D%BC%EC%97%85%EB%A1%9C%EB%93%9C1"
     },
-    "description": "1. Commons-fileupload 설치 pom.xml파일에 해당내용 추가( &lt;dependencies&gt; 태그안에 ) &lt;!-- 파일업로드 --&gt; &lt;!-- https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload --&gt; &lt;dependency&gt; &lt;groupId&gt;commons-fileupload&lt;/groupId&gt; &lt;artifactId&gt;commons-fileupload&lt;/artifactId&gt; &lt;version&gt;1.4&lt;/version&gt; &lt;/dependency&gt; 2. servlet-context.xml &lt;bean&gt; 추가 src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml &lt;bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"&gt; &lt;property name="defaultEncoding" value="UTF-8"/&gt; &lt;property name="maxUploadSize" value="104857568"/&gt; &lt;property name="maxUploadSizePerFile" value="2097152"/&gt; &lt;/bean&gt; 3. BackEnd Controller 파일 예시 log는 log4J 설정후 사용 Logger log ="
+    "description": "스프링 목록 Spring(1) - 백엔드 초기설정 Spring(2) -스프링 Client 파일 업로드(1) Spring(3) -스프링 Client 파일 업로드(2) 1. Commons-fileupload 설치 pom.xml파일에 해당내용 추가( &lt;dependencies&gt; 태그안에 ) &lt;!-- 파일업로드 --&gt; &lt;!-- https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload --&gt; &lt;dependency&gt; &lt;groupId&gt;commons-fileupload&lt;/groupId&gt; &lt;artifactId&gt;commons-fileupload&lt;/artifactId&gt; &lt;version&gt;1.4&lt;/version&gt; &lt;/dependency&gt; 2. servlet-context.xml &lt;bean&gt; 추가 src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml &lt;bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"&gt; &lt;property name="defaultEncoding" value="UTF-8"/&gt; &lt;property name="maxUploadSize" value="104857568"/&gt;"
 }
     </script>
 
@@ -113,7 +113,7 @@
     </script> -->
 
     <meta name="generator" content="Jekyll 3.6.2" />
-    <link rel="alternate" type="application/rss+xml" title="스프링 Client 파일 업로드" href="/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="스프링 Client 파일 업로드(1)" href="/feed.xml" />
 
 
 </head>
@@ -185,7 +185,7 @@ into the {body} of the default.hbs template -->
                         
                     
                 </section>
-                <h1 class="post-full-title">스프링 Client 파일 업로드</h1>
+                <h1 class="post-full-title">스프링 Client 파일 업로드(1)</h1>
             </header>
 
             <!--
@@ -197,7 +197,16 @@ into the {body} of the default.hbs template -->
 
             <section class="post-full-content">
                 <div class="kg-card-markdown">
-                    <h1 id="1-commons-fileupload-설치">1. Commons-fileupload 설치</h1>
+                    
+<p><span class="table-of-contents-list">스프링 목록 </span></p>
+<ul class="table-of-contents-list">
+    <li><a href="./백엔드초기설정">Spring(1) - 백엔드 초기설정</a></li>
+    <li><a href="./스프링파일업로드1">Spring(2) -스프링 Client 파일 업로드(1)</a></li>
+    <li><a href="./스프링파일업로드2">Spring(3) -스프링 Client 파일 업로드(2)</a></li>
+</ul>
+<p><br /><br /></p>
+
+<h1 id="1-commons-fileupload-설치">1. Commons-fileupload 설치</h1>
 <p><br /></p>
 <h6 id="pomxml파일에-해당내용-추가-dependencies-태그안에-">pom.xml파일에 해당내용 추가( &lt;dependencies&gt; 태그안에 )</h6>
 
@@ -227,11 +236,52 @@ into the {body} of the default.hbs template -->
 
 <p><br /><br /><br /><br /></p>
 
-<h1 id="3-backend-controller-파일-예시">3. BackEnd Controller 파일 예시</h1>
+<h1 id="3-구현해야할-기능">3. 구현해야할 기능</h1>
+
+<p><br /></p>
+
+<h6 id="3-1-front-로부터-받은--letterfiles-imagefile-repboard-데이터-처리">3-1. Front 로부터 받은  letterFiles, imageFile, repBoard 데이터 처리</h6>
+<blockquote>
+  <ul>
+    <li>reBoard값 DB에 저장</li>
+    <li>List &lt;letterFiles&gt; 서버에 저장</li>
+    <li>imageFile 서버에 저장</li>
+    <li>요청 url은 POST 방식으로 : “board/write”</li>
+  </ul>
+</blockquote>
+
+<p><br /><br /><br /><br /></p>
+
+<h6 id="3-2-사용자가-올린-사진을-매번-풀-로드하는건-비효율-적임으로">3-2. 사용자가 올린 사진을 매번 풀 로드하는건 비효율 적임으로</h6>
+<blockquote>
+  <ul>
+    <li>섬네일 생성</li>
+    <li>생성된 섬네일 게시글 클릭시 보여주기</li>
+    <li>올린 파일도 추가로 게시글 클릭시 보여주고, 받을수 있게 설정하기</li>
+  </ul>
+</blockquote>
+
+<ul class="table-of-contents-list">
+<h4>해당내용은 아래 링크에서 구현 예정</h4><br />
+    	<li><a href="./스프링파일업로드2">Spring(3) -스프링 Client 파일 업로드(2)</a></li>
+</ul>
+
+<p><br /><br /><br /><br /></p>
+
+<h2 id="4-backend-controller-구현">4. BackEnd Controller 구현</h2>
+
+<p><br /><br /></p>
 
 <ul>
   <li>log는 log4J 설정후 사용
     <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nc">Logger</span> <span class="n">log</span> <span class="o">=</span> <span class="nc">Logger</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">getClass</span><span class="o">());</span>
+</code></pre></div>    </div>
+  </li>
+  <li>아래 변수들 Controller 멤버 변수로 추가하기
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="c1">//@Controller 멤버변수로 선언</span>
+ <span class="kd">private</span>	<span class="nc">String</span> <span class="n">saveDirectory</span> <span class="o">=</span> <span class="s">"f:\\files"</span><span class="o">;</span><span class="c1">//자기가 원하는 경로</span>
+ <span class="kd">private</span> <span class="kt">int</span> <span class="n">s_width</span><span class="o">=</span><span class="mi">100</span><span class="o">;</span>
+ <span class="kd">private</span> <span class="kt">int</span> <span class="n">s_height</span><span class="o">=</span><span class="mi">100</span><span class="o">;</span>
 </code></pre></div>    </div>
   </li>
   <li>
@@ -243,61 +293,114 @@ into the {body} of the default.hbs template -->
   <li>파일들 저장되는 위치는 String saveDirectory 참고(직접 수정가능)</li>
 </ul>
 
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@PostMapping</span><span class="o">(</span><span class="s">"board/write"</span><span class="o">)</span>
-	<span class="kd">public</span> <span class="nc">ResponseEntity</span><span class="o">&lt;?&gt;</span> <span class="n">write</span><span class="o">(</span><span class="nd">@RequestPart</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">MultipartFile</span><span class="o">&gt;</span> <span class="n">letterFiles</span><span class="o">,</span> <span class="nd">@RequestPart</span> <span class="nc">MultipartFile</span> <span class="n">imageFile</span><span class="o">,</span>
-			<span class="nc">RepBoard</span> <span class="n">repBoard</span><span class="o">)</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	<span class="nd">@PostMapping</span><span class="o">(</span><span class="s">"board/write"</span><span class="o">)</span>
+	<span class="kd">public</span> <span class="nc">ResponseEntity</span><span class="o">&lt;?&gt;</span> <span class="n">write</span><span class="o">(</span><span class="nd">@RequestPart</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">"letterFiles"</span><span class="o">)</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">MultipartFile</span><span class="o">&gt;</span> <span class="n">paramLetterFiles</span><span class="o">,</span>
+								   <span class="nd">@RequestPart</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">"imageFile"</span><span class="o">)</span> <span class="nc">MultipartFile</span> <span class="n">paramImageFile</span><span class="o">,</span> 
+								   <span class="nc">RepBoard</span> <span class="n">repBoard</span><span class="o">)</span> <span class="o">{</span>
 
 		<span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">"요청전달데이터 title="</span> <span class="o">+</span> <span class="n">repBoard</span><span class="o">.</span><span class="na">getBoardTitle</span><span class="o">()</span> <span class="o">+</span> <span class="s">", content="</span> <span class="o">+</span> <span class="n">repBoard</span><span class="o">.</span><span class="na">getBoardContent</span><span class="o">());</span>
-		<span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">"letterFiles.size()="</span> <span class="o">+</span> <span class="n">letterFiles</span><span class="o">.</span><span class="na">size</span><span class="o">());</span>
-		<span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">"imageFile.getSize()="</span> <span class="o">+</span> <span class="n">imageFile</span><span class="o">.</span><span class="na">getSize</span><span class="o">());</span>
-
-		<span class="c1">// 게시글내용 DB에 저장</span>
+		<span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">"letterFiles.size()="</span> <span class="o">+</span> <span class="n">paramLetterFiles</span><span class="o">.</span><span class="na">size</span><span class="o">());</span>
+		<span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">"imageFile.getSize()="</span> <span class="o">+</span> <span class="n">paramImageFile</span><span class="o">.</span><span class="na">getSize</span><span class="o">());</span>
+		<span class="c1">// 임시유저</span>
+		<span class="nc">Customer</span> <span class="n">testUser</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Customer</span><span class="o">();</span>
+		<span class="n">testUser</span><span class="o">.</span><span class="na">setId</span><span class="o">(</span><span class="s">"id1"</span><span class="o">);</span>
+		<span class="n">testUser</span><span class="o">.</span><span class="na">setName</span><span class="o">(</span><span class="s">"김치"</span><span class="o">);</span>
 
 		<span class="c1">// 파일 경로생성</span>
-		<span class="nc">String</span> <span class="n">saveDirectory</span> <span class="o">=</span> <span class="s">"f:\\files"</span><span class="o">;</span>
 		<span class="k">if</span> <span class="o">(!</span><span class="k">new</span> <span class="nc">File</span><span class="o">(</span><span class="n">saveDirectory</span><span class="o">).</span><span class="na">exists</span><span class="o">())</span> <span class="o">{</span>
 			<span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">"업로드 실제경로생성"</span><span class="o">);</span>
 			<span class="k">new</span> <span class="nf">File</span><span class="o">(</span><span class="n">saveDirectory</span><span class="o">).</span><span class="na">mkdirs</span><span class="o">();</span>
-		<span class="o">}</span>
+		<span class="o">}</span>		
 
-            <span class="c1">//저장될 게시판 번호(아직 없어서 임시 0)</span>
-		<span class="kt">int</span> <span class="n">wroteBoardNo</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
 
-		<span class="c1">// 이미지파일 저장하기</span>
-		<span class="nc">String</span> <span class="n">imageFileName</span> <span class="o">=</span> <span class="n">imageFile</span><span class="o">.</span><span class="na">getOriginalFilename</span><span class="o">();</span> <span class="c1">// 이미지파일원본이름얻기</span>
-		<span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">"파일크기: "</span> <span class="o">+</span> <span class="n">imageFile</span><span class="o">.</span><span class="na">getSize</span><span class="o">()</span> <span class="o">+</span> <span class="s">", 파일이름:"</span> <span class="o">+</span> <span class="n">imageFile</span><span class="o">.</span><span class="na">getOriginalFilename</span><span class="o">());</span>
-		<span class="c1">// 저장할 파일이름을 지정한다 ex) 글번호_image_XXXX_원본이름</span>
-		<span class="nc">String</span> <span class="n">fileName</span> <span class="o">=</span> <span class="n">wroteBoardNo</span> <span class="o">+</span> <span class="s">"_image_"</span> <span class="o">+</span> <span class="no">UUID</span><span class="o">.</span><span class="na">randomUUID</span><span class="o">()</span> <span class="o">+</span> <span class="s">"_"</span> <span class="o">+</span> <span class="n">imageFileName</span><span class="o">;</span>
-		<span class="c1">// ex) 0_image_ddf269da-3202-447a-a2c5-7ce395b63887_문어.png</span>
+		<span class="c1">// 1.Add DATABASE</span>
+		<span class="c1">//Code ~~</span>
 
-		<span class="c1">// 파일생성</span>
-		<span class="nc">File</span> <span class="n">file</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">File</span><span class="o">(</span><span class="n">saveDirectory</span><span class="o">,</span> <span class="n">fileName</span><span class="o">);</span>
+		<span class="c1">// 2.Save List&lt;letter&gt; File</span>
+		<span class="c1">//Code ~~</span>
+
+		<span class="c1">// 3. Save image FiLe</span>
+		<span class="c1">//Code ~~</span>
+
+		<span class="c1">//아래 예시 코드 보고 주석칸에 코드 채워넣기</span>
+
+
+
+
+		<span class="c1">//RETURN</span>
+		<span class="c1">//프론트에 HttpStatus.OK전달</span>
+		<span class="k">return</span> <span class="k">new</span> <span class="nf">ResponseEntity</span><span class="o">(</span><span class="nc">HttpStatus</span><span class="o">.</span><span class="na">OK</span><span class="o">);</span>
+	<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /><br /><br /></p>
+
+<blockquote>
+  <h3 id="1-repboard-db에-저장하기">1) RepBoard DB에 저장하기</h3>
+</blockquote>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>		
+		<span class="c1">// 1. Add DATABASE</span>
 		<span class="k">try</span> <span class="o">{</span>
-			<span class="nc">FileCopyUtils</span><span class="o">.</span><span class="na">copy</span><span class="o">(</span><span class="n">imageFile</span><span class="o">.</span><span class="na">getBytes</span><span class="o">(),</span> <span class="n">file</span><span class="o">);</span>
-		<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">IOException</span> <span class="n">e2</span><span class="o">)</span> <span class="o">{</span>
-			<span class="n">e2</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+			<span class="n">repBoard</span><span class="o">.</span><span class="na">setBoardC</span><span class="o">(</span><span class="n">testUser</span><span class="o">);</span>
+			<span class="n">service</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">repBoard</span><span class="o">);</span>
+		<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">AddException</span> <span class="n">e1</span><span class="o">)</span> <span class="o">{</span>
 			<span class="k">return</span> <span class="k">new</span> <span class="nc">ResponseEntity</span><span class="o">&lt;&gt;(</span><span class="nc">HttpStatus</span><span class="o">.</span><span class="na">INTERNAL_SERVER_ERROR</span><span class="o">);</span>
 		<span class="o">}</span>
 
-		<span class="c1">// letters File</span>
-		<span class="k">for</span> <span class="o">(</span><span class="nc">MultipartFile</span> <span class="n">mf</span> <span class="o">:</span> <span class="n">letterFiles</span><span class="o">)</span> <span class="o">{</span>
-			<span class="nc">String</span> <span class="n">letterFileName</span> <span class="o">=</span> <span class="n">mf</span><span class="o">.</span><span class="na">getOriginalFilename</span><span class="o">();</span>
+</code></pre></div></div>
+
+<p><br /><br /><br /></p>
+
+<blockquote>
+  <h3 id="2-listmultipartfile-letters-받은거--server에-저장하기">2) List&lt;MultipartFile&gt; letters 받은거  Server에 저장하기</h3>
+</blockquote>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>		<span class="c1">// 2.Save List&lt;letter&gt; File</span>
+		<span class="k">for</span> <span class="o">(</span><span class="nc">MultipartFile</span> <span class="n">mf</span> <span class="o">:</span> <span class="n">paramLetterFiles</span><span class="o">)</span> <span class="o">{</span>
 			<span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">"파일크기: "</span> <span class="o">+</span> <span class="n">mf</span><span class="o">.</span><span class="na">getSize</span><span class="o">()</span> <span class="o">+</span> <span class="s">", 파일이름:"</span> <span class="o">+</span> <span class="n">mf</span><span class="o">.</span><span class="na">getOriginalFilename</span><span class="o">());</span>
-			<span class="nc">String</span> <span class="n">mfFileName</span> <span class="o">=</span> <span class="n">wroteBoardNo</span> <span class="o">+</span> <span class="s">"_letter_"</span> <span class="o">+</span> <span class="no">UUID</span><span class="o">.</span><span class="na">randomUUID</span><span class="o">()</span> <span class="o">+</span> <span class="s">"_"</span> <span class="o">+</span> <span class="n">letterFileName</span><span class="o">;</span>
-			<span class="nc">File</span> <span class="n">mfFile</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">File</span><span class="o">(</span><span class="n">saveDirectory</span><span class="o">,</span> <span class="n">mfFileName</span><span class="o">);</span>
+			<span class="nc">String</span> <span class="n">mfFileName</span> <span class="o">=</span> <span class="n">repBoard</span><span class="o">.</span><span class="na">getBoardNo</span><span class="o">()</span> <span class="o">+</span> <span class="s">"_letter_"</span> <span class="o">+</span> <span class="no">UUID</span><span class="o">.</span><span class="na">randomUUID</span><span class="o">()</span> <span class="o">+</span> <span class="s">"_"</span> <span class="o">+</span> <span class="n">mf</span><span class="o">.</span><span class="na">getOriginalFilename</span><span class="o">();</span>
+
 			<span class="k">try</span> <span class="o">{</span>
-				<span class="nc">FileCopyUtils</span><span class="o">.</span><span class="na">copy</span><span class="o">(</span><span class="n">mf</span><span class="o">.</span><span class="na">getBytes</span><span class="o">(),</span> <span class="n">mfFile</span><span class="o">);</span>
+				<span class="nc">FileCopyUtils</span><span class="o">.</span><span class="na">copy</span><span class="o">(</span><span class="n">mf</span><span class="o">.</span><span class="na">getBytes</span><span class="o">(),</span> <span class="k">new</span> <span class="nc">File</span><span class="o">(</span><span class="n">saveDirectory</span><span class="o">,</span> <span class="n">mfFileName</span><span class="o">));</span>
 			<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
 				<span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
 				<span class="k">return</span> <span class="k">new</span> <span class="nc">ResponseEntity</span><span class="o">&lt;&gt;(</span><span class="nc">HttpStatus</span><span class="o">.</span><span class="na">INTERNAL_SERVER_ERROR</span><span class="o">);</span>
 			<span class="o">}</span>
 		<span class="o">}</span>
-
-		<span class="k">return</span> <span class="k">new</span> <span class="nf">ResponseEntity</span><span class="o">(</span><span class="nc">HttpStatus</span><span class="o">.</span><span class="na">OK</span><span class="o">);</span>
-	<span class="o">}</span>
 </code></pre></div></div>
 
-<h1 id="4front-파일-예시">4.Front 파일 예시</h1>
+<p><br /><br /><br /></p>
+
+<blockquote>
+  <h3 id="3-multipartfile-imagefile-받은거--server에-저장하기">3) MultipartFile imageFile 받은거  Server에 저장하기</h3>
+</blockquote>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>		<span class="c1">// 3. Save image FiLe</span>
+		<span class="kt">boolean</span> <span class="n">isSavedImageFileComplete</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+		<span class="kt">boolean</span> <span class="n">isImageFile</span> <span class="o">=</span> <span class="n">paramImageFile</span><span class="o">.</span><span class="na">getContentType</span><span class="o">().</span><span class="na">contains</span><span class="o">(</span><span class="s">"image/"</span><span class="o">);</span>
+
+		<span class="k">if</span> <span class="o">(!</span><span class="n">isImageFile</span><span class="o">){</span> 
+			<span class="k">return</span> <span class="k">new</span> <span class="nc">ResponseEntity</span><span class="o">&lt;&gt;(</span><span class="nc">HttpStatus</span><span class="o">.</span><span class="na">INTERNAL_SERVER_ERROR</span><span class="o">);</span>
+		<span class="o">}</span>
+		<span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">"파일크기: "</span> <span class="o">+</span> <span class="n">paramImageFile</span><span class="o">.</span><span class="na">getSize</span><span class="o">()</span> <span class="o">+</span> <span class="s">", 파일이름:"</span> <span class="o">+</span> <span class="n">paramImageFile</span><span class="o">.</span><span class="na">getOriginalFilename</span><span class="o">());</span>
+		<span class="nc">String</span> <span class="n">imageFileName</span> <span class="o">=</span> <span class="n">repBoard</span><span class="o">.</span><span class="na">getBoardNo</span><span class="o">()</span> <span class="o">+</span> <span class="s">"_image_"</span> <span class="o">+</span> <span class="no">UUID</span><span class="o">.</span><span class="na">randomUUID</span><span class="o">()</span> <span class="o">+</span> <span class="s">"_"</span>
+				<span class="o">+</span> <span class="n">paramImageFile</span><span class="o">.</span><span class="na">getOriginalFilename</span><span class="o">();</span> <span class="c1">// 저장할 파일이름을 지정한다 ex) 글번호_image_XXXX_원본이름</span>
+														<span class="c1">// ex) 0_image_ddf269da-3202-447a-a2c5-7ce395b63887_문어.png</span>
+
+		<span class="nc">File</span> <span class="n">createdImagefile</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">File</span><span class="o">(</span><span class="n">saveDirectory</span><span class="o">,</span> <span class="n">imageFileName</span><span class="o">);</span>
+		<span class="k">try</span> <span class="o">{</span>
+			<span class="nc">FileCopyUtils</span><span class="o">.</span><span class="na">copy</span><span class="o">(</span><span class="n">paramImageFile</span><span class="o">.</span><span class="na">getBytes</span><span class="o">(),</span> <span class="n">createdImagefile</span><span class="o">);</span>
+			<span class="n">isSavedImageFileComplete</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+			<span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">"이미지파일 저장:"</span> <span class="o">+</span> <span class="n">createdImagefile</span><span class="o">.</span><span class="na">getAbsolutePath</span><span class="o">()</span> <span class="o">+</span> <span class="s">", 이미지파일 크기:"</span> <span class="o">+</span> <span class="n">createdImagefile</span><span class="o">.</span><span class="na">length</span><span class="o">());</span>
+		<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">IOException</span> <span class="n">e1</span><span class="o">)</span> <span class="o">{</span>
+			<span class="n">e1</span><span class="o">.</span><span class="na">getStackTrace</span><span class="o">();</span>
+			<span class="k">return</span> <span class="k">new</span> <span class="nc">ResponseEntity</span><span class="o">&lt;&gt;(</span><span class="nc">HttpStatus</span><span class="o">.</span><span class="na">INTERNAL_SERVER_ERROR</span><span class="o">);</span>
+		<span class="o">}</span>
+
+</code></pre></div></div>
+
+<h1 id="5front-파일-구현">5.Front 파일 구현</h1>
 <p><br /></p>
 <h3 id="writehtml">write.html</h3>
 
@@ -454,13 +557,31 @@ into the {body} of the default.hbs template -->
 <span class="p">});</span>
 </code></pre></div></div>
 
-<h1 id="5정상적인-backend-콘솔-화면">5.정상적인 BackEnd 콘솔 화면</h1>
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">INFO : com.my.board.controller.RepBoardController - 요청전달데이터 title=문어, content=ㅁㄴㅇㄹ
+<p><br /><br /></p>
+<h1 id="6정상적인-backend-콘솔-화면">6.정상적인 BackEnd 콘솔 화면</h1>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">INFO : com.my.board.controller.RepBoardController - 요청전달데이터 title=테스트 글제목 입니다, content=테스트 글내용 입니다.
 INFO : com.my.board.controller.RepBoardController - letterFiles.size()=1
-INFO : com.my.board.controller.RepBoardController - imageFile.getSize()=25372
-INFO : com.my.board.controller.RepBoardController - 파일크기: 25372, 파일이름:main.PNG
+INFO : com.my.board.controller.RepBoardController - imageFile.getSize()=20202
 INFO : com.my.board.controller.RepBoardController - 파일크기: 269, 파일이름:책.txt
+INFO : com.my.board.controller.RepBoardController - 파일크기: 20202, 파일이름:문어.png
+INFO : com.my.board.controller.RepBoardController - 이미지파일 저장:f:\files\33_image_09e70250-03f8-44ac-b380-7b7c3a78f7e4_문어.png, 이미지파일 크기:20202
+
 </span></code></pre></div></div>
+
+<blockquote>
+  <p>히카리 log4J 콘솔내용은 가독성을 위해 글에서 지웠음</p>
+</blockquote>
+
+<p><br /> <br /> <br /></p>
+
+<p><span class="table-of-contents-list">스프링 목록 </span></p>
+<ul class="table-of-contents-list">
+    <li><a href="./백엔드초기설정">Spring(1) - 백엔드 초기설정</a></li>
+    <li><a href="./스프링파일업로드1">Spring(2) -스프링 Client 파일 업로드(1)</a></li>
+    <li><a href="./스프링파일업로드2">Spring(3) -스프링 Client 파일 업로드(2)</a></li>
+</ul>
+
 
                 </div>
             </section>
@@ -517,9 +638,9 @@ INFO : com.my.board.controller.RepBoardController - 파일크기: 269, 파일이
                     <div id="disqus_thread"></div>
                     <script>
                         var disqus_config = function () {
-                            var this_page_url = 'https://dongjea2.github.io/%EC%8A%A4%ED%94%84%EB%A7%81%ED%8C%8C%EC%9D%BC%EC%97%85%EB%A1%9C%EB%93%9C';
-                            var this_page_identifier = '/스프링파일업로드';
-                            var this_page_title = '스프링 Client 파일 업로드';
+                            var this_page_url = 'https://dongjea2.github.io/%EC%8A%A4%ED%94%84%EB%A7%81%ED%8C%8C%EC%9D%BC%EC%97%85%EB%A1%9C%EB%93%9C1';
+                            var this_page_identifier = '/스프링파일업로드1';
+                            var this_page_title = '스프링 Client 파일 업로드(1)';
                         };
                         (function() {
                             var d = document, s = d.createElement('script');
@@ -564,13 +685,22 @@ INFO : com.my.board.controller.RepBoardController - 파일크기: 269, 파일이
                                 
                                   
                                     
+                                        
+                                        
+                                            <li><a href="/%EC%8A%A4%ED%94%84%EB%A7%81%ED%8C%8C%EC%9D%BC%EC%97%85%EB%A1%9C%EB%93%9C2">스프링 Client 파일 업로드(2)</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
                                   
                                 
                                   
                                     
                                         
                                         
-                                            <li><a href="/%EB%B0%B1%EC%97%94%EB%93%9C%EC%B4%88%EA%B8%B0%EC%84%A4%EC%A0%95">mybatis 실행연습</a></li>
+                                            <li><a href="/%EB%B0%B1%EC%97%94%EB%93%9C%EC%B4%88%EA%B8%B0%EC%84%A4%EC%A0%95">Backend 초기설정 + Mybatis</a></li>
                                         
                                     
                                   
@@ -584,7 +714,7 @@ INFO : com.my.board.controller.RepBoardController - 파일크기: 269, 파일이
                         <footer class="read-next-card-footer">
                             <a href="/tag/spring/">
                                 
-                                    See all 1 posts  →
+                                    See all 2 posts  →
                                 
                             </a>
                         </footer>
@@ -593,6 +723,55 @@ INFO : com.my.board.controller.RepBoardController - 파일크기: 269, 파일이
             
 
             <!-- If there's a next post, display it using the same markup included from - partials/post-card.hbs -->
+            
+                
+
+    <article class="post-card post-template">
+        
+            <a class="post-card-image-link" href="/%EC%8A%A4%ED%94%84%EB%A7%81%ED%8C%8C%EC%9D%BC%EC%97%85%EB%A1%9C%EB%93%9C2">
+                <div class="post-card-image" style="background-image: url(/assets/built/images/spring.jpg)"></div>
+            </a>
+        
+        <div class="post-card-content">
+            <a class="post-card-content-link" href="/%EC%8A%A4%ED%94%84%EB%A7%81%ED%8C%8C%EC%9D%BC%EC%97%85%EB%A1%9C%EB%93%9C2">
+                <header class="post-card-header">
+                    
+                        
+                            
+                                <span class="post-card-tags">Spring</span>
+                            
+                        
+                    
+
+                    <h2 class="post-card-title">스프링 Client 파일 업로드(2)</h2>
+                </header>
+                <section class="post-card-excerpt">
+                    
+                        <p>Client가 업로드한 이미지 썸네일 만들고, 올린파일 다운로드 하기</p>
+                    
+                </section>
+            </a>
+            <footer class="post-card-meta">
+                
+                    
+                        
+                        <img class="author-profile-image" src="/assets/built/images/author-logo.jpg" alt="동재" />
+                        
+                        <span class="post-card-author">
+                            <a href="/author/dongjae/">동재</a>
+                        </span>
+                    
+                
+                <span class="reading-time">
+                    
+                    
+                      3 min read
+                    
+                </span>
+            </footer>
+        </div>
+    </article>
+
             
 
             <!-- If there's a previous post, display it using the same markup included from - partials/post-card.hbs -->
@@ -616,7 +795,7 @@ INFO : com.my.board.controller.RepBoardController - 파일크기: 269, 파일이
                         
                     
 
-                    <h2 class="post-card-title">mybatis 실행연습</h2>
+                    <h2 class="post-card-title">Backend 초기설정 + Mybatis</h2>
                 </header>
                 <section class="post-card-excerpt">
                     
@@ -660,18 +839,18 @@ INFO : com.my.board.controller.RepBoardController - 파일크기: 269, 파일이
         </a>
     </div>
     <span class="floating-header-divider">&mdash;</span>
-    <div class="floating-header-title">스프링 Client 파일 업로드</div>
+    <div class="floating-header-title">스프링 Client 파일 업로드(1)</div>
     <div class="floating-header-share">
         <div class="floating-header-share-label">Share this <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
     <path d="M7.5 15.5V4a1.5 1.5 0 1 1 3 0v4.5h2a1 1 0 0 1 1 1h2a1 1 0 0 1 1 1H18a1.5 1.5 0 0 1 1.5 1.5v3.099c0 .929-.13 1.854-.385 2.748L17.5 23.5h-9c-1.5-2-5.417-8.673-5.417-8.673a1.2 1.2 0 0 1 1.76-1.605L7.5 15.5zm6-6v2m-3-3.5v3.5m6-1v2"/>
 </svg>
 </div>
-        <a class="floating-header-share-tw" href="https://twitter.com/share?text=%EC%8A%A4%ED%94%84%EB%A7%81+Client+%ED%8C%8C%EC%9D%BC+%EC%97%85%EB%A1%9C%EB%93%9C&amp;url=https://dongjea2.github.io/%EC%8A%A4%ED%94%84%EB%A7%81%ED%8C%8C%EC%9D%BC%EC%97%85%EB%A1%9C%EB%93%9C"
+        <a class="floating-header-share-tw" href="https://twitter.com/share?text=%EC%8A%A4%ED%94%84%EB%A7%81+Client+%ED%8C%8C%EC%9D%BC+%EC%97%85%EB%A1%9C%EB%93%9C%281%29&amp;url=https://dongjea2.github.io/%EC%8A%A4%ED%94%84%EB%A7%81%ED%8C%8C%EC%9D%BC%EC%97%85%EB%A1%9C%EB%93%9C1"
             onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
 
         </a>
-        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://dongjea2.github.io/%EC%8A%A4%ED%94%84%EB%A7%81%ED%8C%8C%EC%9D%BC%EC%97%85%EB%A1%9C%EB%93%9C"
+        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://dongjea2.github.io/%EC%8A%A4%ED%94%84%EB%A7%81%ED%8C%8C%EC%9D%BC%EC%97%85%EB%A1%9C%EB%93%9C1"
             onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
 

@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator>
   <link href="https://dongjea2.github.io/tag/design-patterns/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://dongjea2.github.io/" rel="alternate" type="text/html" />
-  <updated>2022-01-14T14:02:45+09:00</updated>
+  <updated>2022-01-14T22:35:53+09:00</updated>
   <id>https://dongjea2.github.io/tag/design-patterns/feed.xml</id>
 
   
@@ -45,7 +45,7 @@
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Python 강좌는 여러 절로 구성되어 있습니다. &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;디자인 패턴 목록 &lt;/span&gt;&lt;/p&gt;
 &lt;ul class=&quot;table-of-contents-list&quot;&gt;
     &lt;li&gt;&lt;a href=&quot;./strategy&quot;&gt;디자인 패턴(1) - Strategy 스트레티지 &lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./strategy&quot;&gt;디자인 패턴(2) - Observer 옵저버 &lt;/a&gt;&lt;/li&gt;
