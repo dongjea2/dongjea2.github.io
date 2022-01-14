@@ -279,11 +279,16 @@ into the {body} of the default.hbs template -->
 	<span class="o">}</span>
 </code></pre></div></div>
 
+<p><br /><br /><br /></p>
+
 <blockquote>
-  <h3 id="4-썸네일-이미지-저장하기">4) 썸네일 이미지 저장하기</h3>
+  <h3 id="4-썸네일-이미지-저장하기">4) 썸네일 이미지 저장하기<br /></h3>
   <ul>
-    <li>isSaveImageFileComplete 는 3번 코드에 있음</li>
+    <li>isSaveImageFileComplete 라는 boolean 값은 <br />
+  //3. Save image FiLe 코드에 있음</li>
   </ul>
+
+  <p>이미지 저장이 성공되야, 썸네일을 만들수있기 때문에 true일경우 썸네일 생성</p>
 </blockquote>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	<span class="c1">// 4. Save Thumbnail imageFile</span>
@@ -422,7 +427,7 @@ into the {body} of the default.hbs template -->
 		
 		
 		
-		<span class="c1">// 5. 이미지 썸네일다운로드하기</span>
+        <span class="c1">//5. 이미지 썸네일 프론트로 다시 전송해주기</span>
 		<span class="nc">HttpHeaders</span> <span class="n">responseHeaders</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">HttpHeaders</span><span class="o">();</span>
 		<span class="k">try</span> <span class="o">{</span>
 			<span class="n">responseHeaders</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="nc">HttpHeaders</span><span class="o">.</span><span class="na">CONTENT_LENGTH</span><span class="o">,</span> <span class="n">thumbnailFile</span><span class="o">.</span><span class="na">length</span><span class="o">()</span> <span class="o">+</span> <span class="s">""</span><span class="o">);</span>
@@ -434,9 +439,16 @@ into the {body} of the default.hbs template -->
 			<span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
 			<span class="k">return</span> <span class="k">new</span> <span class="nc">ResponseEntity</span><span class="o">&lt;&gt;(</span><span class="nc">HttpStatus</span><span class="o">.</span><span class="na">INTERNAL_SERVER_ERROR</span><span class="o">);</span>
 		<span class="o">}</span>
+
+
+
+        <span class="c1">// 기존 RETURN 주석처리 하기</span>
+		<span class="c1">//return new ResponseEntity(HttpStatus.OK);</span>
 	<span class="o">}</span>
 
 </code></pre></div></div>
+
+<p><br /><br /></p>
 
 <blockquote>
   <h3 id="섬네일-제대로-저장하고-보내는-기능-작동하는지-테스트-하기">섬네일 제대로 저장하고 보내는 기능 작동하는지 테스트 하기</h3>
