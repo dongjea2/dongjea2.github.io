@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator>
   <link href="https://dongjea2.github.io/tag/spring/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://dongjea2.github.io/" rel="alternate" type="text/html" />
-  <updated>2022-01-14T22:35:53+09:00</updated>
+  <updated>2022-01-15T01:34:44+09:00</updated>
   <id>https://dongjea2.github.io/tag/spring/feed.xml</id>
 
   
@@ -46,10 +46,14 @@
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;이번에-할-것&quot;&gt;이번에 할 것&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;Client가 준 이미지 썸네일로 만들기&lt;/li&gt;
-&lt;/ul&gt;
+&lt;h2 id=&quot;이번에-해야할것&quot;&gt;이번에 해야할것&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;섬네일 생성&lt;/li&gt;
+    &lt;li&gt;생성된 섬네일 게시글 클릭시 보여주기&lt;/li&gt;
+    &lt;li&gt;올린 파일도 추가로 게시글 클릭시 보여주고, 받을수 있게 설정하기&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -68,7 +72,7 @@
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;h3 id=&quot;atention--기존-리턴문-주석처리하기&quot;&gt;Atention : 기존 리턴문 주석처리하기!&lt;/h3&gt;
+  &lt;h3 id=&quot;attention--기존-리턴문-주석처리하기&quot;&gt;Attention : 기존 리턴문 주석처리하기!&lt;/h3&gt;
 &lt;/blockquote&gt;
 
 &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;	&lt;span class=&quot;nd&quot;&gt;@PostMapping&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;board/write&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
@@ -324,6 +328,9 @@
 &lt;/ul&gt;
 &lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
+&lt;h3 id=&quot;client가-파일을-업로드할때-서버측에서-구현해야할-것들&quot;&gt;Client가 파일을 업로드할때 서버측에서 구현해야할 것들&lt;/h3&gt;
+&lt;p&gt;&lt;br /&gt; &lt;br /&gt;&lt;/p&gt;
+
 &lt;h1 id=&quot;1-commons-fileupload-설치&quot;&gt;1. Commons-fileupload 설치&lt;/h1&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;h6 id=&quot;pomxml파일에-해당내용-추가-dependencies-태그안에-&quot;&gt;pom.xml파일에 해당내용 추가( &amp;lt;dependencies&amp;gt; 태그안에 )&lt;/h6&gt;
@@ -336,6 +343,13 @@
     &lt;span class=&quot;nt&quot;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;1.4&lt;span class=&quot;nt&quot;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3&gt;&lt;a href=&quot;https://commons.apache.org/proper/commons-fileupload/&quot;&gt; Commons FileUpload&lt;/a&gt;(링크)&lt;/h3&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Commons FileUpload 패키지를 사용하면 강력한 고성능 파일 업로드 기능을 서블릿과 웹 애플리케이션에 쉽게 추가할 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;FileUpload는 HTTP 요청을 RFC 1867, “HTML에서 양식 기반 파일 업로드”에 따라 구문 분석합니다. 즉, POST 메서드를 사용하여 HTTP 요청을 제출하면 “멀티파트/폼 데이터”의 콘텐츠 유형으로 해당 요청을 구문 분석하여 호출자가 쉽게 결과를 사용할 수 있습니다.&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;h1 id=&quot;2-servlet-contextxml--bean-추가&quot;&gt;2. servlet-context.xml  &amp;lt;bean&amp;gt; 추가&lt;/h1&gt;
@@ -351,6 +365,21 @@
 	&lt;span class=&quot;nt&quot;&gt;&amp;lt;property&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;maxUploadSizePerFile&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;2097152&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/bean&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;mutipartResolver 빈 추가한 후 인코딩형식, 최대 파일사이즈&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;maxUploadSize : 한 요청당 업로드가 허용되는 최대 용량을 바이트 단위로 설정합니다. -1 은 제한이 없다는 뜻으로 이 프로퍼티를 지정하지 않을때 기본값입니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;maxUploadSizePerFile : 한 파일당 업로드가 허용되는 최대 용량을 바이트 단위로 설정합니다. -1 은 제한이 없다는 뜻으로 이 프로퍼티를 지정하지 않을때 기본값입니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;defaultEncoding : 요청을 파싱할때 사용한 기본 인코딩을 지정합니다. 이 값을 개발 파트의 헤더와 폼 필드에 적용됩니다. 기본값은 서블릿 스펙에 따라 ISO-859-1 입니다. 만약 요청이 문자 인코딩을 지정하면 요청 인코딩이 이 설정을 재정의 합니다. 또한 ServletRequest.setCharacterEncoding 메서드를 호출하는 필터에서의 문자 인코딩을 일반적으로 재정의할 수 있습니다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;multipartResolver 자료 출처: https://offbyone.tistory.com/345 [쉬고 싶은 개발자]&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -380,7 +409,7 @@
 &lt;/blockquote&gt;
 
 &lt;ul class=&quot;table-of-contents-list&quot;&gt;
-&lt;h4&gt;해당내용은 아래 링크에서 구현 예정&lt;/h4&gt;&lt;br /&gt;
+&lt;h4&gt;3-2 는 아래 링크에서 구현 예정&lt;/h4&gt;&lt;br /&gt;
     	&lt;li&gt;&lt;a href=&quot;./스프링파일업로드2&quot;&gt;Spring(3) -스프링 Client 파일 업로드(2)&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -410,6 +439,10 @@
   &lt;/li&gt;
   &lt;li&gt;파일들 저장되는 위치는 String saveDirectory 참고(직접 수정가능)&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;controller-의-write-메소드-기본-틀&quot;&gt;Controller 의 write 메소드 기본 틀&lt;/h1&gt;
 
 &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;	&lt;span class=&quot;nd&quot;&gt;@PostMapping&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;board/write&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
 	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ResponseEntity&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;?&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;@RequestPart&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;letterFiles&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;MultipartFile&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;paramLetterFiles&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
@@ -450,6 +483,8 @@
 		&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;ResponseEntity&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;HttpStatus&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;OK&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
 	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;아래 주석 Code~ 부분은 밑에 코드들로 채워넣기&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -517,6 +552,8 @@
 		&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;5front-파일-구현&quot;&gt;5.Front 파일 구현&lt;/h1&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
