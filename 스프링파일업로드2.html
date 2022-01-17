@@ -344,9 +344,11 @@ Java에서 고품질 미리 보기를 만드는 것은 상당히 어려운 작�
 
 <p><br /><br /><br /></p>
 
-<h1 id="완성-된-코드">완성 된 코드</h1>
+<h3 id="완성-된-코드">완성 된 코드</h3>
 
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c1">//멤버변수들</span>
+<details>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java">    <span class="c1">//멤버변수들</span>
 	<span class="kd">private</span>	<span class="nc">String</span> <span class="n">saveDirectory</span> <span class="o">=</span> <span class="s">"f:\\files"</span><span class="o">;</span>
 	<span class="kd">private</span> <span class="kt">int</span> <span class="n">s_width</span><span class="o">=</span><span class="mi">100</span><span class="o">;</span>
 	<span class="kd">private</span> <span class="kt">int</span> <span class="n">s_height</span><span class="o">=</span><span class="mi">100</span><span class="o">;</span>
@@ -459,15 +461,79 @@ Java에서 고품질 미리 보기를 만드는 것은 상당히 어려운 작�
 
         <span class="c1">// 기존 RETURN 주석처리 하기</span>
 		<span class="c1">//return new ResponseEntity(HttpStatus.OK);</span>
-	<span class="o">}</span>
+	<span class="o">}</span></code></pre></figure>
 
-</code></pre></div></div>
 
+</details>
 <p><br /><br /></p>
 
 <blockquote>
-  <h3 id="섬네일-제대로-저장하고-보내는-기능-작동하는지-테스트-하기">섬네일 제대로 저장하고 보내는 기능 작동하는지 테스트 하기</h3>
+  <h4 id="섬네일-제대로-저장하고-보내는-기능-작동하는지-테스트-하기">섬네일 제대로 저장하고 보내는 기능 작동하는지 테스트 하기</h4>
 </blockquote>
+
+<p><br /><br /><br /><br /></p>
+
+<h1 id="3-유저가-저장한-파일-보여주기">3. 유저가 저장한 파일 보여주기</h1>
+
+<p>프론트</p>
+<blockquote>
+  <ol>
+    <li>boarderinfo.html 수정( 게시글 클릭시 올린 파일칸 뚫기)</li>
+    <li>boarderinfo.js 수정( 게시글 클릭시 올린 파일 읽어오기)</li>
+  </ol>
+</blockquote>
+
+<p>백엔드</p>
+<blockquote>
+  <ol>
+    <li>@getMapping(“board/info”)에 올린 파일도 추가해서 리턴</li>
+    <li>썸네일도 추가해서 리턴(글 수정예정 1/18일)</li>
+  </ol>
+</blockquote>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	<span class="nd">@GetMapping</span><span class="o">(</span><span class="s">"board/info"</span><span class="o">)</span>
+	<span class="nd">@ResponseBody</span>
+	<span class="kd">public</span> <span class="nc">Object</span> <span class="nf">info</span><span class="o">(</span><span class="nd">@RequestParam</span><span class="o">(</span><span class="n">defaultValue</span> <span class="o">=</span> <span class="s">"0"</span><span class="o">)</span> <span class="kt">int</span> <span class="n">boardNo</span><span class="o">)</span> <span class="o">{</span>
+		<span class="kd">final</span> <span class="kt">int</span> <span class="no">BORDER_NO_SPACE</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+
+		<span class="k">try</span> <span class="o">{</span>
+			<span class="nc">RepBoard</span> <span class="n">rb</span> <span class="o">=</span> <span class="n">service</span><span class="o">.</span><span class="na">findByNo</span><span class="o">(</span><span class="n">boardNo</span><span class="o">);</span>
+			<span class="nc">Map</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span> <span class="nc">Object</span><span class="o">&gt;</span> <span class="n">info</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">HashMap</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span> <span class="nc">Object</span><span class="o">&gt;();</span>
+
+			<span class="n">info</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"boardNo"</span><span class="o">,</span> <span class="n">rb</span><span class="o">.</span><span class="na">getBoardNo</span><span class="o">());</span>
+			<span class="n">info</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"boardTitle"</span><span class="o">,</span> <span class="n">rb</span><span class="o">.</span><span class="na">getBoardTitle</span><span class="o">());</span>
+			<span class="n">info</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"boardC"</span><span class="o">,</span> <span class="n">rb</span><span class="o">.</span><span class="na">getBoardC</span><span class="o">());</span>
+			<span class="n">info</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"boardDt"</span><span class="o">,</span> <span class="n">rb</span><span class="o">.</span><span class="na">getBoardDt</span><span class="o">());</span>
+			<span class="n">info</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"boardContent"</span><span class="o">,</span> <span class="n">rb</span><span class="o">.</span><span class="na">getBoardContent</span><span class="o">());</span>
+			<span class="n">info</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"boardViewcount"</span><span class="o">,</span> <span class="n">rb</span><span class="o">.</span><span class="na">getBoardViewcount</span><span class="o">());</span>
+			
+			<span class="c1">//디렉토리에서 모든 파일 목록읽기</span>
+			<span class="nc">File</span> <span class="n">dir</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">File</span><span class="o">(</span><span class="n">saveDirectory</span><span class="o">);</span>
+
+
+			<span class="c1">//읽은 파일 목록에서 게시판 번호에 해당하는 자료만 뽑기</span>
+			<span class="nc">List</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">filesNameList</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;();</span>
+			<span class="k">for</span> <span class="o">(</span><span class="nc">String</span> <span class="n">fileName</span> <span class="o">:</span> <span class="n">dir</span><span class="o">.</span><span class="na">list</span><span class="o">())</span> <span class="o">{</span>
+				<span class="nc">String</span> <span class="o">[]</span> <span class="n">splitedName</span> <span class="o">=</span><span class="n">fileName</span><span class="o">.</span><span class="na">split</span><span class="o">(</span><span class="s">"_"</span><span class="o">);</span>
+				<span class="k">if</span><span class="o">(</span><span class="n">splitedName</span><span class="o">[</span><span class="no">BORDER_NO_SPACE</span><span class="o">].</span><span class="na">equals</span><span class="o">(</span><span class="s">""</span><span class="o">+</span><span class="n">boardNo</span><span class="o">))</span> <span class="o">{</span>
+					<span class="n">filesNameList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">fileName</span><span class="o">);</span>
+				<span class="o">}</span>
+			<span class="o">}</span>
+			<span class="n">info</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"files"</span><span class="o">,</span> <span class="n">filesNameList</span><span class="o">);</span>
+
+			
+			<span class="k">return</span> <span class="n">info</span><span class="o">;</span>
+
+		<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">FindException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+			<span class="nc">Map</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span> <span class="nc">Object</span><span class="o">&gt;</span> <span class="n">rm</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">HashMap</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span> <span class="nc">Object</span><span class="o">&gt;();</span>
+			<span class="n">rm</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"msg"</span><span class="o">,</span> <span class="n">e</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>
+			<span class="n">rm</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"status"</span><span class="o">,</span> <span class="mi">0</span><span class="o">);</span>
+			<span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+
+			<span class="k">return</span> <span class="n">rm</span><span class="o">;</span>
+		<span class="o">}</span>
+	<span class="o">}</span>
+</code></pre></div></div>
 
 <p><span class="table-of-contents-list">스프링 목록 </span></p>
 <ul class="table-of-contents-list">
