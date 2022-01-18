@@ -260,44 +260,54 @@ into the {body} of the default.hbs template -->
         <li>Selectd에 Web  -&gt; Spring Web 체크</li>
       </ul>
     </li>
-    <li>프로젝트 우클릭 -&gt; Spring -&gt; Add devTools</li>
+    <li>프로젝트 우클릭 -&gt; Spring -&gt; <code class="language-plaintext highlighter-rouge">Add devTools</code> 중요</li>
     <li>프로젝트 우클릭 -&gt; Spirng -&gt; Add Starters
       <ul>
         <li>Oracle driver 추가</li>
         <li>JDBC API 추가</li>
+        <li>Spring Web 추가</li>
+        <li>Mybatis Framwork 추가</li>
       </ul>
     </li>
     <li>application.properties -&gt; 우클릭 -&gt;Convert properties to .yml</li>
   </ol>
 </blockquote>
 
-<h2 id="propertiesyml-칸-구분-잘해야-됨">properties.yml (칸 구분 잘해야 됨)</h2>
+<h2 id="propertiesyml-칸-구분-잘-할것">properties.yml (칸 구분 잘 할것)</h2>
 
-<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#포트 번호설정</span>
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#서버 설정</span>
 <span class="na">server</span><span class="pi">:</span>
-    <span class="na">port</span><span class="pi">:</span> <span class="m">9999</span>
-    <span class="na">servlet</span><span class="pi">:</span>
+  <span class="na">port</span><span class="pi">:</span> <span class="m">9998</span>
+  <span class="na">servlet</span><span class="pi">:</span>
     <span class="na">context-path</span><span class="pi">:</span> <span class="s">/demo</span>
+<span class="c1">#스프링 설정</span>
 <span class="na">spring</span><span class="pi">:</span>
-    <span class="c1">#히카리 cp용 데이터소스 + 커넥션풀</span>
-    <span class="na">datasource</span><span class="pi">:</span>
-        <span class="na">hikari</span><span class="pi">:</span>
-            <span class="na">driver-class-name</span><span class="pi">:</span> <span class="s">net.sf.log4jdbc.sql.jdbcapi.DriverSpy</span>
-            <span class="na">jdbc-url</span><span class="pi">:</span> <span class="s">jdbc:log4jdbc:oracle:thin:@localhost:1521:xe</span>
-            <span class="na">username</span><span class="pi">:</span> <span class="s">hr</span>
-            <span class="na">password</span><span class="pi">:</span> <span class="s">hr</span>
-            <span class="na">maximum-pool-size</span><span class="pi">:</span> <span class="m">10</span>
-            <span class="na">minimum-idle</span><span class="pi">:</span> <span class="m">2</span>
-    <span class="c1">#Mapresolver 용 prefix</span>
-    <span class="na">mvc</span><span class="pi">:</span>
-        <span class="na">view</span><span class="pi">:</span>
-        <span class="na">prefix</span><span class="pi">:</span> <span class="s">/WEB-INF/views/</span>
+  <span class="na">datasource</span><span class="pi">:</span>
+    <span class="na">hikari</span><span class="pi">:</span>
+      <span class="na">driver-class-name</span><span class="pi">:</span> <span class="s">net.sf.log4jdbc.sql.jdbcapi.DriverSpy</span>
+      <span class="na">jdbc-url</span><span class="pi">:</span> <span class="s">jdbc:log4jdbc:oracle:thin:@localhost:1521:xe</span>
+      <span class="na">username</span><span class="pi">:</span> <span class="s">hr</span>
+      <span class="na">password</span><span class="pi">:</span> <span class="s">hr</span>
+      <span class="na">maximum-pool-size</span><span class="pi">:</span> <span class="m">10</span>
+      <span class="na">minimum-idle</span><span class="pi">:</span> <span class="m">2</span>
+
+<span class="c1">#맵리졸버 용 프리픽스</span>
+  <span class="na">mvc</span><span class="pi">:</span>
+    <span class="na">view</span><span class="pi">:</span>
+      <span class="na">prefix</span><span class="pi">:</span> <span class="s">/WEB-INF/views/</span>
+
+
+<span class="c1">#스프링 부트 로그레벨 TRACE &lt; DEBUG &lt; INFO &lt; WARN &lt; ERROR</span>
+<span class="na">logging</span><span class="pi">:</span>
+  <span class="na">level</span><span class="pi">:</span>
+    <span class="na">root</span><span class="pi">:</span> <span class="s">info</span>
 
 </code></pre></div></div>
 
 <p><br /><br /><br /></p>
 
 <h3 id="2-mybatis-설정-파일-추가">2. Mybatis 설정 파일 추가</h3>
+<p><code class="language-plaintext highlighter-rouge">기본 패키지 바뀔시 tpye = "com.my.~~~"이런식으로 반드시 수정할것</code></p>
 
 <h2 id="mybatis-configxml">mybatis-config.xml</h2>
 <p>(src/main/resources/mybatisConfig/<code class="language-plaintext highlighter-rouge">mybatis-config.xml</code>)</p>
@@ -305,11 +315,11 @@ into the {body} of the default.hbs template -->
 <span class="cp">&lt;!DOCTYPE configuration
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-config.dtd"&gt;</span>
-<span class="nt">&lt;configuration&gt;</span>
-	<span class="nt">&lt;settings&gt;</span>
+<span class="nt">&lt;configuration지</span>
+	<span class="err">&lt;settings</span><span class="nt">&gt;</span>
 		<span class="c">&lt;!-- 언더스코어를 자동으로 카멜케이스로 매핑해주는 기능 --&gt;</span>
 		<span class="nt">&lt;setting</span> <span class="na">name=</span><span class="s">"mapUnderscoreToCamelCase"</span> <span class="na">value=</span><span class="s">"true"</span><span class="nt">/&gt;</span>
-		<span class="nt">&lt;setting</span> <span class="na">name=</span><span class="s">"jdbcTypeForNull"</span> <span class="na">value=</span><span class="s">"NULL"</span><span class="nt">/&gt;</span>
+		<span class="nt">&lt;지etting</span> <span class="na">name=</span><span class="s">"jdbcTypeForNull"</span> <span class="na">value=</span><span class="s">"NULL"</span><span class="nt">/&gt;</span>
 	<span class="nt">&lt;/settings&gt;</span>
 
 	<span class="nt">&lt;typeAliases&gt;</span>
@@ -339,7 +349,8 @@ into the {body} of the default.hbs template -->
 <p><br /><br /></p>
 
 <h2 id="productmapperxml">ProductMapper.xml</h2>
-<p>(src/main/resources/mybatisConfig/<code class="language-plaintext highlighter-rouge">ProductMapper.xml</code>)</p>
+<p><code class="language-plaintext highlighter-rouge">기본 패키지 바뀔시 namespace = "com.my.~~~"이런식으로 반드시 수정할것</code>
+(src/main/resources/mybatisConfig/<code class="language-plaintext highlighter-rouge">ProductMapper.xml</code>)</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</span>
 <span class="cp">&lt;!DOCTYPE mapper
@@ -421,9 +432,70 @@ into the {body} of the default.hbs template -->
 
 </code></pre></div></div>
 
-<h1 id="4-단위-테스트">4. 단위 테스트</h1>
+<h2 id="dao-vo-controller-파일-알아서-각자-추가">DAO ,Vo, Controller 파일 알아서 각자 추가</h2>
+<p><code class="language-plaintext highlighter-rouge">기본 패키지  바뀔시 모든 파일들의 "com.my.~~ " 이런 식으로 반드시 수정할것</code></p>
 
-<p>~이어서 작성중</p>
+<p><br /><br /><br /></p>
+
+<h1 id="4-단위-테스트">4. 단위 테스트</h1>
+<p>src/test/java 에 스프링이 자동 스캔 해주는 패키지에 넣기</p>
+<blockquote>
+  <ul>
+    <li>ex) com.example.demo.dao</li>
+    <li>ex) com.my.dao</li>
+  </ul>
+</blockquote>
+
+<h2 id="productdaooracletestjava">ProductDAOOracleTest.java</h2>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="nn">com.my.dao</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">static</span> <span class="n">org</span><span class="o">.</span><span class="na">junit</span><span class="o">.</span><span class="na">jupiter</span><span class="o">.</span><span class="na">api</span><span class="o">.</span><span class="na">Assertions</span><span class="o">.</span><span class="na">assertEquals</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">static</span> <span class="n">org</span><span class="o">.</span><span class="na">junit</span><span class="o">.</span><span class="na">jupiter</span><span class="o">.</span><span class="na">api</span><span class="o">.</span><span class="na">Assertions</span><span class="o">.</span><span class="na">assertTrue</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">org.junit.jupiter.api.Test</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.beans.factory.annotation.Autowired</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.beans.factory.annotation.Qualifier</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.boot.test.context.SpringBootTest</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">com.my.exception.FindException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.my.product.dao.ProductDAOInterface</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.my.product.vo.Product</span><span class="o">;</span>
+
+
+<span class="nd">@SpringBootTest</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ProductDAOOracleTest</span> <span class="o">{</span>
+
+	<span class="nd">@Autowired</span>
+	<span class="nd">@Qualifier</span><span class="o">(</span><span class="s">"pDAO"</span><span class="o">)</span>
+	<span class="kd">private</span> <span class="nc">ProductDAOInterface</span> <span class="n">dao</span><span class="o">;</span>
+
+	<span class="nd">@Test</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">testFindByNo</span><span class="o">()</span> <span class="kd">throws</span> <span class="nc">FindException</span> <span class="o">{</span>
+		<span class="nc">String</span> <span class="n">prod_no</span> <span class="o">=</span> <span class="s">"C0001"</span><span class="o">;</span>
+		<span class="nc">Product</span> <span class="n">p</span> <span class="o">=</span> <span class="n">dao</span><span class="o">.</span><span class="na">findByNo</span><span class="o">(</span><span class="n">prod_no</span><span class="o">);</span> <span class="c1">//DB검색결과</span>
+
+		<span class="nc">String</span> <span class="n">expectedProdName</span> <span class="o">=</span> <span class="s">"아메리카노"</span><span class="o">;</span><span class="c1">//예상</span>
+		<span class="kt">int</span> <span class="n">expectedProdPrice</span> <span class="o">=</span> <span class="mi">1000</span><span class="o">;</span>
+		
+		<span class="n">assertEquals</span><span class="o">(</span><span class="n">expectedProdName</span><span class="o">,</span> <span class="n">p</span><span class="o">.</span><span class="na">getprodName</span><span class="o">());</span>
+		<span class="n">assertTrue</span><span class="o">(</span><span class="n">expectedProdPrice</span> <span class="o">==</span> <span class="n">p</span><span class="o">.</span><span class="na">getprodPrice</span><span class="o">());</span>
+	<span class="o">}</span>
+
+	<span class="nd">@Test</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">testFindAll</span><span class="o">()</span> <span class="kd">throws</span> <span class="nc">FindException</span> <span class="o">{</span>
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"testSelectAll메서드호출"</span><span class="o">);</span>
+		<span class="nc">List</span><span class="o">&lt;</span><span class="nc">Product</span><span class="o">&gt;</span><span class="n">list</span> <span class="o">=</span> <span class="n">dao</span><span class="o">.</span><span class="na">findAll</span><span class="o">();</span>
+		<span class="kt">int</span> <span class="n">expectedSize</span> <span class="o">=</span> <span class="mi">10</span><span class="o">;</span> <span class="c1">//예상</span>
+		<span class="n">assertTrue</span><span class="o">(</span><span class="n">expectedSize</span> <span class="o">==</span> <span class="n">list</span><span class="o">.</span><span class="na">size</span><span class="o">());</span>
+	<span class="o">}</span>	
+
+
+<span class="o">}</span>
+
+</code></pre></div></div>
 
 <p><span class="table-of-contents-list">스프링 목록 </span></p>
 <ul class="table-of-contents-list">

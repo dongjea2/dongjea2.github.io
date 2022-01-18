@@ -815,6 +815,8 @@ Usage (In Ghost editor):
     font-weight: 400!important;
     background: var(--whitegrey);
     border-radius: 3px;
+    background-color: bisque;
+    font-family: Ubuntu;
 }
 
 .post-full-content pre {
