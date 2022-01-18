@@ -253,27 +253,41 @@ into the {body} of the default.hbs template -->
 <blockquote>
   <ol>
     <li>프로젝트 생성  -&gt; new -&gt;others.. -&gt; spring boot-&gt;  Spring Starter Project
-      <ul>
-        <li>Packaging : War</li>
-        <li>java Version : 8</li>
-        <li>Bootversion (5.2.8)</li>
-        <li>Selectd에 Web  -&gt; Spring Web 체크</li>
-      </ul>
+      <blockquote>
+        <ul>
+          <li>Packaging : War</li>
+          <li>java Version : 8</li>
+          <li>Bootversion (5.2.8)</li>
+          <li>Selectd -&gt; <code class="language-plaintext highlighter-rouge">Spring Web</code> 추가</li>
+          <li>Selectd -&gt; <code class="language-plaintext highlighter-rouge">Oracle driver</code> 추가</li>
+          <li>Selectd -&gt; <code class="language-plaintext highlighter-rouge">JDBC API</code> 추가</li>
+          <li>Selectd -&gt; <code class="language-plaintext highlighter-rouge">Mybatis FrameWork</code> 추가</li>
+        </ul>
+      </blockquote>
     </li>
     <li>프로젝트 우클릭 -&gt; Spring -&gt; <code class="language-plaintext highlighter-rouge">Add devTools</code> 중요</li>
-    <li>프로젝트 우클릭 -&gt; Spirng -&gt; Add Starters
-      <ul>
-        <li>Oracle driver 추가</li>
-        <li>JDBC API 추가</li>
-        <li>Spring Web 추가</li>
-        <li>Mybatis Framwork 추가</li>
-      </ul>
-    </li>
-    <li>application.properties -&gt; 우클릭 -&gt;Convert properties to .yml</li>
+    <li><code class="language-plaintext highlighter-rouge">application.properties</code> -&gt; 우클릭 -&gt;Convert properties to .yml</li>
   </ol>
 </blockquote>
 
-<h2 id="propertiesyml-칸-구분-잘-할것">properties.yml (칸 구분 잘 할것)</h2>
+<h3 id="formxml-추가">form.xml 추가</h3>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>				<span class="c">&lt;!-- JDBC용 Log4J--&gt;</span>
+		<span class="nt">&lt;dependency&gt;</span>
+			<span class="nt">&lt;groupId&gt;</span>org.bgee.log4jdbc-log4j2<span class="nt">&lt;/groupId&gt;</span>
+			<span class="nt">&lt;artifactId&gt;</span>log4jdbc-log4j2-jdbc4<span class="nt">&lt;/artifactId&gt;</span>
+			<span class="nt">&lt;version&gt;</span>1.16<span class="nt">&lt;/version&gt;</span>
+		<span class="nt">&lt;/dependency&gt;</span>
+				
+		<span class="c">&lt;!-- jsp라이브러리 --&gt;</span>
+		<span class="nt">&lt;dependency&gt;</span>
+			<span class="nt">&lt;groupId&gt;</span>org.apache.tomcat.embed<span class="nt">&lt;/groupId&gt;</span>
+			<span class="nt">&lt;artifactId&gt;</span>tomcat-embed-jasper<span class="nt">&lt;/artifactId&gt;</span>
+		<span class="nt">&lt;/dependency&gt;</span>
+
+</code></pre></div></div>
+
+<h3 id="propertiesyml-칸-구분-잘-할것">properties.yml (칸 구분 잘 할것)</h3>
 
 <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#서버 설정</span>
 <span class="na">server</span><span class="pi">:</span>
@@ -309,7 +323,7 @@ into the {body} of the default.hbs template -->
 <h3 id="2-mybatis-설정-파일-추가">2. Mybatis 설정 파일 추가</h3>
 <p><code class="language-plaintext highlighter-rouge">기본 패키지 바뀔시 tpye = "com.my.~~~"이런식으로 반드시 수정할것</code></p>
 
-<h2 id="mybatis-configxml">mybatis-config.xml</h2>
+<h3 id="mybatis-configxml">mybatis-config.xml</h3>
 <p>(src/main/resources/mybatisConfig/<code class="language-plaintext highlighter-rouge">mybatis-config.xml</code>)</p>
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</span>
 <span class="cp">&lt;!DOCTYPE configuration
@@ -348,7 +362,7 @@ into the {body} of the default.hbs template -->
 
 <p><br /><br /></p>
 
-<h2 id="productmapperxml">ProductMapper.xml</h2>
+<h3 id="productmapperxml">ProductMapper.xml</h3>
 <p><code class="language-plaintext highlighter-rouge">기본 패키지 바뀔시 namespace = "com.my.~~~"이런식으로 반드시 수정할것</code>
 (src/main/resources/mybatisConfig/<code class="language-plaintext highlighter-rouge">ProductMapper.xml</code>)</p>
 
@@ -370,8 +384,8 @@ into the {body} of the default.hbs template -->
 
 <p><br /><br /></p>
 
-<h2 id="databaseconfigurationjava-">DatabaseConfiguration.java ()</h2>
-<p>(/demo/src/main/java/com/example/demo/config/<code class="language-plaintext highlighter-rouge">DatabaseConfiguration.java</code>)</p>
+<h3 id="databaseconfigurationjava">DatabaseConfiguration.java</h3>
+<p>(src/main/java/com/example/demo/config/<code class="language-plaintext highlighter-rouge">DatabaseConfiguration.java</code>)</p>
 
 <blockquote>
   <h3 id="해당-내용은-mybatis-configxml-에-자동으로-추가됨">해당 내용은 mybatis-config.xml 에 자동으로 추가됨</h3>

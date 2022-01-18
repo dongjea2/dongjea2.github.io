@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator>
   <link href="https://dongjea2.github.io/tag/spring-boot/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://dongjea2.github.io/" rel="alternate" type="text/html" />
-  <updated>2022-01-18T12:53:15+09:00</updated>
+  <updated>2022-01-18T15:47:07+09:00</updated>
   <id>https://dongjea2.github.io/tag/spring-boot/feed.xml</id>
 
   
@@ -85,27 +85,41 @@
 &lt;blockquote&gt;
   &lt;ol&gt;
     &lt;li&gt;프로젝트 생성  -&amp;gt; new -&amp;gt;others.. -&amp;gt; spring boot-&amp;gt;  Spring Starter Project
-      &lt;ul&gt;
-        &lt;li&gt;Packaging : War&lt;/li&gt;
-        &lt;li&gt;java Version : 8&lt;/li&gt;
-        &lt;li&gt;Bootversion (5.2.8)&lt;/li&gt;
-        &lt;li&gt;Selectd에 Web  -&amp;gt; Spring Web 체크&lt;/li&gt;
-      &lt;/ul&gt;
+      &lt;blockquote&gt;
+        &lt;ul&gt;
+          &lt;li&gt;Packaging : War&lt;/li&gt;
+          &lt;li&gt;java Version : 8&lt;/li&gt;
+          &lt;li&gt;Bootversion (5.2.8)&lt;/li&gt;
+          &lt;li&gt;Selectd -&amp;gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Spring Web&lt;/code&gt; 추가&lt;/li&gt;
+          &lt;li&gt;Selectd -&amp;gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Oracle driver&lt;/code&gt; 추가&lt;/li&gt;
+          &lt;li&gt;Selectd -&amp;gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;JDBC API&lt;/code&gt; 추가&lt;/li&gt;
+          &lt;li&gt;Selectd -&amp;gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Mybatis FrameWork&lt;/code&gt; 추가&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/blockquote&gt;
     &lt;/li&gt;
     &lt;li&gt;프로젝트 우클릭 -&amp;gt; Spring -&amp;gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Add devTools&lt;/code&gt; 중요&lt;/li&gt;
-    &lt;li&gt;프로젝트 우클릭 -&amp;gt; Spirng -&amp;gt; Add Starters
-      &lt;ul&gt;
-        &lt;li&gt;Oracle driver 추가&lt;/li&gt;
-        &lt;li&gt;JDBC API 추가&lt;/li&gt;
-        &lt;li&gt;Spring Web 추가&lt;/li&gt;
-        &lt;li&gt;Mybatis Framwork 추가&lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/li&gt;
-    &lt;li&gt;application.properties -&amp;gt; 우클릭 -&amp;gt;Convert properties to .yml&lt;/li&gt;
+    &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;application.properties&lt;/code&gt; -&amp;gt; 우클릭 -&amp;gt;Convert properties to .yml&lt;/li&gt;
   &lt;/ol&gt;
 &lt;/blockquote&gt;
 
-&lt;h2 id=&quot;propertiesyml-칸-구분-잘-할것&quot;&gt;properties.yml (칸 구분 잘 할것)&lt;/h2&gt;
+&lt;h3 id=&quot;formxml-추가&quot;&gt;form.xml 추가&lt;/h3&gt;
+
+&lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;				&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- JDBC용 Log4J--&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
+			&lt;span class=&quot;nt&quot;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.bgee.log4jdbc-log4j2&lt;span class=&quot;nt&quot;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+			&lt;span class=&quot;nt&quot;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;log4jdbc-log4j2-jdbc4&lt;span class=&quot;nt&quot;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+			&lt;span class=&quot;nt&quot;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;1.16&lt;span class=&quot;nt&quot;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
+				
+		&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- jsp라이브러리 --&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
+			&lt;span class=&quot;nt&quot;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.apache.tomcat.embed&lt;span class=&quot;nt&quot;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+			&lt;span class=&quot;nt&quot;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;tomcat-embed-jasper&lt;span class=&quot;nt&quot;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;propertiesyml-칸-구분-잘-할것&quot;&gt;properties.yml (칸 구분 잘 할것)&lt;/h3&gt;
 
 &lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;#서버 설정&lt;/span&gt;
 &lt;span class=&quot;na&quot;&gt;server&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
@@ -141,7 +155,7 @@
 &lt;h3 id=&quot;2-mybatis-설정-파일-추가&quot;&gt;2. Mybatis 설정 파일 추가&lt;/h3&gt;
 &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;기본 패키지 바뀔시 tpye = &quot;com.my.~~~&quot;이런식으로 반드시 수정할것&lt;/code&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;mybatis-configxml&quot;&gt;mybatis-config.xml&lt;/h2&gt;
+&lt;h3 id=&quot;mybatis-configxml&quot;&gt;mybatis-config.xml&lt;/h3&gt;
 &lt;p&gt;(src/main/resources/mybatisConfig/&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mybatis-config.xml&lt;/code&gt;)&lt;/p&gt;
 &lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&amp;gt;&lt;/span&gt;
 &lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE configuration
@@ -180,7 +194,7 @@
 
 &lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;productmapperxml&quot;&gt;ProductMapper.xml&lt;/h2&gt;
+&lt;h3 id=&quot;productmapperxml&quot;&gt;ProductMapper.xml&lt;/h3&gt;
 &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;기본 패키지 바뀔시 namespace = &quot;com.my.~~~&quot;이런식으로 반드시 수정할것&lt;/code&gt;
 (src/main/resources/mybatisConfig/&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ProductMapper.xml&lt;/code&gt;)&lt;/p&gt;
 
@@ -202,8 +216,8 @@
 
 &lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;databaseconfigurationjava-&quot;&gt;DatabaseConfiguration.java ()&lt;/h2&gt;
-&lt;p&gt;(/demo/src/main/java/com/example/demo/config/&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DatabaseConfiguration.java&lt;/code&gt;)&lt;/p&gt;
+&lt;h3 id=&quot;databaseconfigurationjava&quot;&gt;DatabaseConfiguration.java&lt;/h3&gt;
+&lt;p&gt;(src/main/java/com/example/demo/config/&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DatabaseConfiguration.java&lt;/code&gt;)&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;h3 id=&quot;해당-내용은-mybatis-configxml-에-자동으로-추가됨&quot;&gt;해당 내용은 mybatis-config.xml 에 자동으로 추가됨&lt;/h3&gt;
