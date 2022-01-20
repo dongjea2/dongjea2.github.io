@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator>
   <link href="https://dongjea2.github.io/tag/spring-boot/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://dongjea2.github.io/" rel="alternate" type="text/html" />
-  <updated>2022-01-20T21:56:50+09:00</updated>
+  <updated>2022-01-20T22:00:06+09:00</updated>
   <id>https://dongjea2.github.io/tag/spring-boot/feed.xml</id>
 
   
@@ -42,6 +42,7 @@
     &lt;li&gt;&lt;a href=&quot;./백엔드초기설정&quot;&gt;Spring(1) - 백엔드 초기설정&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./스프링파일업로드1&quot;&gt;Spring(2) -스프링 Client 파일 업로드(1)&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./스프링파일업로드2&quot;&gt;Spring(3) -스프링 Client 파일 업로드(2)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./백엔드Restfull변경&quot;&gt;Spring(4) - 백엔드 RESTFULL 로 바꾸기&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt; 스프링 부트 목록 &lt;/span&gt;&lt;/p&gt;
@@ -390,6 +391,7 @@
     &lt;li&gt;&lt;a href=&quot;./백엔드초기설정&quot;&gt;Spring(1) - 백엔드 초기설정&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./스프링파일업로드1&quot;&gt;Spring(2) -스프링 Client 파일 업로드(1)&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./스프링파일업로드2&quot;&gt;Spring(3) -스프링 Client 파일 업로드(2)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./백엔드Restfull변경&quot;&gt;Spring(4) - 백엔드 RESTFULL 로 바꾸기&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt; 스프링 부트 목록 &lt;/span&gt;&lt;/p&gt;
