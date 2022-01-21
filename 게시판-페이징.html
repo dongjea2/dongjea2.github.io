@@ -240,6 +240,9 @@ into the {body} of the default.hbs template -->
 
 <p><br /><br /><br /><br /></p>
 
+<h3 id="oracle-sql-developer-">ORACLE (SQL DEVELOPER )</h3>
+<hr />
+
 <h1 id="1-db에-페이징-함수-추가하기">1. DB에 페이징 함수 추가하기</h1>
 
 <blockquote>
@@ -281,7 +284,7 @@ into the {body} of the default.hbs template -->
 
 <p><br /><br /><br /><br /></p>
 
-<h1 id="2-sql-구문에-rownum-추가-및-아까-만든-함수-사용">2. SQL 구문에 rownum 추가 및 아까 만든 함수 사용</h1>
+<h1 id="2-sql-로-함수-테스트-하기">2. SQL 로 함수 테스트 하기</h1>
 
 <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="o">*</span>
 <span class="k">FROM</span> <span class="p">(</span>
@@ -304,12 +307,22 @@ into the {body} of the default.hbs template -->
 <span class="k">WHERE</span> <span class="n">r</span> <span class="k">BETWEEN</span> <span class="n">START_ROW</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span> <span class="k">AND</span> <span class="n">END_ROW</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">);</span>
 </code></pre></div></div>
 
+<blockquote>
+  <p>제대로 쿼리문 5개씩 읽어오는 지 확인</p>
+</blockquote>
+
 <p><br /><br /><br /><br /></p>
 
-<h1 id="3-repboardmapperxml-위의-findall-부분-위의-sql-대로-수정">3. RepboardMapper.xml 위의 <code class="language-plaintext highlighter-rouge">findAll</code> 부분 위의 sql 대로 수정</h1>
+<h3 id="spring-이클립스">Spring (이클립스)</h3>
+<hr />
 
+<h1 id="3-repboardmapperxml">3. RepboardMapper.xml</h1>
 <blockquote>
-  <p><code class="language-plaintext highlighter-rouge">parameterType = "map"</code> 추가해주기 map에 currentPage, cntPerPage 넣어 줄거</p>
+  <ul>
+    <li><code class="language-plaintext highlighter-rouge">findAll</code>  수정<br /><br /></li>
+    <li><code class="language-plaintext highlighter-rouge">parameterType = "map"</code> 추가<br />
+ <code class="language-plaintext highlighter-rouge">&lt;map&gt;</code>에 <code class="language-plaintext highlighter-rouge">currentPage</code> , <code class="language-plaintext highlighter-rouge">cntPerPage</code> 넣어 줄거</li>
+  </ul>
 </blockquote>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	<span class="nt">&lt;select</span> <span class="na">id=</span><span class="s">"findAll"</span> <span class="na">resultType=</span><span class="s">"Repboard"</span> <span class="na">parameterType=</span><span class="s">"map"</span><span class="nt">&gt;</span>
@@ -337,7 +350,8 @@ into the {body} of the default.hbs template -->
 
 <p><br /><br /><br /><br /></p>
 
-<h1 id="4-페이지-정보가-담긴-dto-만들어주기">4. 페이지 정보가 담긴 DTO 만들어주기</h1>
+<h1 id="4-pagedtojava">4. PageDTO.java</h1>
+<p>(com.my.dto/PageDTO.java)</p>
 
 <blockquote>
   <p>DTO 내부에서 <code class="language-plaintext highlighter-rouge">startPage</code>, <code class="language-plaintext highlighter-rouge">endPage</code>, <code class="language-plaintext highlighter-rouge">totalPage</code> 내부로 적으로  초기화 해주기</p>
@@ -401,10 +415,12 @@ into the {body} of the default.hbs template -->
 
 <p><br /><br /><br /><br /></p>
 
-<h1 id="5-controller에-list-수정">5. Controller에 list() 수정</h1>
-
+<h1 id="5-repboardcontrollerjava">5. RepBoardController.java</h1>
 <blockquote>
-  <p><code class="language-plaintext highlighter-rouge">pageDTO</code> 사용하기</p>
+  <ul>
+    <li>list() 수정</li>
+    <li><code class="language-plaintext highlighter-rouge">pageDTO</code> 사용하기</li>
+  </ul>
 </blockquote>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	<span class="nd">@GetMapping</span><span class="o">(</span><span class="n">value</span><span class="o">=</span> <span class="o">{</span><span class="s">"/list"</span><span class="o">,</span> <span class="s">"/list/{currentPage}"</span><span class="o">})</span>
@@ -442,7 +458,10 @@ into the {body} of the default.hbs template -->
 
 <p><br /><br /><br /></p>
 
-<h4 id="a-repboardmapperxml-의--findcount-추가">A) RepBoardMapper.xml 의  findCount 추가</h4>
+<h4 id="a-repboardmapperxml">A) RepBoardMapper.xml</h4>
+<blockquote>
+  <p>findCount 추가</p>
+</blockquote>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	<span class="nt">&lt;select</span> <span class="na">id=</span><span class="s">"findCount"</span> <span class="na">resultType=</span><span class="s">"int"</span><span class="nt">&gt;</span>
 		SELECT COUNT(*) FROM repboard
@@ -452,7 +471,13 @@ into the {body} of the default.hbs template -->
 
 <p><br /><br /><br /></p>
 
-<h4 id="b-dao-findall-수정--findcount-추가">B) DAO findAll() 수정 , findCount() 추가</h4>
+<h4 id="b-repboarddaooraclejava">B) RepboardDAOOracle.java</h4>
+<blockquote>
+  <ul>
+    <li>findAll() 수정 , findCount() 추가</li>
+    <li>인터페이스에도 추가 해주기</li>
+  </ul>
+</blockquote>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 	<span class="nd">@Override</span>
@@ -507,7 +532,12 @@ into the {body} of the default.hbs template -->
 
 <p><br /><br /><br /></p>
 
-<h4 id="c-service의-findall-수정">C) Service의 findAll() 수정</h4>
+<h4 id="c-repboardservicejava">C) RepboardService.java</h4>
+<blockquote>
+  <ul>
+    <li>findAll() 수정</li>
+  </ul>
+</blockquote>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	<span class="kd">public</span> <span class="nc">PageDTO</span><span class="o">&lt;</span><span class="nc">RepBoard</span><span class="o">&gt;</span> <span class="nf">findAll</span><span class="o">()</span> <span class="kd">throws</span> <span class="nc">FindException</span><span class="o">{</span>
 		<span class="k">return</span> <span class="nf">findAll</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>

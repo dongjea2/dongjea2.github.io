@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator>
   <link href="https://dongjea2.github.io/author/dongjae/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://dongjea2.github.io/" rel="alternate" type="text/html" />
-  <updated>2022-01-21T22:48:33+09:00</updated>
+  <updated>2022-01-22T00:32:30+09:00</updated>
   <id>https://dongjea2.github.io/author/dongjae/feed.xml</id>
 
   
@@ -76,6 +76,9 @@
 
 &lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
+&lt;h3 id=&quot;oracle-sql-developer-&quot;&gt;ORACLE (SQL DEVELOPER )&lt;/h3&gt;
+&lt;hr /&gt;
+
 &lt;h1 id=&quot;1-db에-페이징-함수-추가하기&quot;&gt;1. DB에 페이징 함수 추가하기&lt;/h1&gt;
 
 &lt;blockquote&gt;
@@ -117,7 +120,7 @@
 
 &lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h1 id=&quot;2-sql-구문에-rownum-추가-및-아까-만든-함수-사용&quot;&gt;2. SQL 구문에 rownum 추가 및 아까 만든 함수 사용&lt;/h1&gt;
+&lt;h1 id=&quot;2-sql-로-함수-테스트-하기&quot;&gt;2. SQL 로 함수 테스트 하기&lt;/h1&gt;
 
 &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
@@ -140,12 +143,22 @@
 &lt;span class=&quot;k&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;BETWEEN&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;START_ROW&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AND&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;END_ROW&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
+&lt;blockquote&gt;
+  &lt;p&gt;제대로 쿼리문 5개씩 읽어오는 지 확인&lt;/p&gt;
+&lt;/blockquote&gt;
+
 &lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h1 id=&quot;3-repboardmapperxml-위의-findall-부분-위의-sql-대로-수정&quot;&gt;3. RepboardMapper.xml 위의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;findAll&lt;/code&gt; 부분 위의 sql 대로 수정&lt;/h1&gt;
+&lt;h3 id=&quot;spring-이클립스&quot;&gt;Spring (이클립스)&lt;/h3&gt;
+&lt;hr /&gt;
 
+&lt;h1 id=&quot;3-repboardmapperxml&quot;&gt;3. RepboardMapper.xml&lt;/h1&gt;
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;parameterType = &quot;map&quot;&lt;/code&gt; 추가해주기 map에 currentPage, cntPerPage 넣어 줄거&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;findAll&lt;/code&gt;  수정&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;parameterType = &quot;map&quot;&lt;/code&gt; 추가&lt;br /&gt;
+ &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;map&amp;gt;&lt;/code&gt;에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;currentPage&lt;/code&gt; , &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cntPerPage&lt;/code&gt; 넣어 줄거&lt;/li&gt;
+  &lt;/ul&gt;
 &lt;/blockquote&gt;
 
 &lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;	&lt;span class=&quot;nt&quot;&gt;&amp;lt;select&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;findAll&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;resultType=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Repboard&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;parameterType=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;map&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
@@ -173,7 +186,8 @@
 
 &lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h1 id=&quot;4-페이지-정보가-담긴-dto-만들어주기&quot;&gt;4. 페이지 정보가 담긴 DTO 만들어주기&lt;/h1&gt;
+&lt;h1 id=&quot;4-pagedtojava&quot;&gt;4. PageDTO.java&lt;/h1&gt;
+&lt;p&gt;(com.my.dto/PageDTO.java)&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;DTO 내부에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;startPage&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;endPage&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;totalPage&lt;/code&gt; 내부로 적으로  초기화 해주기&lt;/p&gt;
@@ -237,10 +251,12 @@
 
 &lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h1 id=&quot;5-controller에-list-수정&quot;&gt;5. Controller에 list() 수정&lt;/h1&gt;
-
+&lt;h1 id=&quot;5-repboardcontrollerjava&quot;&gt;5. RepBoardController.java&lt;/h1&gt;
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pageDTO&lt;/code&gt; 사용하기&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;list() 수정&lt;/li&gt;
+    &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pageDTO&lt;/code&gt; 사용하기&lt;/li&gt;
+  &lt;/ul&gt;
 &lt;/blockquote&gt;
 
 &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;	&lt;span class=&quot;nd&quot;&gt;@GetMapping&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/list&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;/list/{currentPage}&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;})&lt;/span&gt;
@@ -278,7 +294,10 @@
 
 &lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h4 id=&quot;a-repboardmapperxml-의--findcount-추가&quot;&gt;A) RepBoardMapper.xml 의  findCount 추가&lt;/h4&gt;
+&lt;h4 id=&quot;a-repboardmapperxml&quot;&gt;A) RepBoardMapper.xml&lt;/h4&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;findCount 추가&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;	&lt;span class=&quot;nt&quot;&gt;&amp;lt;select&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;findCount&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;resultType=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;int&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
 		SELECT COUNT(*) FROM repboard
@@ -288,7 +307,13 @@
 
 &lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h4 id=&quot;b-dao-findall-수정--findcount-추가&quot;&gt;B) DAO findAll() 수정 , findCount() 추가&lt;/h4&gt;
+&lt;h4 id=&quot;b-repboarddaooraclejava&quot;&gt;B) RepboardDAOOracle.java&lt;/h4&gt;
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;findAll() 수정 , findCount() 추가&lt;/li&gt;
+    &lt;li&gt;인터페이스에도 추가 해주기&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
 
 &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
 	&lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
@@ -343,7 +368,12 @@
 
 &lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h4 id=&quot;c-service의-findall-수정&quot;&gt;C) Service의 findAll() 수정&lt;/h4&gt;
+&lt;h4 id=&quot;c-repboardservicejava&quot;&gt;C) RepboardService.java&lt;/h4&gt;
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;findAll() 수정&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
 
 &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;PageDTO&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;RepBoard&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;findAll&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;throws&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;FindException&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
 		&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;findAll&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
