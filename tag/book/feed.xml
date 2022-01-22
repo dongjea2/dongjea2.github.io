@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator>
   <link href="https://dongjea2.github.io/tag/book/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://dongjea2.github.io/" rel="alternate" type="text/html" />
-  <updated>2022-01-22T23:55:22+09:00</updated>
+  <updated>2022-01-22T23:56:07+09:00</updated>
   <id>https://dongjea2.github.io/tag/book/feed.xml</id>
 
   
@@ -30,6 +30,40 @@
   
   
 
+  
+    <entry>
+      <title type="html">오리진</title>
+      <link href="https://dongjea2.github.io/%EC%98%A4%EB%A6%AC%EC%A7%84" rel="alternate" type="text/html" title="오리진" />
+      <published>2022-01-22T19:13:00+09:00</published>
+      <updated>2022-01-22T19:13:00+09:00</updated>
+      <id>https://dongjea2.github.io/%EC%98%A4%EB%A6%AC%EC%A7%84</id>
+      <content type="html" xml:base="https://dongjea2.github.io/%EC%98%A4%EB%A6%AC%EC%A7%84">&lt;p&gt;이 글은 Origins 서평입니다.&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>동재</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="book" />
+      
+
+      
+        <summary type="html">오리진[지구는 우리를 어떻게 만들었는가] 에 대한 서평</summary>
+      
+
+      
+      
+    </entry>
   
     <entry>
       <title type="html">존 메이너드 케인즈</title>
@@ -59,40 +93,6 @@
 
       
         <summary type="html">이 글은 존메이너드 케인즈 에대한 서평입니다.</summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">오리진</title>
-      <link href="https://dongjea2.github.io/%EC%98%A4%EB%A6%AC%EC%A7%84" rel="alternate" type="text/html" title="오리진" />
-      <published>2022-01-08T19:13:00+09:00</published>
-      <updated>2022-01-08T19:13:00+09:00</updated>
-      <id>https://dongjea2.github.io/%EC%98%A4%EB%A6%AC%EC%A7%84</id>
-      <content type="html" xml:base="https://dongjea2.github.io/%EC%98%A4%EB%A6%AC%EC%A7%84">&lt;p&gt;이 글은 Origins 서평입니다.&lt;/p&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>동재</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="book" />
-      
-
-      
-        <summary type="html">오리진[지구는 우리를 어떻게 만들었는가] 에 대한 서평</summary>
       
 
       
