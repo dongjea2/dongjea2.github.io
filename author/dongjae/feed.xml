@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator>
   <link href="https://dongjea2.github.io/author/dongjae/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://dongjea2.github.io/" rel="alternate" type="text/html" />
-  <updated>2022-01-22T23:56:07+09:00</updated>
+  <updated>2022-01-23T00:21:53+09:00</updated>
   <id>https://dongjea2.github.io/author/dongjae/feed.xml</id>
 
   
@@ -37,7 +37,7 @@
       <published>2022-01-22T19:13:00+09:00</published>
       <updated>2022-01-22T19:13:00+09:00</updated>
       <id>https://dongjea2.github.io/%EC%98%A4%EB%A6%AC%EC%A7%84</id>
-      <content type="html" xml:base="https://dongjea2.github.io/%EC%98%A4%EB%A6%AC%EC%A7%84">&lt;p&gt;이 글은 Origins 서평입니다.&lt;/p&gt;</content>
+      <content type="html" xml:base="https://dongjea2.github.io/%EC%98%A4%EB%A6%AC%EC%A7%84">&lt;p&gt;&lt;img src=&quot;BookCover\오리진.jpg&quot; alt=&quot;책 커버&quot; /&gt;&lt;/p&gt;</content>
 
       
       
@@ -58,7 +58,7 @@
       
 
       
-        <summary type="html">오리진[지구는 우리를 어떻게 만들었는가] 에 대한 서평</summary>
+        <summary type="html">지구가 우리를 어떤식으로 행동하게 만들었는가</summary>
       
 
       
@@ -2752,11 +2752,13 @@ Java에서 고품질 미리 보기를 만드는 것은 상당히 어려운 작�
   
     <entry>
       <title type="html">존 메이너드 케인즈</title>
-      <link href="https://dongjea2.github.io/JOHN_MAYNARD_KEYNES-copy" rel="alternate" type="text/html" title="존 메이너드 케인즈" />
+      <link href="https://dongjea2.github.io/%EC%BC%80%EC%9D%B8%EC%A6%88" rel="alternate" type="text/html" title="존 메이너드 케인즈" />
       <published>2022-01-08T19:13:00+09:00</published>
       <updated>2022-01-08T19:13:00+09:00</updated>
-      <id>https://dongjea2.github.io/JOHN_MAYNARD_KEYNES%20copy</id>
-      <content type="html" xml:base="https://dongjea2.github.io/JOHN_MAYNARD_KEYNES-copy">&lt;p&gt;이 글은 존메이너드 케인즈 에대한 서평입니다.&lt;/p&gt;</content>
+      <id>https://dongjea2.github.io/%EC%BC%80%EC%9D%B8%EC%A6%88</id>
+      <content type="html" xml:base="https://dongjea2.github.io/%EC%BC%80%EC%9D%B8%EC%A6%88">&lt;p&gt;&lt;img src=&quot;BookCover\케인즈.jpg&quot; alt=&quot;책 커버&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;이 글은 존메이너드 케인즈 에대한 서평입니다.&lt;/p&gt;</content>
 
       
       
@@ -2777,7 +2779,7 @@ Java에서 고품질 미리 보기를 만드는 것은 상당히 어려운 작�
       
 
       
-        <summary type="html">이 글은 존메이너드 케인즈 에대한 서평입니다.</summary>
+        <summary type="html"></summary>
       
 
       
