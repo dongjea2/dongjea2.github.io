@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator>
   <link href="https://dongjea2.github.io/author/dongjae/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://dongjea2.github.io/" rel="alternate" type="text/html" />
-  <updated>2022-01-24T23:48:22+09:00</updated>
+  <updated>2022-01-25T00:18:07+09:00</updated>
   <id>https://dongjea2.github.io/author/dongjae/feed.xml</id>
 
   
@@ -389,11 +389,11 @@ SELECT COUNT(*) FROM repboard
   
     <entry>
       <title type="html">프론트 동적 설정</title>
-      <link href="https://dongjea2.github.io/%ED%94%84%EB%A1%A0%ED%8A%B8js%EB%8F%99%EC%A0%81%EC%84%A4%EC%A0%95" rel="alternate" type="text/html" title="프론트 동적 설정" />
+      <link href="https://dongjea2.github.io/%ED%94%84%EB%A1%A0%ED%8A%B8ContextPath%EB%8F%99%EC%A0%81%EC%84%A4%EC%A0%95" rel="alternate" type="text/html" title="프론트 동적 설정" />
       <published>2022-01-24T09:00:00+09:00</published>
       <updated>2022-01-24T09:00:00+09:00</updated>
-      <id>https://dongjea2.github.io/%ED%94%84%EB%A1%A0%ED%8A%B8js%EB%8F%99%EC%A0%81%EC%84%A4%EC%A0%95</id>
-      <content type="html" xml:base="https://dongjea2.github.io/%ED%94%84%EB%A1%A0%ED%8A%B8js%EB%8F%99%EC%A0%81%EC%84%A4%EC%A0%95">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;스프링 목록 &lt;/span&gt;&lt;/p&gt;
+      <id>https://dongjea2.github.io/%ED%94%84%EB%A1%A0%ED%8A%B8ContextPath%EB%8F%99%EC%A0%81%EC%84%A4%EC%A0%95</id>
+      <content type="html" xml:base="https://dongjea2.github.io/%ED%94%84%EB%A1%A0%ED%8A%B8ContextPath%EB%8F%99%EC%A0%81%EC%84%A4%EC%A0%95">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;스프링 목록 &lt;/span&gt;&lt;/p&gt;
 &lt;ul class=&quot;table-of-contents-list&quot;&gt;
     &lt;li&gt;&lt;a href=&quot;./백엔드초기설정&quot;&gt;Spring(1) - 백엔드 초기설정&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./스프링파일업로드1&quot;&gt;Spring(2) -스프링 Client 파일 업로드(1)&lt;/a&gt;&lt;/li&gt;
@@ -409,12 +409,21 @@ SELECT COUNT(*) FROM repboard
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
+&lt;h2 id=&quot;동적으로-frontcontextpath-설정하는-이유&quot;&gt;동적으로 frontContextPath 설정하는 이유?&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;실제 프로젝트 주소랑, ContextPath가 달라서 프로젝트가 꼬일때가 있음&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
 &lt;h2 id=&quot;이번에-해야할것&quot;&gt;이번에 해야할것&lt;/h2&gt;
 &lt;blockquote&gt;
   &lt;ul&gt;
-    &lt;li&gt;섬네일 생성&lt;/li&gt;
-    &lt;li&gt;생성된 섬네일 게시글 클릭시 보여주기&lt;/li&gt;
-    &lt;li&gt;올린 파일도 추가로 게시글 클릭시 보여주고, 받을수 있게 설정하기&lt;/li&gt;
+    &lt;li&gt;basic.js의 frontContexPath 동적으로 얻게 하기(파싱)&lt;/li&gt;
+    &lt;li&gt;basic.js &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;로그인&lt;/code&gt; 정보도 동적으로 얻어오기&lt;/li&gt;
   &lt;/ul&gt;
 &lt;/blockquote&gt;
 
