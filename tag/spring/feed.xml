@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator>
   <link href="https://dongjea2.github.io/tag/spring/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://dongjea2.github.io/" rel="alternate" type="text/html" />
-  <updated>2022-01-23T12:38:48+09:00</updated>
+  <updated>2022-01-24T21:59:36+09:00</updated>
   <id>https://dongjea2.github.io/tag/spring/feed.xml</id>
 
   
@@ -30,6 +30,114 @@
   
   
 
+  
+    <entry>
+      <title type="html">검색기능 추가하기</title>
+      <link href="https://dongjea2.github.io/%EC%8A%A4%ED%94%84%EB%A7%81%EA%B2%80%EC%83%89%EA%B8%B0%EB%8A%A5%EC%B6%94%EA%B0%80-copy" rel="alternate" type="text/html" title="검색기능 추가하기" />
+      <published>2022-01-21T09:00:00+09:00</published>
+      <updated>2022-01-21T09:00:00+09:00</updated>
+      <id>https://dongjea2.github.io/%EC%8A%A4%ED%94%84%EB%A7%81%EA%B2%80%EC%83%89%EA%B8%B0%EB%8A%A5%EC%B6%94%EA%B0%80%20copy</id>
+      <content type="html" xml:base="https://dongjea2.github.io/%EC%8A%A4%ED%94%84%EB%A7%81%EA%B2%80%EC%83%89%EA%B8%B0%EB%8A%A5%EC%B6%94%EA%B0%80-copy">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;스프링 목록 &lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;./백엔드초기설정&quot;&gt;Spring(1) - 백엔드 초기설정&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./스프링파일업로드1&quot;&gt;Spring(2) -스프링 Client 파일 업로드(1)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./스프링파일업로드2&quot;&gt;Spring(3) -스프링 Client 파일 업로드(2)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./백엔드Restfull변경&quot;&gt;Spring(4) - 백엔드 RESTFULL 로 바꾸기&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./게시판페이징&quot;&gt;Spring(5) - 게시판 페이징 기능 추가하기&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt; 스프링 부트 목록 &lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;./스프링부트초기설정&quot;&gt;Spring Boot(1) - 스프링 부트 초기설정&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;이번에-해야할것&quot;&gt;이번에 해야할것&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;백엔드에 검색 기능 요구사항 구현하기&lt;/li&gt;
+    &lt;li&gt;프론트에 검색한 목록들 페이징 처리 해주기&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;백엔드&quot;&gt;백엔드&lt;/h2&gt;
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;1-repboardmapperxml-동적-sql로-구현&quot;&gt;1. RepBoardMapper.xml 동적 SQL로 구현&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;기존의 RepBoardMapper의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;findAll&lt;/code&gt;을 살짝 수정하여 기능 구현 가능&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;select&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;parameterType=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;map&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;resultType=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;RepBoard&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;findAll&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+SELECT * FROM (SELECT rownum r, a.*FROM (SELECT level,repboard.board_no,repboard.parent_no,repboard.board_id &quot;boardC.id&quot;,repboard.board_title,repboard.board_content,repboard.board_viewcount,repboard.board_dtFROM repboard 
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;where&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;if&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;test=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;word != null&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;board_title LIKE &apos;%${word}%&apos; OR board_content LIKE &apos;%${word}%&apos; &lt;span class=&quot;nt&quot;&gt;&amp;lt;/if&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/where&amp;gt;&lt;/span&gt;
+START WITH parent_no = 0CONNECT BY PRIOR board_no = parent_noORDER SIBLINGS BY board_no DESC) a) WHERE r BETWEEN START_ROW(#{currentPage},#{cntPerPage}) AND END_ROW(#{currentPage},#{cntPerPage}) 
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/select&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;select&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;parameterType=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;map&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;resultType=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;RepBoard&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;findByWord&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; SELECT * FROM (SELECT rownum r, a.*FROM (SELECT *FROM (SELECT level,repboard.board_no,repboard.parent_no,repboard.board_id &quot;boardC.id&quot;,repboard.board_title,repboard.board_content,repboard.board_viewcount,repboard.board_dtFROM repboardSTART WITH parent_no = 0CONNECT BY PRIOR board_no = parent_noORDER SIBLINGS BY board_no DESC)WHERE board_title LIKE &apos;%${word}%&apos; OR board_content LIKE &apos;%${word}%&apos;ORDER BY board_title, board_content) a) WHERE r BETWEEN START_ROW(#{currentPage},#{cntPerPage}) AND END_ROW(#{currentPage},#{cntPerPage}) &lt;span class=&quot;nt&quot;&gt;&amp;lt;/select&amp;gt;&lt;/span&gt;
+
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;select&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;resultType=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;int&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;findCount&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+SELECT COUNT(*) FROM repboard 
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;where&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;if&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;test=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;word != null&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;board_title LIKE &apos;%${word}%&apos; OR board_content LIKE &apos;%${word}%&apos; &lt;span class=&quot;nt&quot;&gt;&amp;lt;/if&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/where&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/select&amp;gt;&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;스프링 목록 &lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;./백엔드초기설정&quot;&gt;Spring(1) - 백엔드 초기설정&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./스프링파일업로드1&quot;&gt;Spring(2) -스프링 Client 파일 업로드(1)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./스프링파일업로드2&quot;&gt;Spring(3) -스프링 Client 파일 업로드(2)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./백엔드Restfull변경&quot;&gt;Spring(4) - 백엔드 RESTFULL 로 바꾸기&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./게시판페이징&quot;&gt;Spring(5) - 게시판 페이징 기능 추가하기&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt; 스프링 부트 목록 &lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;./스프링부트초기설정&quot;&gt;Spring Boot(1) - 스프링 부트 초기설정&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>동재</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="spring" />
+      
+
+      
+        <summary type="html">게시판 검색 기능을 추가하는 글입니다.</summary>
+      
+
+      
+      
+    </entry>
   
     <entry>
       <title type="html">게시판 페이징 기능 만들기</title>
@@ -426,6 +534,79 @@
 
       
         <summary type="html">게시판 페이지 기능을 추가하는 글입니다.</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">프론트 동적 설정</title>
+      <link href="https://dongjea2.github.io/%ED%94%84%EB%A1%A0%ED%8A%B8js%EB%8F%99%EC%A0%81%EC%84%A4%EC%A0%95" rel="alternate" type="text/html" title="프론트 동적 설정" />
+      <published>2022-01-21T09:00:00+09:00</published>
+      <updated>2022-01-21T09:00:00+09:00</updated>
+      <id>https://dongjea2.github.io/%ED%94%84%EB%A1%A0%ED%8A%B8js%EB%8F%99%EC%A0%81%EC%84%A4%EC%A0%95</id>
+      <content type="html" xml:base="https://dongjea2.github.io/%ED%94%84%EB%A1%A0%ED%8A%B8js%EB%8F%99%EC%A0%81%EC%84%A4%EC%A0%95">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;스프링 목록 &lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;./백엔드초기설정&quot;&gt;Spring(1) - 백엔드 초기설정&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./스프링파일업로드1&quot;&gt;Spring(2) -스프링 Client 파일 업로드(1)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./스프링파일업로드2&quot;&gt;Spring(3) -스프링 Client 파일 업로드(2)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./백엔드Restfull변경&quot;&gt;Spring(4) - 백엔드 RESTFULL 로 바꾸기&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./게시판페이징&quot;&gt;Spring(5) - 게시판 페이징 기능 추가하기&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt; 스프링 부트 목록 &lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;./스프링부트초기설정&quot;&gt;Spring Boot(1) - 스프링 부트 초기설정&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;이번에-해야할것&quot;&gt;이번에 해야할것&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;섬네일 생성&lt;/li&gt;
+    &lt;li&gt;생성된 섬네일 게시글 클릭시 보여주기&lt;/li&gt;
+    &lt;li&gt;올린 파일도 추가로 게시글 클릭시 보여주고, 받을수 있게 설정하기&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;스프링 목록 &lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;./백엔드초기설정&quot;&gt;Spring(1) - 백엔드 초기설정&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./스프링파일업로드1&quot;&gt;Spring(2) -스프링 Client 파일 업로드(1)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./스프링파일업로드2&quot;&gt;Spring(3) -스프링 Client 파일 업로드(2)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./백엔드Restfull변경&quot;&gt;Spring(4) - 백엔드 RESTFULL 로 바꾸기&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./게시판페이징&quot;&gt;Spring(5) - 게시판 페이징 기능 추가하기&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt; 스프링 부트 목록 &lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;./스프링부트초기설정&quot;&gt;Spring Boot(1) - 스프링 부트 초기설정&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>동재</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="spring" />
+      
+
+      
+        <summary type="html">게시판 프로젝트의 프론트쪽 basic.js동적 설정을 추가하는 글입니다.</summary>
       
 
       
