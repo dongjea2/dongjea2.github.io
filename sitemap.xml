@@ -4,6 +4,22 @@
         xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
     <url>
+        <loc>https://dongjea2.github.io/JPA-%EC%82%AC%EC%9A%A9%ED%95%B4%EB%B3%B4%EA%B8%B0.html</loc>
+        
+        <lastmod>2022-01-25T09:00:00+09:00</lastmod>
+        
+
+        
+        <changefreq>weekly</changefreq>
+        
+
+        
+        <priority>0.5</priority>
+        
+
+    </url>
+    
+    <url>
         <loc>https://dongjea2.github.io/%ED%94%84%EB%A1%A0%ED%8A%B8ContextPath%EB%8F%99%EC%A0%81%EC%84%A4%EC%A0%95.html</loc>
         
         <lastmod>2022-01-24T09:00:00+09:00</lastmod>
