@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator>
   <link href="https://dongjea2.github.io/author/dongjae/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://dongjea2.github.io/" rel="alternate" type="text/html" />
-  <updated>2022-01-26T03:24:05+09:00</updated>
+  <updated>2022-01-26T19:58:39+09:00</updated>
   <id>https://dongjea2.github.io/author/dongjae/feed.xml</id>
 
   
@@ -33,22 +33,25 @@
   
     <entry>
       <title type="html">JPA 사용해보기</title>
-      <link href="https://dongjea2.github.io/JPA-%EC%82%AC%EC%9A%A9%ED%95%B4%EB%B3%B4%EA%B8%B0" rel="alternate" type="text/html" title="JPA 사용해보기" />
+      <link href="https://dongjea2.github.io/JPA%EC%82%AC%EC%9A%A9%ED%95%B4%EB%B3%B4%EA%B8%B0" rel="alternate" type="text/html" title="JPA 사용해보기" />
       <published>2022-01-25T09:00:00+09:00</published>
       <updated>2022-01-25T09:00:00+09:00</updated>
-      <id>https://dongjea2.github.io/JPA%20%EC%82%AC%EC%9A%A9%ED%95%B4%EB%B3%B4%EA%B8%B0</id>
-      <content type="html" xml:base="https://dongjea2.github.io/JPA-%EC%82%AC%EC%9A%A9%ED%95%B4%EB%B3%B4%EA%B8%B0">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;스프링 목록 &lt;/span&gt;&lt;/p&gt;
+      <id>https://dongjea2.github.io/JPA%EC%82%AC%EC%9A%A9%ED%95%B4%EB%B3%B4%EA%B8%B0</id>
+      <content type="html" xml:base="https://dongjea2.github.io/JPA%EC%82%AC%EC%9A%A9%ED%95%B4%EB%B3%B4%EA%B8%B0">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;스프링 목록 &lt;/span&gt;&lt;/p&gt;
 &lt;ul class=&quot;table-of-contents-list&quot;&gt;
     &lt;li&gt;&lt;a href=&quot;./백엔드초기설정&quot;&gt;Spring(1) - 백엔드 초기설정&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./스프링파일업로드1&quot;&gt;Spring(2) -스프링 Client 파일 업로드(1)&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./스프링파일업로드2&quot;&gt;Spring(3) -스프링 Client 파일 업로드(2)&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./백엔드Restfull변경&quot;&gt;Spring(4) - 백엔드 RESTFULL 로 바꾸기&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./게시판페이징&quot;&gt;Spring(5) - 게시판 페이징 기능 추가하기&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./스프링검색기능추가&quot;&gt;Spring(6) - 검색 기능 추가&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./프론트ContextPath동적설정&quot;&gt;Spring(7) - 프론트 ContextPath 동적 설정 &lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt; 스프링 부트 목록 &lt;/span&gt;&lt;/p&gt;
 &lt;ul class=&quot;table-of-contents-list&quot;&gt;
     &lt;li&gt;&lt;a href=&quot;./스프링부트초기설정&quot;&gt;Spring Boot(1) - 스프링 부트 초기설정&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./JPA사용해보기&quot;&gt;Spring Boot(2) - JPA 사용해 보기&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
@@ -96,6 +99,13 @@
     &lt;li&gt;트랜젝션 단위로 엔터티 매니저가 여러개 만들어 진다 &lt;br /&gt;
 -&amp;gt; persist context도 여러개 생김&lt;/li&gt;
   &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt; &lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;0-spring-data-jpa-라이브러리-추가&quot;&gt;0. Spring Data JPA 라이브러리 추가&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;프로젝트 우클릭 -&amp;gt; Spring -&amp;gt; Add Starter -&amp;gt; Spring Data JPA 추가&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;br /&gt; &lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
@@ -210,7 +220,7 @@
 &lt;blockquote&gt;
   &lt;p&gt;자동으로  JPA가 쿼리를 만들어줌으로 쿼리 짤 필요 없어짐&lt;/p&gt;
   &lt;ul&gt;
-    &lt;li&gt;심지어 findAll() 같은건 자동으로 구현되있음&lt;/li&gt;
+    &lt;li&gt;심지어 findAll() 같은건 자동으로 구현되 있음&lt;/li&gt;
   &lt;/ul&gt;
 &lt;/blockquote&gt;
 
@@ -218,7 +228,9 @@
 
 &lt;h2 id=&quot;4customerrepositorytestjava&quot;&gt;4.CustomerRepositoryTest.java&lt;/h2&gt;
 &lt;blockquote&gt;
-  &lt;p&gt;주석들 내용 읽어보기&lt;/p&gt;
+  &lt;p&gt;주석들 내용 읽어보기&lt;br /&gt;
+1차 캐시, 2차캐시 개념 익히기&lt;br /&gt;
+멤버변수가 참조형이면, hash랑 equals 꼭 재정의 해줘야 캐시 활용 가능&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;package&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;com.my.repository&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
@@ -273,11 +285,14 @@
     &lt;li&gt;&lt;a href=&quot;./스프링파일업로드2&quot;&gt;Spring(3) -스프링 Client 파일 업로드(2)&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./백엔드Restfull변경&quot;&gt;Spring(4) - 백엔드 RESTFULL 로 바꾸기&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./게시판페이징&quot;&gt;Spring(5) - 게시판 페이징 기능 추가하기&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./스프링검색기능추가&quot;&gt;Spring(6) - 검색 기능 추가&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./프론트ContextPath동적설정&quot;&gt;Spring(7) - 프론트 ContextPath 동적 설정 &lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt; 스프링 부트 목록 &lt;/span&gt;&lt;/p&gt;
 &lt;ul class=&quot;table-of-contents-list&quot;&gt;
     &lt;li&gt;&lt;a href=&quot;./스프링부트초기설정&quot;&gt;Spring Boot(1) - 스프링 부트 초기설정&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./JPA사용해보기&quot;&gt;Spring Boot(2) - JPA 사용해 보기&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content>
 
       
@@ -295,6 +310,8 @@
       
 
       
+        <category term="Spring Boot" />
+      
         <category term="spring" />
       
         <category term="JPA" />
@@ -310,22 +327,25 @@
   
     <entry>
       <title type="html">검색기능 추가하기</title>
-      <link href="https://dongjea2.github.io/%EC%8A%A4%ED%94%84%EB%A7%81%EA%B2%80%EC%83%89%EA%B8%B0%EB%8A%A5%EC%B6%94%EA%B0%80-copy" rel="alternate" type="text/html" title="검색기능 추가하기" />
+      <link href="https://dongjea2.github.io/%EC%8A%A4%ED%94%84%EB%A7%81%EA%B2%80%EC%83%89%EA%B8%B0%EB%8A%A5%EC%B6%94%EA%B0%80" rel="alternate" type="text/html" title="검색기능 추가하기" />
       <published>2022-01-24T09:00:00+09:00</published>
       <updated>2022-01-24T09:00:00+09:00</updated>
-      <id>https://dongjea2.github.io/%EC%8A%A4%ED%94%84%EB%A7%81%EA%B2%80%EC%83%89%EA%B8%B0%EB%8A%A5%EC%B6%94%EA%B0%80%20copy</id>
-      <content type="html" xml:base="https://dongjea2.github.io/%EC%8A%A4%ED%94%84%EB%A7%81%EA%B2%80%EC%83%89%EA%B8%B0%EB%8A%A5%EC%B6%94%EA%B0%80-copy">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;스프링 목록 &lt;/span&gt;&lt;/p&gt;
+      <id>https://dongjea2.github.io/%EC%8A%A4%ED%94%84%EB%A7%81%EA%B2%80%EC%83%89%EA%B8%B0%EB%8A%A5%EC%B6%94%EA%B0%80</id>
+      <content type="html" xml:base="https://dongjea2.github.io/%EC%8A%A4%ED%94%84%EB%A7%81%EA%B2%80%EC%83%89%EA%B8%B0%EB%8A%A5%EC%B6%94%EA%B0%80">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;스프링 목록 &lt;/span&gt;&lt;/p&gt;
 &lt;ul class=&quot;table-of-contents-list&quot;&gt;
     &lt;li&gt;&lt;a href=&quot;./백엔드초기설정&quot;&gt;Spring(1) - 백엔드 초기설정&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./스프링파일업로드1&quot;&gt;Spring(2) -스프링 Client 파일 업로드(1)&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./스프링파일업로드2&quot;&gt;Spring(3) -스프링 Client 파일 업로드(2)&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./백엔드Restfull변경&quot;&gt;Spring(4) - 백엔드 RESTFULL 로 바꾸기&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./게시판페이징&quot;&gt;Spring(5) - 게시판 페이징 기능 추가하기&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./스프링검색기능추가&quot;&gt;Spring(6) - 검색 기능 추가&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./프론트ContextPath동적설정&quot;&gt;Spring(7) - 프론트 ContextPath 동적 설정 &lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt; 스프링 부트 목록 &lt;/span&gt;&lt;/p&gt;
 &lt;ul class=&quot;table-of-contents-list&quot;&gt;
     &lt;li&gt;&lt;a href=&quot;./스프링부트초기설정&quot;&gt;Spring Boot(1) - 스프링 부트 초기설정&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./JPA사용해보기&quot;&gt;Spring Boot(2) - JPA 사용해 보기&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt; &lt;br /&gt; &lt;br /&gt;&lt;/p&gt;
@@ -631,11 +651,14 @@ SELECT COUNT(*) FROM repboard
     &lt;li&gt;&lt;a href=&quot;./스프링파일업로드2&quot;&gt;Spring(3) -스프링 Client 파일 업로드(2)&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./백엔드Restfull변경&quot;&gt;Spring(4) - 백엔드 RESTFULL 로 바꾸기&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./게시판페이징&quot;&gt;Spring(5) - 게시판 페이징 기능 추가하기&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./스프링검색기능추가&quot;&gt;Spring(6) - 검색 기능 추가&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./프론트ContextPath동적설정&quot;&gt;Spring(7) - 프론트 ContextPath 동적 설정 &lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt; 스프링 부트 목록 &lt;/span&gt;&lt;/p&gt;
 &lt;ul class=&quot;table-of-contents-list&quot;&gt;
     &lt;li&gt;&lt;a href=&quot;./스프링부트초기설정&quot;&gt;Spring Boot(1) - 스프링 부트 초기설정&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./JPA사용해보기&quot;&gt;Spring Boot(2) - JPA 사용해 보기&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content>
 
       
@@ -677,11 +700,14 @@ SELECT COUNT(*) FROM repboard
     &lt;li&gt;&lt;a href=&quot;./스프링파일업로드2&quot;&gt;Spring(3) -스프링 Client 파일 업로드(2)&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./백엔드Restfull변경&quot;&gt;Spring(4) - 백엔드 RESTFULL 로 바꾸기&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./게시판페이징&quot;&gt;Spring(5) - 게시판 페이징 기능 추가하기&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./스프링검색기능추가&quot;&gt;Spring(6) - 검색 기능 추가&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./프론트ContextPath동적설정&quot;&gt;Spring(7) - 프론트 ContextPath 동적 설정 &lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt; 스프링 부트 목록 &lt;/span&gt;&lt;/p&gt;
 &lt;ul class=&quot;table-of-contents-list&quot;&gt;
     &lt;li&gt;&lt;a href=&quot;./스프링부트초기설정&quot;&gt;Spring Boot(1) - 스프링 부트 초기설정&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./JPA사용해보기&quot;&gt;Spring Boot(2) - JPA 사용해 보기&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -713,11 +739,14 @@ SELECT COUNT(*) FROM repboard
     &lt;li&gt;&lt;a href=&quot;./스프링파일업로드2&quot;&gt;Spring(3) -스프링 Client 파일 업로드(2)&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./백엔드Restfull변경&quot;&gt;Spring(4) - 백엔드 RESTFULL 로 바꾸기&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./게시판페이징&quot;&gt;Spring(5) - 게시판 페이징 기능 추가하기&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./스프링검색기능추가&quot;&gt;Spring(6) - 검색 기능 추가&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./프론트ContextPath동적설정&quot;&gt;Spring(7) - 프론트 ContextPath 동적 설정 &lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt; 스프링 부트 목록 &lt;/span&gt;&lt;/p&gt;
 &lt;ul class=&quot;table-of-contents-list&quot;&gt;
     &lt;li&gt;&lt;a href=&quot;./스프링부트초기설정&quot;&gt;Spring Boot(1) - 스프링 부트 초기설정&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./JPA사용해보기&quot;&gt;Spring Boot(2) - JPA 사용해 보기&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content>
 
       
@@ -851,11 +880,14 @@ SELECT COUNT(*) FROM repboard
     &lt;li&gt;&lt;a href=&quot;./스프링파일업로드2&quot;&gt;Spring(3) -스프링 Client 파일 업로드(2)&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./백엔드Restfull변경&quot;&gt;Spring(4) - 백엔드 RESTFULL 로 바꾸기&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./게시판페이징&quot;&gt;Spring(5) - 게시판 페이징 기능 추가하기&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./스프링검색기능추가&quot;&gt;Spring(6) - 검색 기능 추가&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./프론트ContextPath동적설정&quot;&gt;Spring(7) - 프론트 ContextPath 동적 설정 &lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt; 스프링 부트 목록 &lt;/span&gt;&lt;/p&gt;
 &lt;ul class=&quot;table-of-contents-list&quot;&gt;
     &lt;li&gt;&lt;a href=&quot;./스프링부트초기설정&quot;&gt;Spring Boot(1) - 스프링 부트 초기설정&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./JPA사용해보기&quot;&gt;Spring Boot(2) - JPA 사용해 보기&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
@@ -1206,11 +1238,14 @@ SELECT COUNT(*) FROM repboard
     &lt;li&gt;&lt;a href=&quot;./스프링파일업로드2&quot;&gt;Spring(3) -스프링 Client 파일 업로드(2)&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./백엔드Restfull변경&quot;&gt;Spring(4) - 백엔드 RESTFULL 로 바꾸기&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./게시판페이징&quot;&gt;Spring(5) - 게시판 페이징 기능 추가하기&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./스프링검색기능추가&quot;&gt;Spring(6) - 검색 기능 추가&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./프론트ContextPath동적설정&quot;&gt;Spring(7) - 프론트 ContextPath 동적 설정 &lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt; 스프링 부트 목록 &lt;/span&gt;&lt;/p&gt;
 &lt;ul class=&quot;table-of-contents-list&quot;&gt;
     &lt;li&gt;&lt;a href=&quot;./스프링부트초기설정&quot;&gt;Spring Boot(1) - 스프링 부트 초기설정&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./JPA사용해보기&quot;&gt;Spring Boot(2) - JPA 사용해 보기&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content>
 
       
@@ -1252,11 +1287,14 @@ SELECT COUNT(*) FROM repboard
     &lt;li&gt;&lt;a href=&quot;./스프링파일업로드2&quot;&gt;Spring(3) -스프링 Client 파일 업로드(2)&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./백엔드Restfull변경&quot;&gt;Spring(4) - 백엔드 RESTFULL 로 바꾸기&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./게시판페이징&quot;&gt;Spring(5) - 게시판 페이징 기능 추가하기&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./스프링검색기능추가&quot;&gt;Spring(6) - 검색 기능 추가&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./프론트ContextPath동적설정&quot;&gt;Spring(7) - 프론트 ContextPath 동적 설정 &lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt; 스프링 부트 목록 &lt;/span&gt;&lt;/p&gt;
 &lt;ul class=&quot;table-of-contents-list&quot;&gt;
     &lt;li&gt;&lt;a href=&quot;./스프링부트초기설정&quot;&gt;Spring Boot(1) - 스프링 부트 초기설정&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./JPA사용해보기&quot;&gt;Spring Boot(2) - JPA 사용해 보기&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
@@ -1655,11 +1693,14 @@ SELECT COUNT(*) FROM repboard
     &lt;li&gt;&lt;a href=&quot;./스프링파일업로드2&quot;&gt;Spring(3) -스프링 Client 파일 업로드(2)&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./백엔드Restfull변경&quot;&gt;Spring(4) - 백엔드 RESTFULL 로 바꾸기&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./게시판페이징&quot;&gt;Spring(5) - 게시판 페이징 기능 추가하기&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./스프링검색기능추가&quot;&gt;Spring(6) - 검색 기능 추가&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./프론트ContextPath동적설정&quot;&gt;Spring(7) - 프론트 ContextPath 동적 설정 &lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt; 스프링 부트 목록 &lt;/span&gt;&lt;/p&gt;
 &lt;ul class=&quot;table-of-contents-list&quot;&gt;
     &lt;li&gt;&lt;a href=&quot;./스프링부트초기설정&quot;&gt;Spring Boot(1) - 스프링 부트 초기설정&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./JPA사용해보기&quot;&gt;Spring Boot(2) - JPA 사용해 보기&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content>
 
       
@@ -1701,11 +1742,14 @@ SELECT COUNT(*) FROM repboard
     &lt;li&gt;&lt;a href=&quot;./스프링파일업로드2&quot;&gt;Spring(3) -스프링 Client 파일 업로드(2)&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./백엔드Restfull변경&quot;&gt;Spring(4) - 백엔드 RESTFULL 로 바꾸기&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./게시판페이징&quot;&gt;Spring(5) - 게시판 페이징 기능 추가하기&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./스프링검색기능추가&quot;&gt;Spring(6) - 검색 기능 추가&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./프론트ContextPath동적설정&quot;&gt;Spring(7) - 프론트 ContextPath 동적 설정 &lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt; 스프링 부트 목록 &lt;/span&gt;&lt;/p&gt;
 &lt;ul class=&quot;table-of-contents-list&quot;&gt;
     &lt;li&gt;&lt;a href=&quot;./스프링부트초기설정&quot;&gt;Spring Boot(1) - 스프링 부트 초기설정&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./JPA사용해보기&quot;&gt;Spring Boot(2) - JPA 사용해 보기&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -2042,11 +2086,14 @@ Java에서 고품질 미리 보기를 만드는 것은 상당히 어려운 작�
     &lt;li&gt;&lt;a href=&quot;./스프링파일업로드2&quot;&gt;Spring(3) -스프링 Client 파일 업로드(2)&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./백엔드Restfull변경&quot;&gt;Spring(4) - 백엔드 RESTFULL 로 바꾸기&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./게시판페이징&quot;&gt;Spring(5) - 게시판 페이징 기능 추가하기&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./스프링검색기능추가&quot;&gt;Spring(6) - 검색 기능 추가&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./프론트ContextPath동적설정&quot;&gt;Spring(7) - 프론트 ContextPath 동적 설정 &lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt; 스프링 부트 목록 &lt;/span&gt;&lt;/p&gt;
 &lt;ul class=&quot;table-of-contents-list&quot;&gt;
     &lt;li&gt;&lt;a href=&quot;./스프링부트초기설정&quot;&gt;Spring Boot(1) - 스프링 부트 초기설정&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./JPA사용해보기&quot;&gt;Spring Boot(2) - JPA 사용해 보기&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content>
 
       
@@ -2088,11 +2135,14 @@ Java에서 고품질 미리 보기를 만드는 것은 상당히 어려운 작�
     &lt;li&gt;&lt;a href=&quot;./스프링파일업로드2&quot;&gt;Spring(3) -스프링 Client 파일 업로드(2)&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./백엔드Restfull변경&quot;&gt;Spring(4) - 백엔드 RESTFULL 로 바꾸기&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./게시판페이징&quot;&gt;Spring(5) - 게시판 페이징 기능 추가하기&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./스프링검색기능추가&quot;&gt;Spring(6) - 검색 기능 추가&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./프론트ContextPath동적설정&quot;&gt;Spring(7) - 프론트 ContextPath 동적 설정 &lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt; 스프링 부트 목록 &lt;/span&gt;&lt;/p&gt;
 &lt;ul class=&quot;table-of-contents-list&quot;&gt;
     &lt;li&gt;&lt;a href=&quot;./스프링부트초기설정&quot;&gt;Spring Boot(1) - 스프링 부트 초기설정&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./JPA사용해보기&quot;&gt;Spring Boot(2) - JPA 사용해 보기&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -2505,11 +2555,14 @@ INFO : com.my.board.controller.RepBoardController - 이미지파일 저장:f:\fi
     &lt;li&gt;&lt;a href=&quot;./스프링파일업로드2&quot;&gt;Spring(3) -스프링 Client 파일 업로드(2)&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./백엔드Restfull변경&quot;&gt;Spring(4) - 백엔드 RESTFULL 로 바꾸기&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./게시판페이징&quot;&gt;Spring(5) - 게시판 페이징 기능 추가하기&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./스프링검색기능추가&quot;&gt;Spring(6) - 검색 기능 추가&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./프론트ContextPath동적설정&quot;&gt;Spring(7) - 프론트 ContextPath 동적 설정 &lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt; 스프링 부트 목록 &lt;/span&gt;&lt;/p&gt;
 &lt;ul class=&quot;table-of-contents-list&quot;&gt;
     &lt;li&gt;&lt;a href=&quot;./스프링부트초기설정&quot;&gt;Spring Boot(1) - 스프링 부트 초기설정&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./JPA사용해보기&quot;&gt;Spring Boot(2) - JPA 사용해 보기&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content>
 
       
@@ -2551,11 +2604,14 @@ INFO : com.my.board.controller.RepBoardController - 이미지파일 저장:f:\fi
     &lt;li&gt;&lt;a href=&quot;./스프링파일업로드2&quot;&gt;Spring(3) -스프링 Client 파일 업로드(2)&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./백엔드Restfull변경&quot;&gt;Spring(4) - 백엔드 RESTFULL 로 바꾸기&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./게시판페이징&quot;&gt;Spring(5) - 게시판 페이징 기능 추가하기&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./스프링검색기능추가&quot;&gt;Spring(6) - 검색 기능 추가&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./프론트ContextPath동적설정&quot;&gt;Spring(7) - 프론트 ContextPath 동적 설정 &lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt; 스프링 부트 목록 &lt;/span&gt;&lt;/p&gt;
 &lt;ul class=&quot;table-of-contents-list&quot;&gt;
     &lt;li&gt;&lt;a href=&quot;./스프링부트초기설정&quot;&gt;Spring Boot(1) - 스프링 부트 초기설정&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./JPA사용해보기&quot;&gt;Spring Boot(2) - JPA 사용해 보기&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;br /&gt;
@@ -2901,11 +2957,14 @@ INFO : com.my.board.controller.RepBoardController - 이미지파일 저장:f:\fi
     &lt;li&gt;&lt;a href=&quot;./스프링파일업로드2&quot;&gt;Spring(3) -스프링 Client 파일 업로드(2)&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./백엔드Restfull변경&quot;&gt;Spring(4) - 백엔드 RESTFULL 로 바꾸기&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./게시판페이징&quot;&gt;Spring(5) - 게시판 페이징 기능 추가하기&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./스프링검색기능추가&quot;&gt;Spring(6) - 검색 기능 추가&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./프론트ContextPath동적설정&quot;&gt;Spring(7) - 프론트 ContextPath 동적 설정 &lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt; 스프링 부트 목록 &lt;/span&gt;&lt;/p&gt;
 &lt;ul class=&quot;table-of-contents-list&quot;&gt;
     &lt;li&gt;&lt;a href=&quot;./스프링부트초기설정&quot;&gt;Spring Boot(1) - 스프링 부트 초기설정&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./JPA사용해보기&quot;&gt;Spring Boot(2) - JPA 사용해 보기&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content>
 
       
@@ -2949,11 +3008,14 @@ INFO : com.my.board.controller.RepBoardController - 이미지파일 저장:f:\fi
     &lt;li&gt;&lt;a href=&quot;./스프링파일업로드2&quot;&gt;Spring(3) -스프링 Client 파일 업로드(2)&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./백엔드Restfull변경&quot;&gt;Spring(4) - 백엔드 RESTFULL 로 바꾸기&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./게시판페이징&quot;&gt;Spring(5) - 게시판 페이징 기능 추가하기&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./스프링검색기능추가&quot;&gt;Spring(6) - 검색 기능 추가&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./프론트ContextPath동적설정&quot;&gt;Spring(7) - 프론트 ContextPath 동적 설정 &lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt; 스프링 부트 목록 &lt;/span&gt;&lt;/p&gt;
 &lt;ul class=&quot;table-of-contents-list&quot;&gt;
     &lt;li&gt;&lt;a href=&quot;./스프링부트초기설정&quot;&gt;Spring Boot(1) - 스프링 부트 초기설정&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./JPA사용해보기&quot;&gt;Spring Boot(2) - JPA 사용해 보기&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h1&gt;백엔드 프로젝트 초기설정&lt;/h1&gt;
@@ -3444,11 +3506,14 @@ INFO : com.my.board.controller.RepBoardController - 이미지파일 저장:f:\fi
     &lt;li&gt;&lt;a href=&quot;./스프링파일업로드2&quot;&gt;Spring(3) -스프링 Client 파일 업로드(2)&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./백엔드Restfull변경&quot;&gt;Spring(4) - 백엔드 RESTFULL 로 바꾸기&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./게시판페이징&quot;&gt;Spring(5) - 게시판 페이징 기능 추가하기&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./스프링검색기능추가&quot;&gt;Spring(6) - 검색 기능 추가&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./프론트ContextPath동적설정&quot;&gt;Spring(7) - 프론트 ContextPath 동적 설정 &lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt; 스프링 부트 목록 &lt;/span&gt;&lt;/p&gt;
 &lt;ul class=&quot;table-of-contents-list&quot;&gt;
     &lt;li&gt;&lt;a href=&quot;./스프링부트초기설정&quot;&gt;Spring Boot(1) - 스프링 부트 초기설정&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./JPA사용해보기&quot;&gt;Spring Boot(2) - JPA 사용해 보기&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content>
 
       
