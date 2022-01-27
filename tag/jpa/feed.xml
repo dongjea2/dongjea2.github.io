@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator>
   <link href="https://dongjea2.github.io/tag/jpa/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://dongjea2.github.io/" rel="alternate" type="text/html" />
-  <updated>2022-01-26T19:58:39+09:00</updated>
+  <updated>2022-01-27T14:26:08+09:00</updated>
   <id>https://dongjea2.github.io/tag/jpa/feed.xml</id>
 
   
@@ -30,6 +30,198 @@
   
   
 
+  
+    <entry>
+      <title type="html">JPA 관계, 방향 설정해보기</title>
+      <link href="https://dongjea2.github.io/JPA%EB%B0%A9%ED%96%A5%EC%84%A4%EC%A0%95" rel="alternate" type="text/html" title="JPA 관계, 방향 설정해보기" />
+      <published>2022-01-27T09:00:00+09:00</published>
+      <updated>2022-01-27T09:00:00+09:00</updated>
+      <id>https://dongjea2.github.io/JPA%EB%B0%A9%ED%96%A5%EC%84%A4%EC%A0%95</id>
+      <content type="html" xml:base="https://dongjea2.github.io/JPA%EB%B0%A9%ED%96%A5%EC%84%A4%EC%A0%95">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;스프링 목록 &lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;./백엔드초기설정&quot;&gt;Spring(1) - 백엔드 초기설정&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./스프링파일업로드1&quot;&gt;Spring(2) -스프링 Client 파일 업로드(1)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./스프링파일업로드2&quot;&gt;Spring(3) -스프링 Client 파일 업로드(2)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./백엔드Restfull변경&quot;&gt;Spring(4) - 백엔드 RESTFULL 로 바꾸기&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./게시판페이징&quot;&gt;Spring(5) - 게시판 페이징 기능 추가하기&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./스프링검색기능추가&quot;&gt;Spring(6) - 검색 기능 추가&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./프론트ContextPath동적설정&quot;&gt;Spring(7) - 프론트 ContextPath 동적 설정 &lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt; 스프링 부트 목록 &lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;./스프링부트초기설정&quot;&gt;Spring Boot(1) - 스프링 부트 초기설정&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./JPA사용해보기&quot;&gt;Spring Boot(2) - JPA 사용해 보기&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;생각보다-까다로운-관계-설정과-방향설정&quot;&gt;생각보다 까다로운 관계 설정과 방향설정&lt;/h2&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;관계-설정&quot;&gt;관계 설정&lt;/h3&gt;
+&lt;p&gt;(@ManyToOne, @ManyToMany, @OneToMany)&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;게시글은 댓글을 가지고있음, 게시글 하나에 댓글이 여러개 달릴수 있음&lt;br /&gt;
+게시글(One) To 댓글(Many) &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+    &lt;li&gt;댓글 입장에선 여러개의 댓글은 하나의 게시글에 달려있음&lt;br /&gt;
+댓글(Many) To 게시글(One)&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;방향설정&quot;&gt;방향설정&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;방향 설정은 한쪽이 어느쪽을 자주 포함하는지에 따라 설계&lt;br /&gt;&lt;br /&gt;
+ex) 쇼핑몰 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;상품&lt;/code&gt; 과 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;결제내역&lt;/code&gt; 테이블이 존재&lt;br /&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;결제내역&lt;/code&gt;에서 어떤 상품을 샀는지 조회하는 경우는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;많음&lt;/code&gt;&lt;br /&gt;
+ 반대로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;상품&lt;/code&gt;을 조회하면서 결제내역을 보는 경우는 적음 &lt;br /&gt;&lt;br /&gt;
+결제내역 -&amp;gt; 상품 (단방향)&lt;br /&gt;&lt;br /&gt;
+반대의 경우를 조회하고 싶을때는 양방향으로 만들지말고 Fetch Join 이용&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;단방향&quot;&gt;단방향&lt;/h1&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;설계하기가 생각보다 까다로움, 그러나 설계 후에는 코드관리 용이&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;1-many-to-one단방향&quot;&gt;1. @Many To One(단방향)&lt;/h4&gt;
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;만들기 상대적으로 쉬움&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nd&quot;&gt;@Entity&lt;/span&gt;
+&lt;span class=&quot;nd&quot;&gt;@Table&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;프로필&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;//멤버변수들&lt;/span&gt;
+    &lt;span class=&quot;nd&quot;&gt;@Id&lt;/span&gt;
+    &lt;span class=&quot;nc&quot;&gt;Long&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;파일번호&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;파일이름&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;// 해당 어노테이션과,  One의 자료형만 적어주면 끝&lt;/span&gt;
+    &lt;span class=&quot;nd&quot;&gt;@ManyToOne&lt;/span&gt;
+    &lt;span class=&quot;nc&quot;&gt;User&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//프로필의 소유주&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;user를 이용해 프로필 정보를 보고싶으면 &lt;br /&gt;
+user쪽에 @OneToMany 만들지말고 Fetch Join이용&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;2-one-to-many단방향&quot;&gt;2 .@One To Many(단방향)&lt;/h4&gt;
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;생각보다 까다로움&lt;br /&gt;&lt;/li&gt;
+    &lt;li&gt;repository 만들때 One 위주로 만들것 (TDD)&lt;br /&gt;&lt;/li&gt;
+    &lt;li&gt;영속성 관리, 영속성 전이 까지 고려해야함&lt;br /&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;양방향&quot;&gt;양방향&lt;/h1&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;초기 설계가 단방향에 비해 빠름, 그러나 코드가 복잡해짐&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;3-manytoone-onetomany-양방향&quot;&gt;3. @ManyToOne, @OneToMany (양방향)&lt;/h4&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h6 id=&quot;aone-의-시점&quot;&gt;a)One (의 시점)&lt;/h6&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mappedBy&lt;/code&gt; 써줘야함 ( One (부모) 삭제 시 Many(자식) 문제가됨 )&lt;br /&gt;
+SELECT 할시에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Lazy Loding&lt;/code&gt; 때문에 에러 발생할 수 있음
+(영속성 전파 관련문제)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h6 id=&quot;b-many-의-시점&quot;&gt;b) Many (의 시점)&lt;/h6&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;@ManyToOne 어노테이션만 적을시 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;브릿지 테이블&lt;/code&gt; 생성됨&lt;br /&gt;&lt;br /&gt;
+@JoinColumn(FK를 위한 어노테이션) 사용하면One의 @Id가져옴(브릿지 테이블 안생김)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;lazy-loding-문제-해결법&quot;&gt;Lazy Loding 문제 해결법&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;@Transactional&lt;/code&gt; 사용&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;@OneToMany에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;fetch=FetchType.LAZY&lt;/code&gt;사용&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;transactional-쓰면-오류-안나는-이유&quot;&gt;@Transactional 쓰면 오류 안나는 이유&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;PC는 트랜잭션과 관련있어서 트랜잭션 시작시 PC할당되고, 완료시 사라짐&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;@Transactional 안쓴 경우&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;레이지 로딩이 글번호, 글제목 가져옴 , 답글은 아직 안가져옴(조인이라)&lt;br /&gt;
+게시글 검색만하고 닫힘(pc사라짐)&lt;br /&gt;
+이미 pc는 닫혀있음, o.getReplies 로 리플가져오고싶어도 pc가 없어서 오류&lt;br /&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;@Transactional 사용시&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;트랜잭션 어노테이션 사용시 레이지로딩해서 (글 번호, 글제목 가져옴 일단)&lt;br /&gt;
+트랜잭션 아직 안닫혀있음 = find~~다 끝나도 pc 안사라짐&lt;br /&gt;
+o.getReplies 구문 사용할 기회가 남아있음 (pc가 열려있음)&lt;br /&gt;
+o.getReplies select하고 종료&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;auto&quot;&gt;Auto&lt;/h2&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>동재</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="Spring Boot" />
+      
+        <category term="spring" />
+      
+        <category term="JPA" />
+      
+
+      
+        <summary type="html">JPA의 양방향, 단방향 관계에 대한 내용입니다.</summary>
+      
+
+      
+      
+    </entry>
   
     <entry>
       <title type="html">JPA 사용해보기</title>
