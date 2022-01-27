@@ -368,6 +368,12 @@ SELECT 할시에 <code class="language-plaintext highlighter-rouge">Lazy Loding<
 
 
 
+
+<span class="c1">//추가 예시</span>
+
+<span class="c1">// 원래의 예제 코드라면 One의 입장에서만 보여줬겟지만</span>
+<span class="c1">// 실제의 코드는 이런식으로 Many이면서, One일수도 있음</span>
+
 <span class="c1">// 이 부분은 OrderInfo가 Many인 상황</span>
 
     <span class="c1">//[One]</span>
@@ -399,6 +405,7 @@ SELECT 할시에 <code class="language-plaintext highlighter-rouge">Lazy Loding<
 	<span class="nd">@ManyToOne</span>
 	<span class="nd">@JoinColumn</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">"order_no"</span> <span class="o">)</span>
 	<span class="kd">private</span> <span class="nc">OderInfo</span> <span class="n">order_info</span><span class="o">;</span>
+
 
 
 <span class="c1">// 이 부분은 OrderLine가 Many인 상황</span>

@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator>
   <link href="https://dongjea2.github.io/author/dongjae/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://dongjea2.github.io/" rel="alternate" type="text/html" />
-  <updated>2022-01-27T23:59:45+09:00</updated>
+  <updated>2022-01-28T00:21:43+09:00</updated>
   <id>https://dongjea2.github.io/author/dongjae/feed.xml</id>
 
   
@@ -196,6 +196,12 @@ SELECT 할시에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;
 
 
 
+
+&lt;span class=&quot;c1&quot;&gt;//추가 예시&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// 원래의 예제 코드라면 One의 입장에서만 보여줬겟지만&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// 실제의 코드는 이런식으로 Many이면서, One일수도 있음&lt;/span&gt;
+
 &lt;span class=&quot;c1&quot;&gt;// 이 부분은 OrderInfo가 Many인 상황&lt;/span&gt;
 
     &lt;span class=&quot;c1&quot;&gt;//[One]&lt;/span&gt;
@@ -227,6 +233,7 @@ SELECT 할시에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;
 	&lt;span class=&quot;nd&quot;&gt;@ManyToOne&lt;/span&gt;
 	&lt;span class=&quot;nd&quot;&gt;@JoinColumn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;order_no&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
 	&lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;OderInfo&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;order_info&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
 
 
 &lt;span class=&quot;c1&quot;&gt;// 이 부분은 OrderLine가 Many인 상황&lt;/span&gt;
