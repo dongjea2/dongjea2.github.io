@@ -267,27 +267,40 @@ ex) 쇼핑몰 <code class="language-plaintext highlighter-rouge">상품</code> �
 <h4 id="1-many-to-one단방향">1. @Many To One(단방향)</h4>
 <blockquote>
   <ul>
-    <li>만들기 상대적으로 쉬움</li>
+    <li>구현 상대적으로 쉬움</li>
   </ul>
 </blockquote>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Entity</span>
 <span class="nd">@Table</span>
-<span class="kd">public</span> <span class="n">프로필</span><span class="o">{</span>
-    <span class="c1">//멤버변수들</span>
+<span class="kd">public</span> <span class="n">결제내역</span><span class="o">{</span>
+    <span class="c1">//결제에 관한 멤버변수들 .. 날짜, 갯수 등등</span>
     <span class="nd">@Id</span>
-    <span class="nc">Long</span> <span class="n">파일번호</span><span class="o">;</span>
-    <span class="nc">String</span> <span class="n">파일이름</span><span class="o">;</span>
+    <span class="nc">Long</span> <span class="n">결제번호</span><span class="o">;</span>
+    <span class="kt">int</span> <span class="n">갯수</span><span class="o">..</span> 
+    <span class="nc">Date</span> <span class="n">결제날짜</span> <span class="n">등등</span><span class="o">..</span>
+
+
+
 
     <span class="c1">// 해당 어노테이션과,  One의 자료형만 적어주면 끝</span>
     <span class="nd">@ManyToOne</span>
-    <span class="nc">User</span> <span class="n">user</span><span class="o">;</span><span class="c1">//프로필의 소유주</span>
+    <span class="nc">Product</span> <span class="n">product</span> <span class="c1">//결제한 상품</span>
 <span class="o">}</span>
 </code></pre></div></div>
 
 <blockquote>
-  <p>user를 이용해 프로필 정보를 보고싶으면 <br />
-user쪽에 @OneToMany 만들지말고 Fetch Join이용</p>
+  <p>결제 내역에서 상품을 보는경우는 많음(단방향)</p>
+</blockquote>
+
+<blockquote>
+  <p>가끔씩, <code class="language-plaintext highlighter-rouge">상품</code>을 이용해 결제내역 정보를 보고싶으면<br />
+(해당 스웨터[상품]의 총 판매 수 ) <br /><br />
+Product에 @OneToMany 사용하지 말고(<code class="language-plaintext highlighter-rouge">양방향</code>으로 바꾸지 말고!)<br />
+<code class="language-plaintext highlighter-rouge">Fethch Join</code>으로 사용</p>
+  <ul>
+    <li>(JPA가 아니였으면 sql사용시 아우터 조인으로 간단히 처리할수 있는 상황)</li>
+  </ul>
 </blockquote>
 
 <p><br /><br /><br /><br /></p>
@@ -296,7 +309,7 @@ user쪽에 @OneToMany 만들지말고 Fetch Join이용</p>
 <blockquote>
   <ul>
     <li>생각보다 까다로움<br /></li>
-    <li>repository 만들때 One 위주로 만들것 (TDD)<br /></li>
+    <li>repository 만들때 One 위주로 만들것 (작업단위, 업(JOb) 위주. TDD)<br /></li>
     <li>영속성 관리, 영속성 전이 까지 고려해야함<br /></li>
   </ul>
 </blockquote>
@@ -323,12 +336,80 @@ SELECT 할시에 <code class="language-plaintext highlighter-rouge">Lazy Loding<
 (영속성 전파 관련문제)</p>
 </blockquote>
 
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nd">@Entity</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">"order_info"</span><span class="o">)</span>
+<span class="nd">@Table</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">"jpaorder_info"</span><span class="o">)</span>
+
+<span class="nd">@SequenceGenerator</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">"jpaorder_seq_generator"</span><span class="o">,</span>
+					<span class="n">sequenceName</span> <span class="o">=</span> <span class="s">"JPAORDER_SEQ"</span><span class="o">,</span>
+					<span class="n">initialValue</span> <span class="o">=</span> <span class="mi">1</span><span class="o">,</span>
+					<span class="n">allocationSize</span> <span class="o">=</span> <span class="mi">1</span><span class="o">)</span><span class="c1">//1씩증가</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">OderInfo</span> <span class="o">{</span>
+
+	<span class="nd">@Id</span>
+	<span class="nd">@GeneratedValue</span><span class="o">(</span> <span class="n">strategy</span> <span class="o">=</span> <span class="nc">GenerationType</span><span class="o">.</span><span class="na">SEQUENCE</span><span class="o">,</span>
+					<span class="n">generator</span> <span class="o">=</span> <span class="s">"jpaorder_seq_generator"</span>
+			<span class="o">)</span>
+	<span class="kd">private</span> <span class="kt">int</span> <span class="n">order_no</span><span class="o">;</span>
+	
+	<span class="nd">@CreationTimestamp</span>
+	<span class="kd">private</span> <span class="nc">Date</span> <span class="n">order_dt</span><span class="o">;</span>
+	
+
+<span class="c1">// 이 부분은 OrderInfo가 One인 상황</span>
+    
+    <span class="c1">//[Many]</span>
+	<span class="nd">@OneToMany</span><span class="o">(</span><span class="n">cascade</span> <span class="o">=</span> <span class="nc">CascadeType</span><span class="o">.</span><span class="na">ALL</span><span class="o">,</span>
+                <span class="c1">//자식들도 인서트 되게할려면all(영속성 전이)</span>
+			   <span class="n">fetch</span> <span class="o">=</span> <span class="nc">FetchType</span><span class="o">.</span><span class="na">EAGER</span><span class="o">,</span>
+			   <span class="n">mappedBy</span> <span class="o">=</span> <span class="s">"order_info"</span><span class="o">)</span>
+	<span class="kd">private</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">OderLine</span><span class="o">&gt;</span> <span class="n">lines</span><span class="o">;</span>
+	
+
+
+
+<span class="c1">// 이 부분은 OrderInfo가 Many인 상황</span>
+
+    <span class="c1">//[One]</span>
+	<span class="nd">@ManyToOne</span>
+	<span class="nd">@JoinColumn</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">"order_id"</span><span class="o">)</span> <span class="c1">//이거안쓰면 ddl오토 시 이름자동으로 order_)c</span>
+	<span class="c1">//One</span>
+	<span class="kd">private</span> <span class="nc">Customer</span> <span class="n">order_c</span><span class="o">;</span>
+
+</code></pre></div></div>
+
 <h6 id="b-many-의-시점">b) Many (의 시점)</h6>
 <blockquote>
-  <p>@ManyToOne 어노테이션만 적을시 <code class="language-plaintext highlighter-rouge">브릿지 테이블</code> 생성됨<br /><br />
+  <p>@ManyToOne 어노테이션만 적을시 <code class="language-plaintext highlighter-rouge">브릿지 테이블</code> 생성됨(ddl-auto 설정시)<br /><br />
 @JoinColumn(FK를 위한 어노테이션) 사용하면One의 @Id가져옴(브릿지 테이블 안생김)</p>
 </blockquote>
 
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nd">@Entity</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">"orderline"</span><span class="o">)</span>
+<span class="nd">@Table</span><span class="o">(</span><span class="n">name</span><span class="o">=</span> <span class="s">"jpaorder_line"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">OderLine</span> <span class="kd">implements</span> <span class="nc">Serializable</span><span class="o">{</span>
+
+	<span class="c1">//복합키로 아이디 쓸때 시리얼라이저블 인터페이스 구현</span>
+	<span class="c1">//객체직렬화를 가능하게 구현한다.</span>
+
+<span class="c1">// 이 부분은 OrderLine가 Many인 상황</span>
+
+    <span class="c1">//[One]</span>
+	<span class="nd">@Id</span>
+	<span class="nd">@ManyToOne</span>
+	<span class="nd">@JoinColumn</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">"order_no"</span> <span class="o">)</span>
+	<span class="kd">private</span> <span class="nc">OderInfo</span> <span class="n">order_info</span><span class="o">;</span>
+
+
+<span class="c1">// 이 부분은 OrderLine가 Many인 상황</span>
+
+    <span class="c1">//[One]</span>
+	<span class="nd">@Id</span>
+	<span class="nd">@ManyToOne</span>
+	<span class="nd">@JoinColumn</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">"order_prod_no"</span><span class="o">)</span>
+	<span class="kd">private</span> <span class="nc">Pruduct</span> <span class="n">order_p</span><span class="o">;</span>
+
+</code></pre></div></div>
 <p><br /><br /></p>
 
 <h3 id="lazy-loding-문제-해결법">Lazy Loding 문제 해결법</h3>
