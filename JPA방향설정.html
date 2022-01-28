@@ -465,7 +465,8 @@ SELECT 할시에 <code class="language-plaintext highlighter-rouge">Lazy Loding<
 <h3 id="lazy-loding-문제-해결법">Lazy Loding 문제 해결법</h3>
 <ul>
   <li><code class="language-plaintext highlighter-rouge">@Transactional</code> 사용<br /></li>
-  <li>@OneToMany에 <code class="language-plaintext highlighter-rouge">fetch=FetchType.LAZY</code>사용</li>
+  <li>@OneToMany에 <code class="language-plaintext highlighter-rouge">fetch=FetchType.EAGER</code>사용</li>
+  <li>하지만 성능에 영향을 줌으로 신중히 사용할 것</li>
 </ul>
 
 <h3 id="transactional-쓰면-오류-안나는-이유">@Transactional 쓰면 오류 안나는 이유</h3>
