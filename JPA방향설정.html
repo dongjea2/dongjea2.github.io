@@ -332,10 +332,12 @@ Product에 @OneToMany 사용하지 말고(<code class="language-plaintext highli
 	<span class="c1">//게시판이 [One]인 상황</span>
 
 	<span class="c1">//Many를 리스트 형식으로 가지고 있음</span>
-		<span class="c1">//CascadeType 사용시, 해당 객체 변경시 자동으로 저장해줌(영속성 전이)</span>
-		<span class="c1">//영속성 전이 사용시 Lazy Loaind 문제때문에 fetch나 다른 처리 해줘야함</span>
-	<span class="nd">@OneToMany</span><span class="o">(</span> <span class="n">cascade</span><span class="o">=</span> <span class="nc">CascadeType</span><span class="o">.</span><span class="na">ALL</span><span class="o">,</span>
-				<span class="n">fetch</span><span class="o">=</span><span class="nc">FetchType</span><span class="o">.</span><span class="na">EAGER</span><span class="o">)</span>
+	<span class="nd">@OneToMany</span><span class="o">(</span>
+				<span class="c1">//CascadeType 사용시, 해당 객체 변경시 자동으로 저장해줌(영속성 전이)</span>
+				<span class="n">cascade</span><span class="o">=</span> <span class="nc">CascadeType</span><span class="o">.</span><span class="na">ALL</span><span class="o">,</span>
+
+				<span class="c1">//영속성 전이 사용시 Lazy Loaind 문제때문에 fetch나 다른 처리 해줘야함</span>
+				<span class="n">fetch</span><span class="o">=</span><span class="nc">FetchType</span><span class="o">.</span><span class="na">EAGER</span>  <span class="o">)</span>
 
 	<span class="c1">//조인 컬럼 사용할 경우 DB에 BoardFile의 (PK키)를 FK로 참조</span>
 	<span class="nd">@JoinColumn</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="s">"file_no"</span><span class="o">)</span>
@@ -344,11 +346,16 @@ Product에 @OneToMany 사용하지 말고(<code class="language-plaintext highli
 </code></pre></div></div>
 
 <blockquote>
-  <p>@JoinColumn 사용 안하면 JPA가 자동으로 <code class="language-plaintext highlighter-rouge">브릿지 테이블</code> 생성해줌</p>
+  <p>영속성 전파 할경우  <code class="language-plaintext highlighter-rouge">Lazy Loading</code> 문제 해결 꼭해야함</p>
+  <ul>
+    <li>해결법 예시 : fetch로 EAGER 주거나, @Transactional 어노테이션 주기</li>
+  </ul>
 </blockquote>
 
+<p><br /></p>
+
 <blockquote>
-  <p>영속성 전파 할경우  <code class="language-plaintext highlighter-rouge">Lazy Loading</code> 문제 해결 꼭해야함</p>
+  <p>@JoinColumn 사용 안하면 JPA가 자동으로 <code class="language-plaintext highlighter-rouge">브릿지 테이블</code> 생성해줌</p>
 </blockquote>
 
 <p><br /><br /><br /><br /><br /><br /></p>
