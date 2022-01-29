@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator>
   <link href="https://dongjea2.github.io/tag/book/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://dongjea2.github.io/" rel="alternate" type="text/html" />
-  <updated>2022-01-29T14:27:20+09:00</updated>
+  <updated>2022-01-29T14:37:09+09:00</updated>
   <id>https://dongjea2.github.io/tag/book/feed.xml</id>
 
   
@@ -30,6 +30,40 @@
   
   
 
+  
+    <entry>
+      <title type="html">안티프래질</title>
+      <link href="https://dongjea2.github.io/%EC%95%88%ED%8B%B0%ED%94%84%EB%9E%98%EC%A7%88" rel="alternate" type="text/html" title="안티프래질" />
+      <published>2022-01-28T09:00:00+09:00</published>
+      <updated>2022-01-28T09:00:00+09:00</updated>
+      <id>https://dongjea2.github.io/%EC%95%88%ED%8B%B0%ED%94%84%EB%9E%98%EC%A7%88</id>
+      <content type="html" xml:base="https://dongjea2.github.io/%EC%95%88%ED%8B%B0%ED%94%84%EB%9E%98%EC%A7%88">&lt;p&gt;&lt;img src=&quot;BookCover\안티프래질.jpg&quot; alt=&quot;책 커버&quot; /&gt;&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>동재</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="book" />
+      
+
+      
+        <summary type="html">불확실성을 전략적으로 포용해야하는 이유</summary>
+      
+
+      
+      
+    </entry>
   
     <entry>
       <title type="html">오리진</title>
