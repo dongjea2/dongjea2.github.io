@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator>
   <link href="https://dongjea2.github.io/tag/spring/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://dongjea2.github.io/" rel="alternate" type="text/html" />
-  <updated>2022-01-29T14:09:19+09:00</updated>
+  <updated>2022-01-29T14:27:20+09:00</updated>
   <id>https://dongjea2.github.io/tag/spring/feed.xml</id>
 
   
@@ -30,6 +30,61 @@
   
   
 
+  
+    <entry>
+      <title type="html">JPA 관계 심화</title>
+      <link href="https://dongjea2.github.io/JPA%EC%8B%AC%ED%99%94" rel="alternate" type="text/html" title="JPA 관계 심화" />
+      <published>2022-01-29T09:00:00+09:00</published>
+      <updated>2022-01-29T09:00:00+09:00</updated>
+      <id>https://dongjea2.github.io/JPA%EC%8B%AC%ED%99%94</id>
+      <content type="html" xml:base="https://dongjea2.github.io/JPA%EC%8B%AC%ED%99%94">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;스프링 목록 &lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;./백엔드초기설정&quot;&gt;Spring(1) - 백엔드 초기설정&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./스프링파일업로드1&quot;&gt;Spring(2) -스프링 Client 파일 업로드(1)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./스프링파일업로드2&quot;&gt;Spring(3) -스프링 Client 파일 업로드(2)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./백엔드Restfull변경&quot;&gt;Spring(4) - 백엔드 RESTFULL 로 바꾸기&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./게시판페이징&quot;&gt;Spring(5) - 게시판 페이징 기능 추가하기&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./스프링검색기능추가&quot;&gt;Spring(6) - 검색 기능 추가&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./프론트ContextPath동적설정&quot;&gt;Spring(7) - 프론트 ContextPath 동적 설정 &lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt; 스프링 부트 목록 &lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;./스프링부트초기설정&quot;&gt;Spring Boot(1) - 스프링 부트 초기설정&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./JPA사용해보기&quot;&gt;Spring Boot(2) - JPA 사용해 보기&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./JPA방향설정&quot;&gt;Spring Boot(3) - JPA 방향설정, 관계설정&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./JPA심화&quot;&gt;Spring Boot(4) - JPA 심화&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>동재</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="Spring Boot" />
+      
+        <category term="spring" />
+      
+        <category term="JPA" />
+      
+
+      
+        <summary type="html">JPA 방향설정, 관계에 대한 심화 내용입니다.</summary>
+      
+
+      
+      
+    </entry>
   
     <entry>
       <title type="html">JPA 관계, 방향 설정해보기</title>
@@ -671,61 +726,6 @@ SELECT 할시에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;
 
       
         <summary type="html">JPA를 기존 스프링, 스프링 부트에 사용해보는 내용입니다.</summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">JPA 관계 심화</title>
-      <link href="https://dongjea2.github.io/JPA%EC%8B%AC%ED%99%94" rel="alternate" type="text/html" title="JPA 관계 심화" />
-      <published>2022-01-25T09:00:00+09:00</published>
-      <updated>2022-01-25T09:00:00+09:00</updated>
-      <id>https://dongjea2.github.io/JPA%EC%8B%AC%ED%99%94</id>
-      <content type="html" xml:base="https://dongjea2.github.io/JPA%EC%8B%AC%ED%99%94">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;스프링 목록 &lt;/span&gt;&lt;/p&gt;
-&lt;ul class=&quot;table-of-contents-list&quot;&gt;
-    &lt;li&gt;&lt;a href=&quot;./백엔드초기설정&quot;&gt;Spring(1) - 백엔드 초기설정&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;./스프링파일업로드1&quot;&gt;Spring(2) -스프링 Client 파일 업로드(1)&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;./스프링파일업로드2&quot;&gt;Spring(3) -스프링 Client 파일 업로드(2)&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;./백엔드Restfull변경&quot;&gt;Spring(4) - 백엔드 RESTFULL 로 바꾸기&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;./게시판페이징&quot;&gt;Spring(5) - 게시판 페이징 기능 추가하기&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;./스프링검색기능추가&quot;&gt;Spring(6) - 검색 기능 추가&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;./프론트ContextPath동적설정&quot;&gt;Spring(7) - 프론트 ContextPath 동적 설정 &lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt; 스프링 부트 목록 &lt;/span&gt;&lt;/p&gt;
-&lt;ul class=&quot;table-of-contents-list&quot;&gt;
-    &lt;li&gt;&lt;a href=&quot;./스프링부트초기설정&quot;&gt;Spring Boot(1) - 스프링 부트 초기설정&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;./JPA사용해보기&quot;&gt;Spring Boot(2) - JPA 사용해 보기&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;./JPA방향설정&quot;&gt;Spring Boot(3) - JPA 방향설정, 관계설정&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;./JPA심화&quot;&gt;Spring Boot(4) - JPA 심화&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>동재</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="Spring Boot" />
-      
-        <category term="spring" />
-      
-        <category term="JPA" />
-      
-
-      
-        <summary type="html">JPA 방향설정, 관계에 대한 심화 내용입니다.</summary>
       
 
       
