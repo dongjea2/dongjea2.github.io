@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator>
   <link href="https://dongjea2.github.io/author/dongjae/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://dongjea2.github.io/" rel="alternate" type="text/html" />
-  <updated>2022-01-28T21:41:34+09:00</updated>
+  <updated>2022-01-29T14:03:53+09:00</updated>
   <id>https://dongjea2.github.io/author/dongjae/feed.xml</id>
 
   
@@ -141,7 +141,7 @@ Product에 @OneToMany 사용하지 말고(&lt;code class=&quot;language-plaintex
     &lt;li&gt;생각보다 까다로움&lt;br /&gt;&lt;/li&gt;
     &lt;li&gt;repository 만들때 One 위주로 만들것 (작업단위, 업(JOb) 위주. TDD)&lt;br /&gt;&lt;/li&gt;
     &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cascade&lt;/code&gt;로 영속성 관리, 영속성 전이 까지 고려해야함&lt;br /&gt;&lt;/li&gt;
-    &lt;li&gt;영속성 전이 할거면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Lazy Loading&lt;/code&gt;문제 꼭 고려할 것!!!&lt;br /&gt;&lt;/li&gt;
+    &lt;li&gt;영속성 전이 할거면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Lazy Loading&lt;/code&gt;문제 꼭 고려해야함 아래설명&lt;br /&gt;&lt;/li&gt;
     &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;@JoinColumn&lt;/code&gt; 쓸지 안쓸지 잘 고려해야함&lt;/li&gt;
   &lt;/ul&gt;
 &lt;/blockquote&gt;
@@ -177,6 +177,12 @@ Product에 @OneToMany 사용하지 말고(&lt;code class=&quot;language-plaintex
   &lt;p&gt;영속성 전파 할경우  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Lazy Loading&lt;/code&gt; 문제 해결 꼭해야함&lt;/p&gt;
   &lt;ul&gt;
     &lt;li&gt;해결법 예시 : fetch로 EAGER 주거나, @Transactional 어노테이션 주기&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;문제는 EAGER 사용시 N+1 문제 발생&lt;/li&gt;
   &lt;/ul&gt;
 &lt;/blockquote&gt;
 
@@ -226,7 +232,7 @@ SELECT 할시에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;
 	&lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Date&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;order_dt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
 	
 
-&lt;span class=&quot;c1&quot;&gt;// 이 부분은 OrderInfo가 One인 상황&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// 이 부분은 OrderInfo가 [One]인 상황&lt;/span&gt;
     
     &lt;span class=&quot;c1&quot;&gt;//[Many]&lt;/span&gt;
 	&lt;span class=&quot;nd&quot;&gt;@OneToMany&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cascade&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;CascadeType&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;ALL&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
@@ -244,7 +250,7 @@ SELECT 할시에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;
 &lt;span class=&quot;c1&quot;&gt;// 원래의 예제 코드라면 One의 입장에서만 보여줬겟지만&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;// 실제의 코드는 이런식으로 Many이면서, One일수도 있음&lt;/span&gt;
 
-&lt;span class=&quot;c1&quot;&gt;// 이 부분은 OrderInfo가 Many인 상황&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// 이 부분은 OrderInfo가 [Many]인 상황&lt;/span&gt;
 
     &lt;span class=&quot;c1&quot;&gt;//[One]&lt;/span&gt;
 	&lt;span class=&quot;nd&quot;&gt;@ManyToOne&lt;/span&gt;
@@ -269,7 +275,7 @@ SELECT 할시에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;
 	&lt;span class=&quot;c1&quot;&gt;//복합키로 아이디 쓸때 시리얼라이저블 인터페이스 구현&lt;/span&gt;
 	&lt;span class=&quot;c1&quot;&gt;//객체직렬화를 가능하게 구현한다.&lt;/span&gt;
 
-&lt;span class=&quot;c1&quot;&gt;// 이 부분은 OrderLine가 Many인 상황&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// 이 부분은 OrderLine가 [Many]인 상황&lt;/span&gt;
 
     &lt;span class=&quot;c1&quot;&gt;//[One]&lt;/span&gt;
 	&lt;span class=&quot;nd&quot;&gt;@Id&lt;/span&gt;
@@ -279,7 +285,7 @@ SELECT 할시에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;
 
 
 
-&lt;span class=&quot;c1&quot;&gt;// 이 부분은 OrderLine가 Many인 상황&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// 이 부분은 OrderLine가 [Many]인 상황&lt;/span&gt;
 
     &lt;span class=&quot;c1&quot;&gt;//[One]&lt;/span&gt;
 	&lt;span class=&quot;nd&quot;&gt;@Id&lt;/span&gt;
@@ -288,14 +294,24 @@ SELECT 할시에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;
 	&lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Pruduct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;order_p&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;lazy-loding-문제-해결법&quot;&gt;Lazy Loding 문제 해결법&lt;/h3&gt;
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;lazy-loding-문제-해결법&quot;&gt;Lazy Loding 문제 해결법&lt;/h1&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;@Transactional&lt;/code&gt; 사용&lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;@OneToMany에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;fetch=FetchType.EAGER&lt;/code&gt;사용&lt;/li&gt;
-  &lt;li&gt;하지만 성능에 영향을 줌으로 신중히 사용할 것&lt;/li&gt;
+  &lt;li&gt;@OneToMany에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;fetch=FetchType.EAGER&lt;/code&gt;사용(N+1문제 유의)&lt;br /&gt;
+ 성능에 영향을 줌으로 신중히 사용할 것&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;h4 id=&quot;n1문제-발생-설명링크&quot;&gt;&lt;a href=&quot;https://www.popit.kr/jpa-n1-발생원인과-해결-방법/&quot;&gt;N+1문제 발생 설명(링크)&lt;/a&gt;&lt;/h4&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;transactional-쓰면-오류-안나는-이유&quot;&gt;@Transactional 쓰면 오류 안나는 이유&lt;/h3&gt;
 &lt;ul&gt;
@@ -304,21 +320,27 @@ SELECT 할시에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;
 
 &lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;@Transactional 안쓴 경우&lt;/p&gt;
+&lt;p&gt;@Transactional &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;없는&lt;/code&gt; 경우&lt;/p&gt;
 &lt;blockquote&gt;
-  &lt;p&gt;레이지 로딩이 글번호, 글제목 가져옴 , 답글은 아직 안가져옴(조인이라)&lt;br /&gt;
-게시글 검색만하고 닫힘(pc사라짐)&lt;br /&gt;
-이미 pc는 닫혀있음, o.getReplies 로 리플가져오고싶어도 pc가 없어서 오류&lt;br /&gt;&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;레이지 로딩이 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SELECT&lt;/code&gt; 먼저 읽어옴&lt;br /&gt;
+  글번호, 글제목 가져옴 , &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;댓글&lt;/code&gt;은 아직 안가져옴(조인이라)&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+    &lt;li&gt;SELECT 만하고 JOIN구문을 안하고 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pc&lt;/code&gt;를 닫아버림&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+    &lt;li&gt;o.getReplies 로 댓글가져오고싶어도 pc가 이미 닫혀서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;오류&lt;/code&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;/ol&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;p&gt;@Transactional 사용시&lt;/p&gt;
 &lt;blockquote&gt;
-  &lt;p&gt;트랜잭션 어노테이션 사용시 레이지로딩해서 (글 번호, 글제목 가져옴 일단)&lt;br /&gt;
-트랜잭션 아직 안닫혀있음 = find~~다 끝나도 pc 안사라짐&lt;br /&gt;
-o.getReplies 구문 사용할 기회가 남아있음 (pc가 열려있음)&lt;br /&gt;
-o.getReplies select하고 종료&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;레이지 로딩이 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SELECT&lt;/code&gt; 먼저 읽어옴&lt;br /&gt;
+  글번호, 글제목 가져옴 , &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;댓글&lt;/code&gt;은 아직 안가져옴(조인이라)&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;@Transactional&lt;/code&gt; 어노테이션이 로직 끝나기전까지 PC닫는거 막아 줌&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+    &lt;li&gt;o.getReplies 구문 사용할 기회가 남아있음 (pc가 열려있음)&lt;br /&gt;&lt;/li&gt;
+    &lt;li&gt;o.getReplies select하고 종료&lt;/li&gt;
+  &lt;/ol&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;

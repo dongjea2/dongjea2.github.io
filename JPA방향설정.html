@@ -313,7 +313,7 @@ Product에 @OneToMany 사용하지 말고(<code class="language-plaintext highli
     <li>생각보다 까다로움<br /></li>
     <li>repository 만들때 One 위주로 만들것 (작업단위, 업(JOb) 위주. TDD)<br /></li>
     <li><code class="language-plaintext highlighter-rouge">cascade</code>로 영속성 관리, 영속성 전이 까지 고려해야함<br /></li>
-    <li>영속성 전이 할거면 <code class="language-plaintext highlighter-rouge">Lazy Loading</code>문제 꼭 고려할 것!!!<br /></li>
+    <li>영속성 전이 할거면 <code class="language-plaintext highlighter-rouge">Lazy Loading</code>문제 꼭 고려해야함 아래설명<br /></li>
     <li><code class="language-plaintext highlighter-rouge">@JoinColumn</code> 쓸지 안쓸지 잘 고려해야함</li>
   </ul>
 </blockquote>
@@ -349,6 +349,12 @@ Product에 @OneToMany 사용하지 말고(<code class="language-plaintext highli
   <p>영속성 전파 할경우  <code class="language-plaintext highlighter-rouge">Lazy Loading</code> 문제 해결 꼭해야함</p>
   <ul>
     <li>해결법 예시 : fetch로 EAGER 주거나, @Transactional 어노테이션 주기</li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>문제는 EAGER 사용시 N+1 문제 발생</li>
   </ul>
 </blockquote>
 
@@ -398,7 +404,7 @@ SELECT 할시에 <code class="language-plaintext highlighter-rouge">Lazy Loding<
 	<span class="kd">private</span> <span class="nc">Date</span> <span class="n">order_dt</span><span class="o">;</span>
 	
 
-<span class="c1">// 이 부분은 OrderInfo가 One인 상황</span>
+<span class="c1">// 이 부분은 OrderInfo가 [One]인 상황</span>
     
     <span class="c1">//[Many]</span>
 	<span class="nd">@OneToMany</span><span class="o">(</span><span class="n">cascade</span> <span class="o">=</span> <span class="nc">CascadeType</span><span class="o">.</span><span class="na">ALL</span><span class="o">,</span>
@@ -416,7 +422,7 @@ SELECT 할시에 <code class="language-plaintext highlighter-rouge">Lazy Loding<
 <span class="c1">// 원래의 예제 코드라면 One의 입장에서만 보여줬겟지만</span>
 <span class="c1">// 실제의 코드는 이런식으로 Many이면서, One일수도 있음</span>
 
-<span class="c1">// 이 부분은 OrderInfo가 Many인 상황</span>
+<span class="c1">// 이 부분은 OrderInfo가 [Many]인 상황</span>
 
     <span class="c1">//[One]</span>
 	<span class="nd">@ManyToOne</span>
@@ -441,7 +447,7 @@ SELECT 할시에 <code class="language-plaintext highlighter-rouge">Lazy Loding<
 	<span class="c1">//복합키로 아이디 쓸때 시리얼라이저블 인터페이스 구현</span>
 	<span class="c1">//객체직렬화를 가능하게 구현한다.</span>
 
-<span class="c1">// 이 부분은 OrderLine가 Many인 상황</span>
+<span class="c1">// 이 부분은 OrderLine가 [Many]인 상황</span>
 
     <span class="c1">//[One]</span>
 	<span class="nd">@Id</span>
@@ -451,7 +457,7 @@ SELECT 할시에 <code class="language-plaintext highlighter-rouge">Lazy Loding<
 
 
 
-<span class="c1">// 이 부분은 OrderLine가 Many인 상황</span>
+<span class="c1">// 이 부분은 OrderLine가 [Many]인 상황</span>
 
     <span class="c1">//[One]</span>
 	<span class="nd">@Id</span>
@@ -460,14 +466,24 @@ SELECT 할시에 <code class="language-plaintext highlighter-rouge">Lazy Loding<
 	<span class="kd">private</span> <span class="nc">Pruduct</span> <span class="n">order_p</span><span class="o">;</span>
 
 </code></pre></div></div>
-<p><br /><br /></p>
 
-<h3 id="lazy-loding-문제-해결법">Lazy Loding 문제 해결법</h3>
+<p><br /><br />
+<br /><br /><br /><br /></p>
+
+<hr />
+
+<h1 id="lazy-loding-문제-해결법">Lazy Loding 문제 해결법</h1>
 <ul>
   <li><code class="language-plaintext highlighter-rouge">@Transactional</code> 사용<br /></li>
-  <li>@OneToMany에 <code class="language-plaintext highlighter-rouge">fetch=FetchType.EAGER</code>사용</li>
-  <li>하지만 성능에 영향을 줌으로 신중히 사용할 것</li>
+  <li>@OneToMany에 <code class="language-plaintext highlighter-rouge">fetch=FetchType.EAGER</code>사용(N+1문제 유의)<br />
+ 성능에 영향을 줌으로 신중히 사용할 것</li>
 </ul>
+
+<blockquote>
+  <h4 id="n1문제-발생-설명링크"><a href="https://www.popit.kr/jpa-n1-발생원인과-해결-방법/">N+1문제 발생 설명(링크)</a></h4>
+</blockquote>
+
+<p><br /><br /><br /><br /></p>
 
 <h3 id="transactional-쓰면-오류-안나는-이유">@Transactional 쓰면 오류 안나는 이유</h3>
 <ul>
@@ -476,21 +492,27 @@ SELECT 할시에 <code class="language-plaintext highlighter-rouge">Lazy Loding<
 
 <p><br /><br /></p>
 
-<p>@Transactional 안쓴 경우</p>
+<p>@Transactional <code class="language-plaintext highlighter-rouge">없는</code> 경우</p>
 <blockquote>
-  <p>레이지 로딩이 글번호, 글제목 가져옴 , 답글은 아직 안가져옴(조인이라)<br />
-게시글 검색만하고 닫힘(pc사라짐)<br />
-이미 pc는 닫혀있음, o.getReplies 로 리플가져오고싶어도 pc가 없어서 오류<br /></p>
+  <ol>
+    <li>레이지 로딩이 <code class="language-plaintext highlighter-rouge">SELECT</code> 먼저 읽어옴<br />
+  글번호, 글제목 가져옴 , <code class="language-plaintext highlighter-rouge">댓글</code>은 아직 안가져옴(조인이라)<br /><br /></li>
+    <li>SELECT 만하고 JOIN구문을 안하고 <code class="language-plaintext highlighter-rouge">pc</code>를 닫아버림<br /><br /></li>
+    <li>o.getReplies 로 댓글가져오고싶어도 pc가 이미 닫혀서 <code class="language-plaintext highlighter-rouge">오류</code><br /></li>
+  </ol>
 </blockquote>
 
 <p><br /></p>
 
 <p>@Transactional 사용시</p>
 <blockquote>
-  <p>트랜잭션 어노테이션 사용시 레이지로딩해서 (글 번호, 글제목 가져옴 일단)<br />
-트랜잭션 아직 안닫혀있음 = find~~다 끝나도 pc 안사라짐<br />
-o.getReplies 구문 사용할 기회가 남아있음 (pc가 열려있음)<br />
-o.getReplies select하고 종료</p>
+  <ol>
+    <li>레이지 로딩이 <code class="language-plaintext highlighter-rouge">SELECT</code> 먼저 읽어옴<br />
+  글번호, 글제목 가져옴 , <code class="language-plaintext highlighter-rouge">댓글</code>은 아직 안가져옴(조인이라)<br /><br /></li>
+    <li><code class="language-plaintext highlighter-rouge">@Transactional</code> 어노테이션이 로직 끝나기전까지 PC닫는거 막아 줌<br /><br /></li>
+    <li>o.getReplies 구문 사용할 기회가 남아있음 (pc가 열려있음)<br /></li>
+    <li>o.getReplies select하고 종료</li>
+  </ol>
 </blockquote>
 
 <p><br /><br /><br /><br /></p>
