@@ -228,6 +228,113 @@ into the {body} of the default.hbs template -->
     <li><a href="./JPA심화">Spring Boot(4) - JPA 심화</a></li>
 </ul>
 
+<h2 id="발생한-문제">발생한 문제</h2>
+
+<h3 id="1-엔터티에서-id어노테이션을-2개-이상-가질경우-영속성-전파-문제">1. 엔터티에서 @Id어노테이션을 2개 이상 가질경우 영속성 전파 문제</h3>
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">int orderNo</code>로 할시 영속성 전파 안되는 문제</p>
+</blockquote>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Entity</span>
+<span class="nd">@Table</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">"ORDER_LINE"</span><span class="o">)</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">OrderLine</span> <span class="kd">implements</span> <span class="nc">Serializable</span><span class="o">{</span>
+
+<span class="err">`</span>
+	<span class="nd">@Id</span>
+	<span class="nd">@ManyToOne</span>
+	<span class="nd">@JoinColumn</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="s">"order_no"</span><span class="o">)</span>
+	<span class="c1">//영속성 전이때문에 ManyToOne을 쓸수밖에 없다.</span>
+	<span class="c1">// 양방향 처럼보이나, mappedBy 안되있으니깐 양방향아님</span>
+	<span class="kd">private</span> <span class="nc">OrderInfo</span> <span class="n">orderNo</span><span class="o">;</span>
+
+	<span class="nd">@Id</span>
+	<span class="nd">@ManyToOne</span>
+	<span class="nd">@JoinColumn</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="s">"order_prod_no"</span><span class="o">)</span>
+	<span class="kd">private</span> <span class="nc">Product</span> <span class="n">orderProduct</span><span class="o">;</span> 
+
+
+	<span class="kd">private</span> <span class="kt">int</span> <span class="n">orderQuantity</span><span class="o">;</span>
+
+</code></pre></div></div>
+
+<hr />
+
+<p><br /><br /><br /><br /></p>
+
+<h3 id="복합키-문제-해결법">복합키 문제 해결법</h3>
+<blockquote>
+  <ul>
+    <li>복합키를 표현할 때는 식별자 클레스를 만들어준다.</li>
+    <li>@IdClass , @EmbededId 식별자 붙여주기</li>
+  </ul>
+</blockquote>
+
+<p><br /></p>
+
+<p><a href="https://velog.io/@cham/JPA-%EB%B3%B5%ED%95%A9-%ED%82%A4-%EB%A7%A4%ED%95%91%ED%95%98%EB%8A%94-%EB%B2%95">참고예시(링크)</a></p>
+
+<p><br /> <br /> <br /></p>
+
+<h3 id="idclass">@IdClass</h3>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Entity</span>
+<span class="nd">@Table</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">"ORDER_LINE"</span><span class="o">)</span>
+<span class="c1">//이거사용</span>
+<span class="nd">@IdClass</span><span class="o">(</span><span class="nc">OrderLineId</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">OrderLine</span> <span class="o">{</span>
+
+	<span class="nd">@Id</span>
+	<span class="nd">@ManyToOne</span>
+	<span class="nd">@JoinColumn</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="s">"order_no"</span><span class="o">)</span>
+	<span class="c1">//영속성 전이때문에 ManyToOne을 쓸수밖에 없다.</span>
+	<span class="c1">// 양방향 처럼보이나, mappedBy 안되있으니깐 양방향아님</span>
+	<span class="kd">private</span> <span class="nc">OrderInfo</span> <span class="n">orderNo</span><span class="o">;</span>
+
+	<span class="nd">@Id</span>
+	<span class="nd">@ManyToOne</span>
+	<span class="nd">@JoinColumn</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="s">"order_prod_no"</span><span class="o">)</span>
+	<span class="kd">private</span> <span class="nc">Product</span> <span class="n">orderProduct</span><span class="o">;</span> 
+
+
+	<span class="kd">private</span> <span class="kt">int</span> <span class="n">orderQuantity</span><span class="o">;</span>
+</code></pre></div></div>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">OrderLineId</span> <span class="kd">implements</span> <span class="nc">Serializable</span><span class="o">{</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">orderNo</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">orderProduct</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /><br /><br /><br /></p>
+
+<h3 id="embededid">@EmbededId</h3>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Entity</span>
+<span class="nd">@Table</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">"ORDER_LINE"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">OrderLine</span> <span class="o">{</span>
+
+    <span class="nd">@MapId</span><span class="o">(</span><span class="s">"orderNo"</span><span class="o">)</span>
+	<span class="nd">@ManyToOne</span>
+	<span class="nd">@JoinColumn</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="s">"order_no"</span><span class="o">)</span>
+	<span class="kd">private</span> <span class="nc">OrderInfo</span> <span class="n">orderNo</span><span class="o">;</span>
+
+    <span class="nd">@MapId</span><span class="o">(</span><span class="s">"orderProdNo"</span><span class="o">)</span>
+	<span class="nd">@ManyToOne</span>
+	<span class="nd">@JoinColumn</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="s">"order_prod_no"</span><span class="o">)</span>
+	<span class="kd">private</span> <span class="nc">Product</span> <span class="n">orderProduct</span><span class="o">;</span> 
+
+    <span class="nd">@EnbededId</span>
+    <span class="kd">private</span> <span class="nc">OrderLineId</span> <span class="n">id</span><span class="o">;</span>
+
+	<span class="kd">private</span> <span class="kt">int</span> <span class="n">orderQuantity</span><span class="o">;</span>
+</code></pre></div></div>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">OrderLineId</span> <span class="kd">implements</span> <span class="nc">Serializable</span><span class="o">{</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">orderNo</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">orderProdNo</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
 
                 </div>
             </section>
