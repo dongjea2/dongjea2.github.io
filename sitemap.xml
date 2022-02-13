@@ -4,6 +4,38 @@
         xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
     <url>
+        <loc>https://dongjea2.github.io/JPA%EC%9D%BC%EB%8C%80%EC%9D%BC%EC%8B%A4%EC%8A%B5.html</loc>
+        
+        <lastmod>2022-02-13T09:00:00+09:00</lastmod>
+        
+
+        
+        <changefreq>weekly</changefreq>
+        
+
+        
+        <priority>0.5</priority>
+        
+
+    </url>
+    
+    <url>
+        <loc>https://dongjea2.github.io/%EB%B8%94%EB%9E%99%EC%8A%A4%EC%99%84.html</loc>
+        
+        <lastmod>2022-02-05T09:00:00+09:00</lastmod>
+        
+
+        
+        <changefreq>weekly</changefreq>
+        
+
+        
+        <priority>0.5</priority>
+        
+
+    </url>
+    
+    <url>
         <loc>https://dongjea2.github.io/%EC%A3%BD%EC%9D%8C%EC%9D%98%EC%97%90%ED%8B%B0%EC%BC%93.html</loc>
         
         <lastmod>2022-02-05T09:00:00+09:00</lastmod>

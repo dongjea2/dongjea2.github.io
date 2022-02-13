@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator>
   <link href="https://dongjea2.github.io/tag/jpa/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://dongjea2.github.io/" rel="alternate" type="text/html" />
-  <updated>2022-02-05T23:48:09+09:00</updated>
+  <updated>2022-02-13T21:40:54+09:00</updated>
   <id>https://dongjea2.github.io/tag/jpa/feed.xml</id>
 
   
@@ -30,6 +30,202 @@
   
   
 
+  
+    <entry>
+      <title type="html">JPA OneToOne 실습</title>
+      <link href="https://dongjea2.github.io/JPA%EC%9D%BC%EB%8C%80%EC%9D%BC%EC%8B%A4%EC%8A%B5" rel="alternate" type="text/html" title="JPA  OneToOne 실습" />
+      <published>2022-02-13T09:00:00+09:00</published>
+      <updated>2022-02-13T09:00:00+09:00</updated>
+      <id>https://dongjea2.github.io/JPA%EC%9D%BC%EB%8C%80%EC%9D%BC%EC%8B%A4%EC%8A%B5</id>
+      <content type="html" xml:base="https://dongjea2.github.io/JPA%EC%9D%BC%EB%8C%80%EC%9D%BC%EC%8B%A4%EC%8A%B5">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;스프링 목록 &lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;./백엔드초기설정&quot;&gt;Spring(1) - 백엔드 초기설정&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./스프링파일업로드1&quot;&gt;Spring(2) -스프링 Client 파일 업로드(1)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./스프링파일업로드2&quot;&gt;Spring(3) -스프링 Client 파일 업로드(2)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./백엔드Restfull변경&quot;&gt;Spring(4) - 백엔드 RESTFULL 로 바꾸기&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./게시판페이징&quot;&gt;Spring(5) - 게시판 페이징 기능 추가하기&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./스프링검색기능추가&quot;&gt;Spring(6) - 검색 기능 추가&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./프론트ContextPath동적설정&quot;&gt;Spring(7) - 프론트 ContextPath 동적 설정 &lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt; 스프링 부트 목록 &lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;./스프링부트초기설정&quot;&gt;Spring Boot(1) - 스프링 부트 초기설정&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./JPA사용해보기&quot;&gt;Spring Boot(2) - JPA 사용해 보기&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./JPA방향설정&quot;&gt;Spring Boot(3) - JPA 방향설정, 관계설정&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./JPA심화&quot;&gt;Spring Boot(4) - JPA 심화&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;프로젝트-테이블&quot;&gt;[프로젝트 테이블]&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;/PostImg/2022-02-13-JPA일대일실습_1.png&quot; alt=&quot;테이블&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;문제점&quot;&gt;[문제점]&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;project&lt;/code&gt;(부모)는&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;project_change&lt;/code&gt;(자식)의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;식별관계(PK + FK)&lt;/code&gt;이고 ,  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;일대일&lt;/code&gt; 관계 이기 때문에&lt;/p&gt;
+
+&lt;p&gt;DB설계대로 JPA를 구현 할려면  양방향으로 만들어야 했다.&lt;/p&gt;
+
+&lt;p&gt;따라서,  양방향으로 연결 시 주의해야할 점들이 생겨났다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;양방향으로-설정한-이유-mappedby&quot;&gt;[양방향으로 설정한 이유 (mappedBy)]&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;관계의 주인 = 상대를 내 테이블에 fk로 참조 해버려서 (자식, 주인 이됨)&lt;br /&gt;
+부모의 데이터를 삭제하고 싶으면 , 자식을 먼저 삭제해줘야 한다.&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;a부모project에서-자식project_change-단방향--x-&quot;&gt;A.부모(project)에서 자식(project_change) 단방향 ( x )&lt;/h3&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;project&lt;/code&gt;에  project_change_no&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;컬럼&lt;/code&gt; 이 생겨버림으로( 부모가 자식을  FK로 들고있는 상태 )&lt;/p&gt;
+
+&lt;p&gt;기존에 설계한 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;project_change&lt;/code&gt; 의 주키 project_no(PK, FK)가 무의미해 진다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;b자식project_change에서-부모project-단방향--x-&quot;&gt;B.자식(project_change)에서 부모(project) 단방향 ( x )&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;@OneToOne&lt;/code&gt;에서 자식 테이블에 FK를 저장하는 단방향 관계는 JPA에서 지원하지 않는다.&lt;br /&gt;
+   출처: https://ict-nroo.tistory.com/126 [개발자의 기록습관]&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;project_change&lt;/code&gt; Entitiy에서 부모를 멤버변수로 가지고 다니는 단방향 방식을 지원 안 한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;c-부모가-관계의-주인인-양방향---x-&quot;&gt;C. 부모가 관계의 주인인 양방향  ( x )&lt;/h3&gt;
+&lt;p&gt;( project가 컬럼에 자식을 들고 다님)&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;@OneToOne(mappedBy = “project_change”)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;이 방법 역시 기존에 설계한 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;project_change&lt;/code&gt;의 주키 project_no(PK, FK)가 무의미해 진다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;d자식이-관계의-주인인-양방향--ㅇ&quot;&gt;D.자식이 관계의 주인인 양방향 ( ㅇ)&lt;/h3&gt;
+&lt;p&gt;( project_change가 컬럼에 부모를 들고 다님)&lt;/p&gt;
+
+&lt;p&gt;이 방법이 기존에 설계한 DB의 구성과 부합한다.
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;@Id&lt;/code&gt; 어노테이션을 달아주면 FK,PK로 사용 할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt; &lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;실제-코드&quot;&gt;[실제 코드]&lt;/h2&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;projectjava&quot;&gt;project.java&lt;/h3&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;nd&quot;&gt;@Entity&lt;/span&gt;
+&lt;span class=&quot;nd&quot;&gt;@Table&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;project&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Project&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;nd&quot;&gt;@Id&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//시퀀스 설정해줘야함&lt;/span&gt;
+	&lt;span class=&quot;nd&quot;&gt;@GeneratedValue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strategy&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;GenerationType&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;IDENTITY&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+	&lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;		&lt;span class=&quot;n&quot;&gt;projectNo&lt;/span&gt;     &lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;   
+	&lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;	&lt;span class=&quot;n&quot;&gt;longTitle&lt;/span&gt;     &lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;   
+	&lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;	&lt;span class=&quot;n&quot;&gt;projectBrief&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;   
+	&lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;	&lt;span class=&quot;n&quot;&gt;editorPick&lt;/span&gt;    &lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;   
+	&lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;	&lt;span class=&quot;n&quot;&gt;projectImage&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;   
+	&lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;		&lt;span class=&quot;n&quot;&gt;targetPrice&lt;/span&gt;   &lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;   
+	&lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Date&lt;/span&gt;	&lt;span class=&quot;n&quot;&gt;startDate&lt;/span&gt;     &lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;   
+	&lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Date&lt;/span&gt;	&lt;span class=&quot;n&quot;&gt;endDate&lt;/span&gt;       &lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;   
+	&lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;	&lt;span class=&quot;n&quot;&gt;shortTitle&lt;/span&gt;    &lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;   
+	&lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;	&lt;span class=&quot;n&quot;&gt;projectContent&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;   
+	&lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;	&lt;span class=&quot;n&quot;&gt;projectUrl&lt;/span&gt;    &lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;   
+
+	&lt;span class=&quot;c1&quot;&gt;//좋아요 상태 (로그인 유저가 이프로젝트가 좋아요 일시 true)&lt;/span&gt;
+	&lt;span class=&quot;nd&quot;&gt;@Transient&lt;/span&gt;
+	&lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;loginedUserProjectInterest&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; 
+
+
+
+	&lt;span class=&quot;c1&quot;&gt;//JOINED TABLE&lt;/span&gt;
+	&lt;span class=&quot;nd&quot;&gt;@OneToOne&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mappedBy&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;project&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+			  &lt;span class=&quot;n&quot;&gt;cascade&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;CascadeType&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;ALL&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+			  &lt;span class=&quot;c1&quot;&gt;//,fetch = FetchType.EAGER)  &lt;/span&gt;
+	&lt;span class=&quot;c1&quot;&gt;//저장 시 projectChange에 setProject해야함(관계의 주인 ProjectChange)&lt;/span&gt;
+	&lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ProjectChange&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;projectChange&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+	&lt;span class=&quot;nd&quot;&gt;@ManyToOne&lt;/span&gt;
+	&lt;span class=&quot;nd&quot;&gt;@JoinColumn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;category_no&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+	&lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Category&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;category&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+	&lt;span class=&quot;nd&quot;&gt;@ManyToOne&lt;/span&gt;
+	&lt;span class=&quot;nd&quot;&gt;@JoinColumn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;user_no&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+	&lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Customer&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;maker&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+	
+	&lt;span class=&quot;nd&quot;&gt;@OneToMany&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mappedBy&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;project&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+	&lt;span class=&quot;c1&quot;&gt;//저장 시 Reward에 setProject해야함&lt;/span&gt;
+	&lt;span class=&quot;c1&quot;&gt;//프로젝트 삭제시 리워드도 자동삭제&lt;/span&gt;
+	&lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Reward&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;reward&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+	                                  
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;projectchangejava&quot;&gt;projectChange.java&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/dongjea2/RhollingIdeas/issues/6&quot;&gt;@MpasId 쓰는 이유 (링크)&lt;/a&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;nd&quot;&gt;@Entity&lt;/span&gt;
+&lt;span class=&quot;nd&quot;&gt;@Table&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;project_change&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ProjectChange&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+	
+	&lt;span class=&quot;nd&quot;&gt;@Id&lt;/span&gt;
+	&lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;projectNo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+	
+	&lt;span class=&quot;nd&quot;&gt;@MapsId&lt;/span&gt;
+	&lt;span class=&quot;nd&quot;&gt;@OneToOne&lt;/span&gt;
+	&lt;span class=&quot;nd&quot;&gt;@JoinColumn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;project_no&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+	&lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Project&lt;/span&gt;	&lt;span class=&quot;n&quot;&gt;project&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+	&lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;		&lt;span class=&quot;n&quot;&gt;supportCnt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;	&lt;span class=&quot;n&quot;&gt;projectStatus&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;		&lt;span class=&quot;n&quot;&gt;sumPrice&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;		&lt;span class=&quot;n&quot;&gt;projectLikeCnt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+	
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>동재</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="Spring Boot" />
+      
+        <category term="spring" />
+      
+        <category term="JPA" />
+      
+
+      
+        <summary type="html">JPA 방향설정, 관계에 대한 심화 내용입니다.</summary>
+      
+
+      
+      
+    </entry>
   
     <entry>
       <title type="html">JPA 관계 심화</title>
