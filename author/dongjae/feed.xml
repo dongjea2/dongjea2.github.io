@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator>
   <link href="https://dongjea2.github.io/author/dongjae/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://dongjea2.github.io/" rel="alternate" type="text/html" />
-  <updated>2022-02-13T21:40:54+09:00</updated>
+  <updated>2022-02-13T21:42:38+09:00</updated>
   <id>https://dongjea2.github.io/author/dongjae/feed.xml</id>
 
   
@@ -54,6 +54,7 @@
     &lt;li&gt;&lt;a href=&quot;./JPA사용해보기&quot;&gt;Spring Boot(2) - JPA 사용해 보기&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./JPA방향설정&quot;&gt;Spring Boot(3) - JPA 방향설정, 관계설정&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./JPA심화&quot;&gt;Spring Boot(4) - JPA 심화&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./JPA일대일실습&quot;&gt;Spring Boot(5) - JPA 일대일 실습&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
@@ -425,6 +426,7 @@
     &lt;li&gt;&lt;a href=&quot;./JPA사용해보기&quot;&gt;Spring Boot(2) - JPA 사용해 보기&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./JPA방향설정&quot;&gt;Spring Boot(3) - JPA 방향설정, 관계설정&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./JPA심화&quot;&gt;Spring Boot(4) - JPA 심화&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./JPA일대일실습&quot;&gt;Spring Boot(5) - JPA 일대일 실습&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;발생한-문제&quot;&gt;발생한 문제&lt;/h2&gt;
@@ -755,6 +757,7 @@
     &lt;li&gt;&lt;a href=&quot;./JPA사용해보기&quot;&gt;Spring Boot(2) - JPA 사용해 보기&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./JPA방향설정&quot;&gt;Spring Boot(3) - JPA 방향설정, 관계설정&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./JPA심화&quot;&gt;Spring Boot(4) - JPA 심화&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./JPA일대일실습&quot;&gt;Spring Boot(5) - JPA 일대일 실습&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -1103,6 +1106,7 @@ SELECT 할시에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;
     &lt;li&gt;&lt;a href=&quot;./JPA사용해보기&quot;&gt;Spring Boot(2) - JPA 사용해 보기&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./JPA방향설정&quot;&gt;Spring Boot(3) - JPA 방향설정, 관계설정&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./JPA심화&quot;&gt;Spring Boot(4) - JPA 심화&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./JPA일대일실습&quot;&gt;Spring Boot(5) - JPA 일대일 실습&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
@@ -1346,6 +1350,7 @@ SELECT 할시에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;
     &lt;li&gt;&lt;a href=&quot;./JPA사용해보기&quot;&gt;Spring Boot(2) - JPA 사용해 보기&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./JPA방향설정&quot;&gt;Spring Boot(3) - JPA 방향설정, 관계설정&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./JPA심화&quot;&gt;Spring Boot(4) - JPA 심화&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./JPA일대일실습&quot;&gt;Spring Boot(5) - JPA 일대일 실습&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content>
 
       
@@ -1401,6 +1406,7 @@ SELECT 할시에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;
     &lt;li&gt;&lt;a href=&quot;./JPA사용해보기&quot;&gt;Spring Boot(2) - JPA 사용해 보기&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./JPA방향설정&quot;&gt;Spring Boot(3) - JPA 방향설정, 관계설정&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./JPA심화&quot;&gt;Spring Boot(4) - JPA 심화&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./JPA일대일실습&quot;&gt;Spring Boot(5) - JPA 일대일 실습&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -1442,6 +1448,7 @@ SELECT 할시에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;
     &lt;li&gt;&lt;a href=&quot;./JPA사용해보기&quot;&gt;Spring Boot(2) - JPA 사용해 보기&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./JPA방향설정&quot;&gt;Spring Boot(3) - JPA 방향설정, 관계설정&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./JPA심화&quot;&gt;Spring Boot(4) - JPA 심화&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./JPA일대일실습&quot;&gt;Spring Boot(5) - JPA 일대일 실습&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content>
 
       
@@ -1493,6 +1500,7 @@ SELECT 할시에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;
     &lt;li&gt;&lt;a href=&quot;./JPA사용해보기&quot;&gt;Spring Boot(2) - JPA 사용해 보기&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./JPA방향설정&quot;&gt;Spring Boot(3) - JPA 방향설정, 관계설정&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./JPA심화&quot;&gt;Spring Boot(4) - JPA 심화&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./JPA일대일실습&quot;&gt;Spring Boot(5) - JPA 일대일 실습&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt; &lt;br /&gt; &lt;br /&gt;&lt;/p&gt;
@@ -1808,6 +1816,7 @@ SELECT COUNT(*) FROM repboard
     &lt;li&gt;&lt;a href=&quot;./JPA사용해보기&quot;&gt;Spring Boot(2) - JPA 사용해 보기&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./JPA방향설정&quot;&gt;Spring Boot(3) - JPA 방향설정, 관계설정&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./JPA심화&quot;&gt;Spring Boot(4) - JPA 심화&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./JPA일대일실습&quot;&gt;Spring Boot(5) - JPA 일대일 실습&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content>
 
       
