@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator>
   <link href="https://dongjea2.github.io/tag/spring-boot/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://dongjea2.github.io/" rel="alternate" type="text/html" />
-  <updated>2022-02-21T17:06:24+09:00</updated>
+  <updated>2022-02-21T17:08:13+09:00</updated>
   <id>https://dongjea2.github.io/tag/spring-boot/feed.xml</id>
 
   
@@ -33,11 +33,11 @@
   
     <entry>
       <title type="html">QueryDSL 적용해보기 (이클립스+Maven)</title>
-      <link href="https://dongjea2.github.io/JPA%EC%9D%BC%EB%8C%80%EC%9D%BC%EC%8B%A4%EC%8A%B5" rel="alternate" type="text/html" title="QueryDSL 적용해보기 (이클립스+Maven)" />
+      <link href="https://dongjea2.github.io/JPA+QueryDSL%EC%82%AC%EC%9A%A9%ED%95%B4%EB%B3%B4%EA%B8%B0" rel="alternate" type="text/html" title="QueryDSL 적용해보기 (이클립스+Maven)" />
       <published>2022-02-21T09:00:00+09:00</published>
       <updated>2022-02-21T09:00:00+09:00</updated>
-      <id>https://dongjea2.github.io/JPA%EC%9D%BC%EB%8C%80%EC%9D%BC%EC%8B%A4%EC%8A%B5</id>
-      <content type="html" xml:base="https://dongjea2.github.io/JPA%EC%9D%BC%EB%8C%80%EC%9D%BC%EC%8B%A4%EC%8A%B5">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;스프링 목록 &lt;/span&gt;&lt;/p&gt;
+      <id>https://dongjea2.github.io/JPA+QueryDSL%EC%82%AC%EC%9A%A9%ED%95%B4%EB%B3%B4%EA%B8%B0</id>
+      <content type="html" xml:base="https://dongjea2.github.io/JPA+QueryDSL%EC%82%AC%EC%9A%A9%ED%95%B4%EB%B3%B4%EA%B8%B0">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;스프링 목록 &lt;/span&gt;&lt;/p&gt;
 &lt;ul class=&quot;table-of-contents-list&quot;&gt;
     &lt;li&gt;&lt;a href=&quot;./백엔드초기설정&quot;&gt;Spring(1) - 백엔드 초기설정&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./스프링파일업로드1&quot;&gt;Spring(2) -스프링 Client 파일 업로드(1)&lt;/a&gt;&lt;/li&gt;
@@ -254,11 +254,11 @@ maven과 eclipse 를 사용한 예제는 생각보다 적었기 때문에 글로
   
     <entry>
       <title type="html">JPA OneToOne 실습</title>
-      <link href="https://dongjea2.github.io/JPA%EC%9D%BC%EB%8C%80%EC%9D%BC%EC%8B%A4%EC%8A%B5-copy" rel="alternate" type="text/html" title="JPA  OneToOne 실습" />
+      <link href="https://dongjea2.github.io/JPA%EC%9D%BC%EB%8C%80%EC%9D%BC%EC%8B%A4%EC%8A%B5" rel="alternate" type="text/html" title="JPA  OneToOne 실습" />
       <published>2022-02-13T09:00:00+09:00</published>
       <updated>2022-02-13T09:00:00+09:00</updated>
-      <id>https://dongjea2.github.io/JPA%EC%9D%BC%EB%8C%80%EC%9D%BC%EC%8B%A4%EC%8A%B5%20copy</id>
-      <content type="html" xml:base="https://dongjea2.github.io/JPA%EC%9D%BC%EB%8C%80%EC%9D%BC%EC%8B%A4%EC%8A%B5-copy">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;스프링 목록 &lt;/span&gt;&lt;/p&gt;
+      <id>https://dongjea2.github.io/JPA%EC%9D%BC%EB%8C%80%EC%9D%BC%EC%8B%A4%EC%8A%B5</id>
+      <content type="html" xml:base="https://dongjea2.github.io/JPA%EC%9D%BC%EB%8C%80%EC%9D%BC%EC%8B%A4%EC%8A%B5">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;스프링 목록 &lt;/span&gt;&lt;/p&gt;
 &lt;ul class=&quot;table-of-contents-list&quot;&gt;
     &lt;li&gt;&lt;a href=&quot;./백엔드초기설정&quot;&gt;Spring(1) - 백엔드 초기설정&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./스프링파일업로드1&quot;&gt;Spring(2) -스프링 Client 파일 업로드(1)&lt;/a&gt;&lt;/li&gt;
