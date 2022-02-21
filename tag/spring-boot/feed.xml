@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator>
   <link href="https://dongjea2.github.io/tag/spring-boot/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://dongjea2.github.io/" rel="alternate" type="text/html" />
-  <updated>2022-02-21T19:55:55+09:00</updated>
+  <updated>2022-02-21T20:02:03+09:00</updated>
   <id>https://dongjea2.github.io/tag/spring-boot/feed.xml</id>
 
   
@@ -60,14 +60,21 @@
 &lt;h2 id=&quot;querydsl-쓰는-이유&quot;&gt;QueryDSL 쓰는 이유&lt;/h2&gt;
 &lt;blockquote&gt;
   &lt;ul&gt;
-    &lt;li&gt;SQL, JPQL의 문제 : 문자이기 때문에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;실행 시점&lt;/code&gt;에서 문제 발견 가능&lt;br /&gt;&lt;/li&gt;
-    &lt;li&gt;반면 쿼리DSL은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;컴파일&lt;/code&gt; 시점에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;오류 검출&lt;/code&gt; 가능 &lt;br /&gt;&lt;/li&gt;
-    &lt;li&gt;IDE가 해당 로직에 오류,&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;오타&lt;/code&gt;가 있는지 알려줌&lt;/li&gt;
+    &lt;li&gt;SQL, JPQL의 문제  :  문자이기 때문에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;실행 시점&lt;/code&gt;이 되야 문제 발견 가능&lt;br /&gt;&lt;/li&gt;
   &lt;/ul&gt;
 &lt;/blockquote&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;따라서, 쿼리의 문법의 오타로 스트레스 받지 않고 쾌적한 개발환경에서 개발 가능&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;반면 쿼리DSL은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;컴파일&lt;/code&gt; 시점에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;오류 검출&lt;/code&gt; 가능 &lt;br /&gt;
+ 추가로, IDE가 해당 로직에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;오류,오타&lt;/code&gt;가 있는지 알려줌&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;따라서, 쿼리의 문법의 오타로 스트레스 받지 않고 쾌적한 개발환경에서 개발 가능&lt;br /&gt;
+참고 : &lt;a href=&quot;https://www.youtube.com/watch?v=gRqyzi9VGYc&quot;&gt;[T아카데미-JPA 프로그래밍]&lt;/a&gt; 18분 부분&lt;/p&gt;
+
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
@@ -214,6 +221,10 @@ maven과 eclipse 를 사용한 예제는 생각보다 적었기 때문에 글로
 	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 	
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;참고 : &lt;a href=&quot;https://www.youtube.com/watch?v=zMAX7g6rO_Y&quot;&gt;[우아콘2020 QUERYDSL 사용하기]&lt;/a&gt; 3분 부분&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;Test 코드 제대로 작동되는지 확인&lt;/p&gt;

@@ -232,14 +232,21 @@ into the {body} of the default.hbs template -->
 <h2 id="querydsl-쓰는-이유">QueryDSL 쓰는 이유</h2>
 <blockquote>
   <ul>
-    <li>SQL, JPQL의 문제 : 문자이기 때문에 <code class="language-plaintext highlighter-rouge">실행 시점</code>에서 문제 발견 가능<br /></li>
-    <li>반면 쿼리DSL은 <code class="language-plaintext highlighter-rouge">컴파일</code> 시점에서 <code class="language-plaintext highlighter-rouge">오류 검출</code> 가능 <br /></li>
-    <li>IDE가 해당 로직에 오류,<code class="language-plaintext highlighter-rouge">오타</code>가 있는지 알려줌</li>
+    <li>SQL, JPQL의 문제  :  문자이기 때문에 <code class="language-plaintext highlighter-rouge">실행 시점</code>이 되야 문제 발견 가능<br /></li>
   </ul>
 </blockquote>
 
 <blockquote>
-  <p>따라서, 쿼리의 문법의 오타로 스트레스 받지 않고 쾌적한 개발환경에서 개발 가능</p>
+  <ul>
+    <li>반면 쿼리DSL은 <code class="language-plaintext highlighter-rouge">컴파일</code> 시점에서 <code class="language-plaintext highlighter-rouge">오류 검출</code> 가능 <br />
+ 추가로, IDE가 해당 로직에 <code class="language-plaintext highlighter-rouge">오류,오타</code>가 있는지 알려줌</li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <p>따라서, 쿼리의 문법의 오타로 스트레스 받지 않고 쾌적한 개발환경에서 개발 가능<br />
+참고 : <a href="https://www.youtube.com/watch?v=gRqyzi9VGYc">[T아카데미-JPA 프로그래밍]</a> 18분 부분</p>
+
 </blockquote>
 
 <p><br /><br /><br /></p>
@@ -386,6 +393,10 @@ maven과 eclipse 를 사용한 예제는 생각보다 적었기 때문에 글로
 	<span class="o">}</span>
 	
 </code></pre></div></div>
+
+<blockquote>
+  <p>참고 : <a href="https://www.youtube.com/watch?v=zMAX7g6rO_Y">[우아콘2020 QUERYDSL 사용하기]</a> 3분 부분</p>
+</blockquote>
 
 <blockquote>
   <p>Test 코드 제대로 작동되는지 확인</p>
