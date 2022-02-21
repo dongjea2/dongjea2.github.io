@@ -11,7 +11,7 @@
 
 
 
-    <title>블랙스완</title>
+    <title>JPA  OneToOne 실습</title>
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -54,30 +54,30 @@
     <!-- This tag outputs SEO meta+structured data and other important settings -->
     <meta name="description" content="기술 , 서평 etc." />
     <link rel="shortcut icon" href="https://dongjea2.github.io/assets/built/images/favicon.png" type="image/png" />
-    <link rel="canonical" href="https://dongjea2.github.io/%EB%B8%94%EB%9E%99%EC%8A%A4%EC%99%84" />
+    <link rel="canonical" href="https://dongjea2.github.io/JPA%EC%9D%BC%EB%8C%80%EC%9D%BC%EC%8B%A4%EC%8A%B5-copy" />
     <meta name="referrer" content="no-referrer-when-downgrade" />
 
      <!--title below is coming from _includes/dynamic_title-->
     <meta property="og:site_name" content="Lv0부터 시작하는 코딩생활" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="블랙스완" />
-    <meta property="og:description" content="간단한 평가 개인 평점 8/10 살아남은 사람들의 이야기는 오류가 있다. 그간 죽어나간 사람들의 이야기는 기록되지 않았기 때문에. 우리는 왜 이런 간단한 사실 조차 인지하기 힘들까? 블랙스완에선 유독 인간이 통계적인 착각에 잘 빠진다는 사실을 강조한다. (연관된 책 대니얼 카너먼 생각의 관한 생각을 참고) 그 통계적 편향에 대한 핵심적 질문을 던지며 ," />
-    <meta property="og:url" content="https://dongjea2.github.io/%EB%B8%94%EB%9E%99%EC%8A%A4%EC%99%84" />
-    <meta property="og:image" content="https://dongjea2.github.io/BookCover/블랙스완.jpg" />
+    <meta property="og:title" content="JPA  OneToOne 실습" />
+    <meta property="og:description" content="스프링 목록 Spring(1) - 백엔드 초기설정 Spring(2) -스프링 Client 파일 업로드(1) Spring(3) -스프링 Client 파일 업로드(2) Spring(4) - 백엔드 RESTFULL 로 바꾸기 Spring(5) - 게시판 페이징 기능 추가하기 Spring(6) - 검색 기능 추가 Spring(7) - 프론트 ContextPath 동적 설정 스프링 부트 목록 Spring Boot(1) - 스프링 부트 초기설정 Spring Boot(2)" />
+    <meta property="og:url" content="https://dongjea2.github.io/JPA%EC%9D%BC%EB%8C%80%EC%9D%BC%EC%8B%A4%EC%8A%B5-copy" />
+    <meta property="og:image" content="https://dongjea2.github.io/assets/built/images/jpa.png" />
     <meta property="article:publisher" content="https://www.facebook.com/" />
     <meta property="article:author" content="https://www.facebook.com/" />
-    <meta property="article:published_time" content="2022-02-05T09:00:00+09:00" />
-    <meta property="article:modified_time" content="2022-02-05T09:00:00+09:00" />
-    <meta property="article:tag" content="Book" />
+    <meta property="article:published_time" content="2022-02-13T09:00:00+09:00" />
+    <meta property="article:modified_time" content="2022-02-13T09:00:00+09:00" />
+    <meta property="article:tag" content="Spring Boot" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="블랙스완" />
-    <meta name="twitter:description" content="간단한 평가 개인 평점 8/10 살아남은 사람들의 이야기는 오류가 있다. 그간 죽어나간 사람들의 이야기는 기록되지 않았기 때문에. 우리는 왜 이런 간단한 사실 조차 인지하기 힘들까? 블랙스완에선 유독 인간이 통계적인 착각에 잘 빠진다는 사실을 강조한다. (연관된 책 대니얼 카너먼 생각의 관한 생각을 참고) 그 통계적 편향에 대한 핵심적 질문을 던지며 ," />
+    <meta name="twitter:title" content="JPA  OneToOne 실습" />
+    <meta name="twitter:description" content="스프링 목록 Spring(1) - 백엔드 초기설정 Spring(2) -스프링 Client 파일 업로드(1) Spring(3) -스프링 Client 파일 업로드(2) Spring(4) - 백엔드 RESTFULL 로 바꾸기 Spring(5) - 게시판 페이징 기능 추가하기 Spring(6) - 검색 기능 추가 Spring(7) - 프론트 ContextPath 동적 설정 스프링 부트 목록 Spring Boot(1) - 스프링 부트 초기설정 Spring Boot(2)" />
     <meta name="twitter:url" content="https://dongjea2.github.io/" />
-    <meta name="twitter:image" content="https://dongjea2.github.io/BookCover/블랙스완.jpg" />
+    <meta name="twitter:image" content="https://dongjea2.github.io/assets/built/images/jpa.png" />
     <meta name="twitter:label1" content="Written by" />
     <meta name="twitter:data1" content="Lv0부터 시작하는 코딩생활" />
     <meta name="twitter:label2" content="Filed under" />
-    <meta name="twitter:data2" content="Book" />
+    <meta name="twitter:data2" content="Spring Boot" />
     <meta name="twitter:site" content="@" />
     <meta name="twitter:creator" content="@" />
     <meta property="og:image:width" content="1400" />
@@ -92,18 +92,18 @@
         "name": "Lv0부터 시작하는 코딩생활",
         "logo": "https://dongjea2.github.io/"
     },
-    "url": "https://dongjea2.github.io/%EB%B8%94%EB%9E%99%EC%8A%A4%EC%99%84",
+    "url": "https://dongjea2.github.io/JPA%EC%9D%BC%EB%8C%80%EC%9D%BC%EC%8B%A4%EC%8A%B5-copy",
     "image": {
         "@type": "ImageObject",
-        "url": "https://dongjea2.github.io/BookCover/블랙스완.jpg",
+        "url": "https://dongjea2.github.io/assets/built/images/jpa.png",
         "width": 2000,
         "height": 666
     },
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://dongjea2.github.io/%EB%B8%94%EB%9E%99%EC%8A%A4%EC%99%84"
+        "@id": "https://dongjea2.github.io/JPA%EC%9D%BC%EB%8C%80%EC%9D%BC%EC%8B%A4%EC%8A%B5-copy"
     },
-    "description": "간단한 평가 개인 평점 8/10 살아남은 사람들의 이야기는 오류가 있다. 그간 죽어나간 사람들의 이야기는 기록되지 않았기 때문에. 우리는 왜 이런 간단한 사실 조차 인지하기 힘들까? 블랙스완에선 유독 인간이 통계적인 착각에 잘 빠진다는 사실을 강조한다. (연관된 책 대니얼 카너먼 생각의 관한 생각을 참고) 그 통계적 편향에 대한 핵심적 질문을 던지며 ,"
+    "description": "스프링 목록 Spring(1) - 백엔드 초기설정 Spring(2) -스프링 Client 파일 업로드(1) Spring(3) -스프링 Client 파일 업로드(2) Spring(4) - 백엔드 RESTFULL 로 바꾸기 Spring(5) - 게시판 페이징 기능 추가하기 Spring(6) - 검색 기능 추가 Spring(7) - 프론트 ContextPath 동적 설정 스프링 부트 목록 Spring Boot(1) - 스프링 부트 초기설정 Spring Boot(2)"
 }
     </script>
 
@@ -116,7 +116,7 @@
     </script> -->
 
     <meta name="generator" content="Jekyll 3.6.2" />
-    <link rel="alternate" type="application/rss+xml" title="블랙스완" href="/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="JPA  OneToOne 실습" href="/feed.xml" />
 
 
 </head>
@@ -174,54 +174,201 @@ into the {body} of the default.hbs template -->
 <main id="site-main" class="site-main outer" role="main">
     <div class="inner">
 
-        <article class="post-full  tag-book post ">
+        <article class="post-full  tag-spring-boot tag-spring tag-jpa post ">
 
             <header class="post-full-header">
                 <section class="post-full-meta">
-                    <time class="post-full-meta-date" datetime=" 5 February 2022"> 5 February 2022</time>
+                    <time class="post-full-meta-date" datetime="13 February 2022">13 February 2022</time>
                     
                         <span class="date-divider">/</span>
                         
                             
-                               <a href='/tag/book/'>BOOK</a>
+                               <a href='/tag/spring-boot/'>SPRING BOOT</a>,
+                            
+                        
+                            
+                               <a href='/tag/spring/'>SPRING</a>,
+                            
+                        
+                            
+                               <a href='/tag/jpa/'>JPA</a>
                             
                         
                     
                 </section>
-                <h1 class="post-full-title">블랙스완</h1>
+                <h1 class="post-full-title">JPA  OneToOne 실습</h1>
             </header>
 
             <!--
             
-            <figure class="post-full-image" style="background-image: url(/BookCover/블랙스완.jpg)">
+            <figure class="post-full-image" style="background-image: url(/assets/built/images/jpa.png)">
             </figure>
             
             -->
 
             <section class="post-full-content">
                 <div class="kg-card-markdown">
-                    <p><img src="../../BookCover/블랙스완.jpg" alt="책 커버" /></p>
+                    
+<p><span class="table-of-contents-list">스프링 목록 </span></p>
+<ul class="table-of-contents-list">
+    <li><a href="./백엔드초기설정">Spring(1) - 백엔드 초기설정</a></li>
+    <li><a href="./스프링파일업로드1">Spring(2) -스프링 Client 파일 업로드(1)</a></li>
+    <li><a href="./스프링파일업로드2">Spring(3) -스프링 Client 파일 업로드(2)</a></li>
+    <li><a href="./백엔드Restfull변경">Spring(4) - 백엔드 RESTFULL 로 바꾸기</a></li>
+    <li><a href="./게시판페이징">Spring(5) - 게시판 페이징 기능 추가하기</a></li>
+    <li><a href="./스프링검색기능추가">Spring(6) - 검색 기능 추가</a></li>
+    <li><a href="./프론트ContextPath동적설정">Spring(7) - 프론트 ContextPath 동적 설정 </a></li>
+</ul>
 
-<h2 id="간단한-평가">간단한 평가</h2>
+<p><span class="table-of-contents-list"> 스프링 부트 목록 </span></p>
+<ul class="table-of-contents-list">
+    <li><a href="./스프링부트초기설정">Spring Boot(1) - 스프링 부트 초기설정</a></li>
+    <li><a href="./JPA사용해보기">Spring Boot(2) - JPA 사용해 보기</a></li>
+    <li><a href="./JPA방향설정">Spring Boot(3) - JPA 방향설정, 관계설정</a></li>
+    <li><a href="./JPA심화">Spring Boot(4) - JPA 심화</a></li>
+    <li><a href="./JPA일대일실습">Spring Boot(5) - JPA 일대일 실습</a></li>
+</ul>
+
+<p><br /><br /><br /></p>
+
+<h2 id="프로젝트-테이블">[프로젝트 테이블]</h2>
+
+<p><img src="/PostImg/2022-02-13-JPA일대일실습_1.png" alt="테이블" /></p>
+
+<h2 id="문제점">[문제점]</h2>
+
+<p><code class="language-plaintext highlighter-rouge">project</code>(부모)는</p>
+
+<p><code class="language-plaintext highlighter-rouge">project_change</code>(자식)의 <code class="language-plaintext highlighter-rouge">식별관계(PK + FK)</code>이고 ,  <code class="language-plaintext highlighter-rouge">일대일</code> 관계 이기 때문에</p>
+
+<p>DB설계대로 JPA를 구현 할려면  양방향으로 만들어야 했다.</p>
+
+<p>따라서,  양방향으로 연결 시 주의해야할 점들이 생겨났다.</p>
+
+<p><br /><br /></p>
+
+<h2 id="양방향으로-설정한-이유-mappedby">[양방향으로 설정한 이유 (mappedBy)]</h2>
+<blockquote>
+  <ul>
+    <li>관계의 주인 = 상대를 내 테이블에 fk로 참조 해버려서 (자식, 주인 이됨)<br />
+부모의 데이터를 삭제하고 싶으면 , 자식을 먼저 삭제해줘야 한다.</li>
+  </ul>
+</blockquote>
+
+<p><br /><br /><br /></p>
+
+<h3 id="a부모project에서-자식project_change-단방향--x-">A.부모(project)에서 자식(project_change) 단방향 ( x )</h3>
+<p><code class="language-plaintext highlighter-rouge">project</code>에  project_change_no<code class="language-plaintext highlighter-rouge">컬럼</code> 이 생겨버림으로( 부모가 자식을  FK로 들고있는 상태 )</p>
+
+<p>기존에 설계한 <code class="language-plaintext highlighter-rouge">project_change</code> 의 주키 project_no(PK, FK)가 무의미해 진다.</p>
+
+<p><br /><br /><br /></p>
+
+<h3 id="b자식project_change에서-부모project-단방향--x-">B.자식(project_change)에서 부모(project) 단방향 ( x )</h3>
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">@OneToOne</code>에서 자식 테이블에 FK를 저장하는 단방향 관계는 JPA에서 지원하지 않는다.<br />
+   출처: https://ict-nroo.tistory.com/126 [개발자의 기록습관]</p>
+</blockquote>
+
+<p><code class="language-plaintext highlighter-rouge">project_change</code> Entitiy에서 부모를 멤버변수로 가지고 다니는 단방향 방식을 지원 안 한다.</p>
+
+<p><br /><br /></p>
+
+<h3 id="c-부모가-관계의-주인인-양방향---x-">C. 부모가 관계의 주인인 양방향  ( x )</h3>
+<p>( project가 컬럼에 자식을 들고 다님)</p>
+<blockquote>
+  <p>@OneToOne(mappedBy = “project_change”)</p>
+</blockquote>
+
+<p>이 방법 역시 기존에 설계한 <code class="language-plaintext highlighter-rouge">project_change</code>의 주키 project_no(PK, FK)가 무의미해 진다.</p>
+
+<p><br /><br /><br /></p>
+
+<h3 id="d자식이-관계의-주인인-양방향--ㅇ">D.자식이 관계의 주인인 양방향 ( ㅇ)</h3>
+<p>( project_change가 컬럼에 부모를 들고 다님)</p>
+
+<p>이 방법이 기존에 설계한 DB의 구성과 부합한다.
+<code class="language-plaintext highlighter-rouge">@Id</code> 어노테이션을 달아주면 FK,PK로 사용 할 수 있다.</p>
+
+<p><br /><br /> <br /><br /></p>
+
 <hr />
-<p>개인 평점 8/10</p>
 
-<p>살아남은 사람들의 이야기는 오류가 있다.  그간 죽어나간 사람들의 이야기는 기록되지 않았기 때문에.</p>
+<h2 id="실제-코드">[실제 코드]</h2>
+<p><br /></p>
 
-<p>우리는 왜 이런 간단한 사실 조차 인지하기 힘들까?</p>
+<h3 id="projectjava">project.java</h3>
 
-<p>블랙스완에선 유독 인간이 통계적인 착각에 잘 빠진다는 사실을 강조한다.
-(연관된 책 대니얼 카너먼 <code class="language-plaintext highlighter-rouge">생각의 관한 생각</code>을 참고)</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nd">@Entity</span>
+<span class="nd">@Table</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">"project"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Project</span> <span class="o">{</span>
+	<span class="nd">@Id</span> <span class="c1">//시퀀스 설정해줘야함</span>
+	<span class="nd">@GeneratedValue</span><span class="o">(</span><span class="n">strategy</span> <span class="o">=</span> <span class="nc">GenerationType</span><span class="o">.</span><span class="na">IDENTITY</span><span class="o">)</span>
+	<span class="kd">private</span> <span class="kt">int</span>		<span class="n">projectNo</span>     <span class="o">;</span>   
+	<span class="kd">private</span> <span class="nc">String</span>	<span class="n">longTitle</span>     <span class="o">;</span>   
+	<span class="kd">private</span> <span class="nc">String</span>	<span class="n">projectBrief</span>  <span class="o">;</span>   
+	<span class="kd">private</span> <span class="nc">String</span>	<span class="n">editorPick</span>    <span class="o">;</span>   
+	<span class="kd">private</span> <span class="nc">String</span>	<span class="n">projectImage</span>  <span class="o">;</span>   
+	<span class="kd">private</span> <span class="kt">int</span>		<span class="n">targetPrice</span>   <span class="o">;</span>   
+	<span class="kd">private</span> <span class="nc">Date</span>	<span class="n">startDate</span>     <span class="o">;</span>   
+	<span class="kd">private</span> <span class="nc">Date</span>	<span class="n">endDate</span>       <span class="o">;</span>   
+	<span class="kd">private</span> <span class="nc">String</span>	<span class="n">shortTitle</span>    <span class="o">;</span>   
+	<span class="kd">private</span> <span class="nc">String</span>	<span class="n">projectContent</span><span class="o">;</span>   
+	<span class="kd">private</span> <span class="nc">String</span>	<span class="n">projectUrl</span>    <span class="o">;</span>   
 
-<p>그 통계적 편향에 대한 핵심적 질문을 던지며 , 현실의 복잡한 측면을 까다롭게 파고든다.</p>
+	<span class="c1">//좋아요 상태 (로그인 유저가 이프로젝트가 좋아요 일시 true)</span>
+	<span class="nd">@Transient</span>
+	<span class="kd">private</span> <span class="kt">boolean</span> <span class="n">loginedUserProjectInterest</span><span class="o">=</span><span class="kc">false</span><span class="o">;</span> 
 
-<p>흄의 칠면조 문제로 시작하여 , 귀납법의 위험한 측면을 강조하고 여러가지 복잡한 수식과 이론으로 만든
-잘 짜여진 모델들이 작은 오차에 의해 처참 할 정도로 무너저버리는 사례도 보여준다.</p>
 
-<p>결국, 예측 할 수없는걸 예측 하려는 헛수고를 하지말고(모든 예측이 쓸대 없는건 아니다.)</p>
 
-<p>결과의 규모에 맞게 사고하는 방법을 가르쳐 주는 철학서다.</p>
+	<span class="c1">//JOINED TABLE</span>
+	<span class="nd">@OneToOne</span><span class="o">(</span><span class="n">mappedBy</span> <span class="o">=</span> <span class="s">"project"</span><span class="o">,</span>
+			  <span class="n">cascade</span> <span class="o">=</span> <span class="nc">CascadeType</span><span class="o">.</span><span class="na">ALL</span><span class="o">)</span>
+			  <span class="c1">//,fetch = FetchType.EAGER)  </span>
+	<span class="c1">//저장 시 projectChange에 setProject해야함(관계의 주인 ProjectChange)</span>
+	<span class="kd">private</span> <span class="nc">ProjectChange</span> <span class="n">projectChange</span><span class="o">;</span>
 
+	<span class="nd">@ManyToOne</span>
+	<span class="nd">@JoinColumn</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">"category_no"</span><span class="o">)</span>
+	<span class="kd">private</span> <span class="nc">Category</span> <span class="n">category</span><span class="o">;</span>
+
+	<span class="nd">@ManyToOne</span>
+	<span class="nd">@JoinColumn</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">"user_no"</span><span class="o">)</span>
+	<span class="kd">private</span> <span class="nc">Customer</span> <span class="n">maker</span><span class="o">;</span>
+	
+	<span class="nd">@OneToMany</span><span class="o">(</span><span class="n">mappedBy</span> <span class="o">=</span> <span class="s">"project"</span><span class="o">)</span>
+	<span class="c1">//저장 시 Reward에 setProject해야함</span>
+	<span class="c1">//프로젝트 삭제시 리워드도 자동삭제</span>
+	<span class="kd">private</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Reward</span><span class="o">&gt;</span> <span class="n">reward</span><span class="o">;</span>
+	                                  
+</code></pre></div></div>
+
+<p><br /><br /><br /></p>
+
+<h3 id="projectchangejava">projectChange.java</h3>
+<p><a href="https://github.com/dongjea2/RhollingIdeas/issues/6">@MpasId 쓰는 이유 (링크)</a></p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nd">@Entity</span>
+<span class="nd">@Table</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">"project_change"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ProjectChange</span> <span class="o">{</span>
+	
+	<span class="nd">@Id</span>
+	<span class="kd">private</span> <span class="kt">int</span> <span class="n">projectNo</span><span class="o">;</span>
+	
+	<span class="nd">@MapsId</span>
+	<span class="nd">@OneToOne</span>
+	<span class="nd">@JoinColumn</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">"project_no"</span><span class="o">)</span>
+	<span class="kd">private</span> <span class="nc">Project</span>	<span class="n">project</span><span class="o">;</span>
+
+	<span class="kd">private</span> <span class="kt">int</span>		<span class="n">supportCnt</span><span class="o">;</span>
+	<span class="kd">private</span> <span class="nc">String</span>	<span class="n">projectStatus</span><span class="o">;</span>
+	<span class="kd">private</span> <span class="kt">int</span>		<span class="n">sumPrice</span><span class="o">;</span>
+	<span class="kd">private</span> <span class="kt">int</span>		<span class="n">projectLikeCnt</span><span class="o">;</span>
+	
+</code></pre></div></div>
 
                 </div>
             </section>
@@ -278,9 +425,9 @@ into the {body} of the default.hbs template -->
                     <div id="disqus_thread"></div>
                     <script>
                         var disqus_config = function () {
-                            var this_page_url = 'https://dongjea2.github.io/%EB%B8%94%EB%9E%99%EC%8A%A4%EC%99%84';
-                            var this_page_identifier = '/블랙스완';
-                            var this_page_title = '블랙스완';
+                            var this_page_url = 'https://dongjea2.github.io/JPA%EC%9D%BC%EB%8C%80%EC%9D%BC%EC%8B%A4%EC%8A%B5-copy';
+                            var this_page_identifier = '/JPA일대일실습 copy';
+                            var this_page_title = 'JPA  OneToOne 실습';
                         };
                         (function() {
                             var d = document, s = d.createElement('script');
@@ -314,7 +461,7 @@ into the {body} of the default.hbs template -->
                         <header class="read-next-card-header">
                             <small class="read-next-card-header-sitetitle">&mdash; Lv0부터 시작하는 코딩생활 &mdash;</small>
                             
-                                <h3 class="read-next-card-header-title"><a href="/tag/book/">Book</a></h3>
+                                <h3 class="read-next-card-header-title"><a href="/tag/spring-boot/">Spring boot</a></h3>
                             
                         </header>
                         <div class="read-next-divider"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 14.5s2 3 5 3 5.5-2.463 5.5-5.5S21 6.5 18 6.5c-5 0-7 11-12 11C2.962 17.5.5 15.037.5 12S3 6.5 6 6.5s4.5 3.5 4.5 3.5"/></svg>
@@ -324,35 +471,16 @@ into the {body} of the default.hbs template -->
                                 
                                 
                                   
-                                
-                                  
-                                
-                                  
+                                    
+                                        
+                                        
+                                            <li><a href="/JPA%EC%9D%BC%EB%8C%80%EC%9D%BC%EC%8B%A4%EC%8A%B5">QueryDSL 적용해보기 (이클립스+Maven)</a></li>
+                                        
                                     
                                   
                                 
                                   
                                     
-                                        
-                                        
-                                            <li><a href="/%EC%A3%BD%EC%9D%8C%EC%9D%98%EC%97%90%ED%8B%B0%EC%BC%93">죽음의 에티켓</a></li>
-                                        
-                                    
-                                  
-                                
-                                  
-                                
-                                  
-                                
-                                  
-                                    
-                                        
-                                        
-                                            <li><a href="/%EC%95%88%ED%8B%B0%ED%94%84%EB%9E%98%EC%A7%88">안티프래질</a></li>
-                                        
-                                    
-                                  
-                                
                                   
                                 
                                   
@@ -365,13 +493,27 @@ into the {body} of the default.hbs template -->
                                     
                                         
                                         
-                                            <li><a href="/%EC%98%A4%EB%A6%AC%EC%A7%84">오리진</a></li>
+                                            <li><a href="/JPA%EC%8B%AC%ED%99%94">JPA 관계 심화</a></li>
                                         
                                     
                                   
                                 
                                   
                                 
+                                  
+                                    
+                                        
+                                        
+                                            <li><a href="/JPA%EB%B0%A9%ED%96%A5%EC%84%A4%EC%A0%95">JPA 관계, 방향 설정해보기</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
                                   
                                 
                                   
@@ -389,14 +531,24 @@ into the {body} of the default.hbs template -->
                                         
                                         
                                     
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
                                   
                                 
                             </ul>
                         </div>
                         <footer class="read-next-card-footer">
-                            <a href="/tag/book/">
+                            <a href="/tag/spring-boot/">
                                 
-                                    See all 4 posts  →
+                                    See all 5 posts  →
                                 
                             </a>
                         </footer>
@@ -410,12 +562,12 @@ into the {body} of the default.hbs template -->
 
     <article class="post-card post-template">
         
-            <a class="post-card-image-link" href="/JPA%EC%9D%BC%EB%8C%80%EC%9D%BC%EC%8B%A4%EC%8A%B5-copy">
+            <a class="post-card-image-link" href="/JPA%EC%9D%BC%EB%8C%80%EC%9D%BC%EC%8B%A4%EC%8A%B5">
                 <div class="post-card-image" style="background-image: url(/assets/built/images/jpa.png)"></div>
             </a>
         
         <div class="post-card-content">
-            <a class="post-card-content-link" href="/JPA%EC%9D%BC%EB%8C%80%EC%9D%BC%EC%8B%A4%EC%8A%B5-copy">
+            <a class="post-card-content-link" href="/JPA%EC%9D%BC%EB%8C%80%EC%9D%BC%EC%8B%A4%EC%8A%B5">
                 <header class="post-card-header">
                     
                         
@@ -424,20 +576,20 @@ into the {body} of the default.hbs template -->
                             
                         
                             
-                               <span class="post-card-tags">Spring</span>
+                               <span class="post-card-tags">Jpa</span>
                             
                         
                             
-                                <span class="post-card-tags">Jpa</span>
+                                <span class="post-card-tags">Querydsl</span>
                             
                         
                     
 
-                    <h2 class="post-card-title">JPA  OneToOne 실습</h2>
+                    <h2 class="post-card-title">QueryDSL 적용해보기 (이클립스+Maven)</h2>
                 </header>
                 <section class="post-card-excerpt">
                     
-                        <p>JPA 방향설정, 관계에 대한 심화 내용입니다.</p>
+                        <p>QueryDSL 설정해보기</p>
                     
                 </section>
             </a>
@@ -470,12 +622,12 @@ into the {body} of the default.hbs template -->
 
     <article class="post-card post-template">
         
-            <a class="post-card-image-link" href="/%EC%A3%BD%EC%9D%8C%EC%9D%98%EC%97%90%ED%8B%B0%EC%BC%93">
-                <div class="post-card-image" style="background-image: url(/BookCover/죽음의에티켓.jpg)"></div>
+            <a class="post-card-image-link" href="/%EB%B8%94%EB%9E%99%EC%8A%A4%EC%99%84">
+                <div class="post-card-image" style="background-image: url(/BookCover/블랙스완.jpg)"></div>
             </a>
         
         <div class="post-card-content">
-            <a class="post-card-content-link" href="/%EC%A3%BD%EC%9D%8C%EC%9D%98%EC%97%90%ED%8B%B0%EC%BC%93">
+            <a class="post-card-content-link" href="/%EB%B8%94%EB%9E%99%EC%8A%A4%EC%99%84">
                 <header class="post-card-header">
                     
                         
@@ -485,11 +637,11 @@ into the {body} of the default.hbs template -->
                         
                     
 
-                    <h2 class="post-card-title">죽음의 에티켓</h2>
+                    <h2 class="post-card-title">블랙스완</h2>
                 </header>
                 <section class="post-card-excerpt">
                     
-                        <p>죽음에도 에티켓이 있다.</p>
+                        <p>알려지지 않은, 예측할수 없는 것들.</p>
                     
                 </section>
             </a>
@@ -529,18 +681,18 @@ into the {body} of the default.hbs template -->
         </a>
     </div>
     <span class="floating-header-divider">&mdash;</span>
-    <div class="floating-header-title">블랙스완</div>
+    <div class="floating-header-title">JPA  OneToOne 실습</div>
     <div class="floating-header-share">
         <div class="floating-header-share-label">Share this <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
     <path d="M7.5 15.5V4a1.5 1.5 0 1 1 3 0v4.5h2a1 1 0 0 1 1 1h2a1 1 0 0 1 1 1H18a1.5 1.5 0 0 1 1.5 1.5v3.099c0 .929-.13 1.854-.385 2.748L17.5 23.5h-9c-1.5-2-5.417-8.673-5.417-8.673a1.2 1.2 0 0 1 1.76-1.605L7.5 15.5zm6-6v2m-3-3.5v3.5m6-1v2"/>
 </svg>
 </div>
-        <a class="floating-header-share-tw" href="https://twitter.com/share?text=%EB%B8%94%EB%9E%99%EC%8A%A4%EC%99%84&amp;url=https://dongjea2.github.io/%EB%B8%94%EB%9E%99%EC%8A%A4%EC%99%84"
+        <a class="floating-header-share-tw" href="https://twitter.com/share?text=JPA++OneToOne+%EC%8B%A4%EC%8A%B5&amp;url=https://dongjea2.github.io/JPA%EC%9D%BC%EB%8C%80%EC%9D%BC%EC%8B%A4%EC%8A%B5-copy"
             onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
 
         </a>
-        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://dongjea2.github.io/%EB%B8%94%EB%9E%99%EC%8A%A4%EC%99%84"
+        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://dongjea2.github.io/JPA%EC%9D%BC%EB%8C%80%EC%9D%BC%EC%8B%A4%EC%8A%B5-copy"
             onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
 
