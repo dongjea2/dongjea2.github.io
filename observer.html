@@ -11,7 +11,7 @@
 
 
 
-    <title>안티프래질</title>
+    <title>Observer Pattern(옵저버 패턴)</title>
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -54,30 +54,30 @@
     <!-- This tag outputs SEO meta+structured data and other important settings -->
     <meta name="description" content="기술 , 서평 etc." />
     <link rel="shortcut icon" href="https://dongjea2.github.io/assets/built/images/favicon.png" type="image/png" />
-    <link rel="canonical" href="https://dongjea2.github.io/%EC%95%88%ED%8B%B0%ED%94%84%EB%9E%98%EC%A7%88" />
+    <link rel="canonical" href="https://dongjea2.github.io/observer" />
     <meta name="referrer" content="no-referrer-when-downgrade" />
 
      <!--title below is coming from _includes/dynamic_title-->
     <meta property="og:site_name" content="Lv0부터 시작하는 코딩생활" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="안티프래질" />
-    <meta property="og:description" content="간단한 평가 개인 평점 10/10 [명저 반열] 불확실성. 즉, 리스크를 어떤식으로 관리해야 하는지를 책에서 주 되게 다룬다. 일반인은 리스크에 대해서 다룰 기회가 거의 없을테고, 수 많은 전문가들 조차 제대로 리스크를 측정하지 못하는 상황이 많은 어려운 분야임에도 불구하고, 나심 탈레브는 일반독자들이 이해하기 쉽게 적절한 눈높이를 유지해주면서, 그 속의 핵심 철학을 명확하게" />
-    <meta property="og:url" content="https://dongjea2.github.io/%EC%95%88%ED%8B%B0%ED%94%84%EB%9E%98%EC%A7%88" />
-    <meta property="og:image" content="https://dongjea2.github.io/BookCover/안티프래질.jpg" />
+    <meta property="og:title" content="Observer Pattern(옵저버 패턴)" />
+    <meta property="og:description" content="옵저버 패턴 출판사(주체)와 구독자(옵저버) 의 느슨한 관계?.. 시나리오 Head First 디자인패턴 참조 p.78~p.81 고객사로 부터 부탁받은 날씨측정하는 메소드 getTemparture() getHumididy() 화면출력용 메소드 3개 currentConditionsDisplay(temp,humidity) statisticsDisplay(temp,humidity) forecastDisplay(temp,humidity) 1.날씨 측정하는 클레스 임시로 구현한 메소드들 public class WeatherData { public void measurementsChanged(){ float temp = getTemperature(); float humidity = getHumidity(); //화면출력부분 currentConditionsDisplay(temp,humidity); statisticsDisplay(temp,humidity);" />
+    <meta property="og:url" content="https://dongjea2.github.io/observer" />
+    <meta property="og:image" content="https://dongjea2.github.io/assets/built/images/design.jpg" />
     <meta property="article:publisher" content="https://www.facebook.com/" />
     <meta property="article:author" content="https://www.facebook.com/" />
-    <meta property="article:published_time" content="2022-01-28T09:00:00+09:00" />
-    <meta property="article:modified_time" content="2022-01-28T09:00:00+09:00" />
-    <meta property="article:tag" content="Book" />
+    <meta property="article:published_time" content="2022-03-05T09:00:00+09:00" />
+    <meta property="article:modified_time" content="2022-03-05T09:00:00+09:00" />
+    <meta property="article:tag" content="Design-patterns" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="안티프래질" />
-    <meta name="twitter:description" content="간단한 평가 개인 평점 10/10 [명저 반열] 불확실성. 즉, 리스크를 어떤식으로 관리해야 하는지를 책에서 주 되게 다룬다. 일반인은 리스크에 대해서 다룰 기회가 거의 없을테고, 수 많은 전문가들 조차 제대로 리스크를 측정하지 못하는 상황이 많은 어려운 분야임에도 불구하고, 나심 탈레브는 일반독자들이 이해하기 쉽게 적절한 눈높이를 유지해주면서, 그 속의 핵심 철학을 명확하게" />
+    <meta name="twitter:title" content="Observer Pattern(옵저버 패턴)" />
+    <meta name="twitter:description" content="옵저버 패턴 출판사(주체)와 구독자(옵저버) 의 느슨한 관계?.. 시나리오 Head First 디자인패턴 참조 p.78~p.81 고객사로 부터 부탁받은 날씨측정하는 메소드 getTemparture() getHumididy() 화면출력용 메소드 3개 currentConditionsDisplay(temp,humidity) statisticsDisplay(temp,humidity) forecastDisplay(temp,humidity) 1.날씨 측정하는 클레스 임시로 구현한 메소드들 public class WeatherData { public void measurementsChanged(){ float temp = getTemperature(); float humidity = getHumidity(); //화면출력부분 currentConditionsDisplay(temp,humidity); statisticsDisplay(temp,humidity);" />
     <meta name="twitter:url" content="https://dongjea2.github.io/" />
-    <meta name="twitter:image" content="https://dongjea2.github.io/BookCover/안티프래질.jpg" />
+    <meta name="twitter:image" content="https://dongjea2.github.io/assets/built/images/design.jpg" />
     <meta name="twitter:label1" content="Written by" />
     <meta name="twitter:data1" content="Lv0부터 시작하는 코딩생활" />
     <meta name="twitter:label2" content="Filed under" />
-    <meta name="twitter:data2" content="Book" />
+    <meta name="twitter:data2" content="Design-patterns" />
     <meta name="twitter:site" content="@" />
     <meta name="twitter:creator" content="@" />
     <meta property="og:image:width" content="1400" />
@@ -92,18 +92,18 @@
         "name": "Lv0부터 시작하는 코딩생활",
         "logo": "https://dongjea2.github.io/"
     },
-    "url": "https://dongjea2.github.io/%EC%95%88%ED%8B%B0%ED%94%84%EB%9E%98%EC%A7%88",
+    "url": "https://dongjea2.github.io/observer",
     "image": {
         "@type": "ImageObject",
-        "url": "https://dongjea2.github.io/BookCover/안티프래질.jpg",
+        "url": "https://dongjea2.github.io/assets/built/images/design.jpg",
         "width": 2000,
         "height": 666
     },
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://dongjea2.github.io/%EC%95%88%ED%8B%B0%ED%94%84%EB%9E%98%EC%A7%88"
+        "@id": "https://dongjea2.github.io/observer"
     },
-    "description": "간단한 평가 개인 평점 10/10 [명저 반열] 불확실성. 즉, 리스크를 어떤식으로 관리해야 하는지를 책에서 주 되게 다룬다. 일반인은 리스크에 대해서 다룰 기회가 거의 없을테고, 수 많은 전문가들 조차 제대로 리스크를 측정하지 못하는 상황이 많은 어려운 분야임에도 불구하고, 나심 탈레브는 일반독자들이 이해하기 쉽게 적절한 눈높이를 유지해주면서, 그 속의 핵심 철학을 명확하게"
+    "description": "옵저버 패턴 출판사(주체)와 구독자(옵저버) 의 느슨한 관계?.. 시나리오 Head First 디자인패턴 참조 p.78~p.81 고객사로 부터 부탁받은 날씨측정하는 메소드 getTemparture() getHumididy() 화면출력용 메소드 3개 currentConditionsDisplay(temp,humidity) statisticsDisplay(temp,humidity) forecastDisplay(temp,humidity) 1.날씨 측정하는 클레스 임시로 구현한 메소드들 public class WeatherData { public void measurementsChanged(){ float temp = getTemperature(); float humidity = getHumidity(); //화면출력부분 currentConditionsDisplay(temp,humidity); statisticsDisplay(temp,humidity);"
 }
     </script>
 
@@ -116,7 +116,7 @@
     </script> -->
 
     <meta name="generator" content="Jekyll 3.6.2" />
-    <link rel="alternate" type="application/rss+xml" title="안티프래질" href="/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="Observer Pattern(옵저버 패턴)" href="/feed.xml" />
 
 
 </head>
@@ -174,167 +174,224 @@ into the {body} of the default.hbs template -->
 <main id="site-main" class="site-main outer" role="main">
     <div class="inner">
 
-        <article class="post-full  tag-book post ">
+        <article class="post-full  tag-design-patterns post ">
 
             <header class="post-full-header">
                 <section class="post-full-meta">
-                    <time class="post-full-meta-date" datetime="28 January 2022">28 January 2022</time>
+                    <time class="post-full-meta-date" datetime=" 5 March 2022"> 5 March 2022</time>
                     
                         <span class="date-divider">/</span>
                         
                             
-                               <a href='/tag/book/'>BOOK</a>
+                               <a href='/tag/design-patterns/'>DESIGN-PATTERNS</a>
                             
                         
                     
                 </section>
-                <h1 class="post-full-title">안티프래질</h1>
+                <h1 class="post-full-title">Observer Pattern(옵저버 패턴)</h1>
             </header>
 
             <!--
             
-            <figure class="post-full-image" style="background-image: url(/BookCover/안티프래질.jpg)">
+            <figure class="post-full-image" style="background-image: url(/assets/built/images/design.jpg)">
             </figure>
             
             -->
 
             <section class="post-full-content">
                 <div class="kg-card-markdown">
-                    <p><img src="BookCover\안티프래질.jpg" alt="책 커버" /></p>
+                    <h2 id="옵저버-패턴">옵저버 패턴</h2>
+<ul>
+  <li>출판사(주체)와 구독자(옵저버) 의 느슨한 관계?..</li>
+</ul>
 
-<h2 id="간단한-평가">간단한 평가</h2>
-<hr />
-<p>개인 평점 10/10 [명저 반열]</p>
-
-<p>불확실성.</p>
-
-<p>즉, 리스크를 어떤식으로 관리해야 하는지를 책에서 주 되게 다룬다.<br />
-일반인은 리스크에 대해서 다룰 기회가 거의 없을테고, 수 많은 전문가들 조차 제대로 리스크를 측정하지 못하는 상황이 많은 어려운 분야임에도 불구하고, 
-나심 탈레브는 일반독자들이 이해하기 쉽게 적절한 눈높이를 유지해주면서, 
-그 속의 핵심 철학을 명확하게 설명해준다.</p>
-
-<p>어째서 <code class="language-plaintext highlighter-rouge">4사분면의 위험</code>(아직 알려지지않은 미지의 위험)이 기존 계(시스템)을 가차없이 붕괴시켜 버리는지, 어중한게 개입이 어째서 훨씬 더 나쁜 결과를 초례하는지,</p>
-
-<p>개인의 희생은 집단에 어떤식으로 이득이 되는지를 생생한 예시와 직접 경험해본 사례들을 통해 알려주는 대목이 인상적이다.</p>
-
-<p>물론, 나심탈레브의 모든 사례(길거리 싸움은 안티프래질 하다)에는 동의하지는 않으나, 정말 인상깊은 예시
-(옵션은 현실에도 매 순간 존재한다, 따분한 점심약속과 친한친구의 점심식사 예시를 들며 옵션이 현실에 어떤식으로 적용할 수 있는지)도 정말 많기때문에 꼭 읽어보면 좋은책이다.</p>
-
-<p>물론, 처음 읽기에는 다소 난이도가 있고 기존의 저서 <code class="language-plaintext highlighter-rouge">행운에속지마라</code>, <code class="language-plaintext highlighter-rouge">블랙스완</code> 등등을 읽어서 블랙스완의 개념과 , 안티프래질에 대한 약간의 개념이 있는 상태에서 읽어야 이해 하기 수월해서 어려운 책에 속한다.</p>
-
-<p>하지만, 한번 읽으면 기존의 세계로는 돌아갈 수 없는 균열이 생기게 된다.</p>
-
-<p><br /><br /></p>
-
-<h2 id="인상-깊었던-내용">인상 깊었던 내용</h2>
-<hr />
-
-<p><br /></p>
-
-<h1 id="정의된-지식이-으뜸일까">정의된 지식이 으뜸일까?</h1>
-
-<p>제일 기억에 남는건 뚱보 토니와 소크라테스의 토론(맞짱) 이었다.(p.383) <br /><br />
-소크라테스는 대상의 같는 본질(정의)에 대해 끊임없이 추구한다(이데아)<br /><br />
-반면, 토니는 어떤 대상을 언어나 특정 틀로 정의하기엔 세상이 너무 복잡하다고 생각한다<br />(비트겐슈타인,니체)</p>
-
-<p><br /><br /></p>
-
-<h3 id="주제-경건함">주제: 경건함</h3>
-
+<h2 id="시나리오">시나리오</h2>
 <blockquote>
-  <p>토니: 당신은 경건함과 경건하지 않음을 구별하게 만드는 특징을 정의하라고 말씀하셨습니다. 제가 정말 무엇이 경건한 행위를 실천할 수 있도록 하는지 선생님께 말씀드릴 수 있어야 한다고 생각하십니까?</p>
+  <p>Head First 디자인패턴 참조 p.78~p.81
+고객사로 부터 부탁받은</p>
 </blockquote>
 
+<h6 id="날씨측정하는-메소드">날씨측정하는 메소드</h6>
 <blockquote>
-  <p>소크라테스: 경건함의 의미를 이해하지 않고 그 <code class="language-plaintext highlighter-rouge">의미를 이해하는 척</code> 하면서 어떻게 그 단어를 사용할 수 있습니까?</p>
+  <p><code class="language-plaintext highlighter-rouge">getTemparture()</code><br />
+<code class="language-plaintext highlighter-rouge">getHumididy()</code></p>
 </blockquote>
 
-<p><br /></p>
-
+<h6 id="화면출력용-메소드-3개">화면출력용 메소드 3개</h6>
 <blockquote>
-  <p>(중략)</p>
+  <p>currentConditionsDisplay(temp,humidity)<br />
+ statisticsDisplay(temp,humidity)<br />
+forecastDisplay(temp,humidity)</p>
 </blockquote>
 
-<p><br /></p>
+<p><br /><br /><br /></p>
 
+<h3 id="1날씨-측정하는-클레스">1.날씨 측정하는 클레스</h3>
 <blockquote>
-  <p>토니: 소크라테스 선생님, 말씀해 보십시오. 어린아이들이 모유를 먹일 필요성을 인식하기 위해 모유를 정의해야 합니까?</p>
+  <p>임시로 구현한 메소드들</p>
 </blockquote>
 
-<blockquote>
-  <p>소크라테스: 아니, 그럴 필요는 없습니다.</p>
-</blockquote>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">WeatherData</span> <span class="o">{</span>
 
-<p><br /></p>
 
-<blockquote>
-  <p>토니 :존경하는 소크라테스 선생님, 개가 어떤 주인에게 충성을 해야하는지를 정의할 필요가 있습니까?</p>
-</blockquote>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">measurementsChanged</span><span class="o">(){</span>
+        <span class="kt">float</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">getTemperature</span><span class="o">();</span>
+        <span class="kt">float</span> <span class="n">humidity</span> <span class="o">=</span> <span class="n">getHumidity</span><span class="o">();</span>
 
-<blockquote>
-  <p>소크라테스: 개는 본능에 따라 행동합니다. 자신의 삶을 성찰하지 않습니다. 우리는 개가 아닙니다.</p>
-</blockquote>
+        <span class="c1">//화면출력부분</span>
+        <span class="n">currentConditionsDisplay</span><span class="o">(</span><span class="n">temp</span><span class="o">,</span><span class="n">humidity</span><span class="o">);</span>
+        <span class="n">statisticsDisplay</span><span class="o">(</span><span class="n">temp</span><span class="o">,</span><span class="n">humidity</span><span class="o">);</span>
+        <span class="n">forecastDisplay</span><span class="o">(</span><span class="n">temp</span><span class="o">,</span><span class="n">humidity</span><span class="o">)</span><span class="n">개</span>
+    <span class="o">}</span>
 
-<p><br /></p>
 
-<blockquote>
-  <p>토니: 맞습니다. 소크라테스 선생님, 개는 본응에 따라 행동하고 우리는 개가 아닙니다.<br />
-하지만 아무런 단서가 없는 것을 실천하게 만드는 본능을 완전히 제거해야 할 정도로 인간이 개와 본질적으로 다릅니까? (중략)</p>
-</blockquote>
 
-<blockquote>
-  <p>토니: 소크라테스 선생님, 그러면 우리가 어떤 대상의 의미를 왜 <code class="language-plaintext highlighter-rouge">고정</code>시켜야 한다고 생각하십니까?</p>
-</blockquote>
+    <span class="c1">//임시구현</span>
+    <span class="kd">private</span> <span class="kt">float</span> <span class="nf">getTemperature</span><span class="o">(){</span>
+        <span class="k">return</span> <span class="o">(</span><span class="kt">float</span><span class="o">)</span> <span class="mf">17.1</span><span class="o">;</span>
+    <span class="o">}</span>
 
-<p><br /></p>
+    <span class="kd">private</span> <span class="kt">float</span> <span class="nf">getHumidity</span><span class="o">(){</span>
+        <span class="k">return</span> <span class="o">(</span><span class="kt">float</span><span class="o">)</span> <span class="mf">55.5</span><span class="o">;</span>
+    <span class="o">}</span>
 
-<blockquote>
-  <p>토니 : 하지만 선생님, 문제는 당신이 우리가 알 수는 있지만 표현할 수 없는 것을 제거`하고 있다는데 있습니다.<br /><br /> 그리고 내가 자전거를 잘 타고 있는 사람에게서 자전거 타기에 관한 이론을 묻는다면, 그는 아마 자전거에서 넘어지게 될 것입니다.<br /> 마찬가지로 당신은 사람들에게 자꾸 질문을 하면서 괴롭히는 방식으로 그들을 혼란스럽게 만들고 , 궁극적으로는 해를 끼치고 있습니다.<br />p.388~390</p>
-</blockquote>
-
-<hr />
-
-<p><br /> <br /> <br /><br /><br /></p>
-
-<h3 id="토론의-의미정의된-지식이-으뜸인가">토론의 의미(정의된 지식이 으뜸인가?)</h3>
-
-<p>이 토론은 비트겐슈타인의 <code class="language-plaintext highlighter-rouge">말 할수 없는 것에 침묵하라.</code> 가 가장 잘어울릴것 같다.<br /><br />
-우리가 말로 표현할수 없지만,  옳지 않다고 생각되는 것.<br /><br />
-우리가 불쾌하다고 느끼는것들이<br /><br /> 말이나 어떤 것으로 표현할 수 없다고 해서 그것이 존재하지 않거나 중요하지 않은건 아니다.<br /><br /></p>
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">currentConditionsDisplay</span><span class="o">(</span><span class="kt">float</span> <span class="n">temp</span><span class="o">,</span> <span class="kt">float</span> <span class="n">humididy</span><span class="o">){</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"온도:"</span><span class="o">+</span><span class="n">temp</span><span class="o">+</span><span class="s">"습도:"</span><span class="o">+</span><span class="n">humididy</span><span class="o">);</span>
+    <span class="o">}</span>
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">statisticsDisplay</span><span class="o">(</span><span class="kt">float</span> <span class="n">temp</span><span class="o">,</span> <span class="kt">float</span> <span class="n">humididy</span><span class="o">){</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"온도:"</span><span class="o">+</span><span class="n">temp</span><span class="o">+</span><span class="s">"습도:"</span><span class="o">+</span><span class="n">humididy</span><span class="o">);</span>
+    <span class="o">}</span>
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">forecastDisplay</span><span class="o">(</span><span class="kt">float</span> <span class="n">temp</span><span class="o">,</span> <span class="kt">float</span> <span class="n">humididy</span><span class="o">){</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"온도:"</span><span class="o">+</span><span class="n">temp</span><span class="o">+</span><span class="s">"습도:"</span><span class="o">+</span><span class="n">humididy</span><span class="o">);</span>
+    <span class="o">}</span>
+</code></pre></div></div>
 
 <blockquote>
-  <p>여기서 우리는 토니가 소크라테스에게 타격을 가하는 지점이 철학의 핵심이라는 사실을 알 수있다. <br />
-실제로 오늘날의 철학으로 자리를 잡게 된 주요 질문은 소크라테스의 등장과 함께 처음 제기되었던 것으로서 <br />
-‘존재란 무엇인가?’, ‘도덕이란 무엇인가?’, ‘증명이란 무엇인가?’,’과학이란 무엇인가?’, ‘이것은 무엇인가?’, ‘저것은 무엇인가?’ 였다.<br />p.391</p>
+  <p>이런식으로 연결하면 화면이 추가될때마다 , 매번 코드를 수정해줘야함
+<br />(화면 출력부분 주석밑에)</p>
 </blockquote>
 
-<p><br /> <br /> <br /></p>
+<p><br /><br /><br /></p>
 
+<h3 id="2더-좋은-방법이-없을까">2.더 좋은 방법이 없을까?</h3>
 <blockquote>
-  <p>확실히 비트겐슈타인은 근대의 안티프래질 사상가 중에서 으뜸이었다. 그는 언어로 표현할 수 없는 대상에 대해 뛰어난 통찰력을 지녔다.<br />
- 그리고 모든 사상가 중에서 생목의 오류를 가장 잘 이해했다.<br /><br />
- 생각을 문자로 표현할 때 <code class="language-plaintext highlighter-rouge">언어가 가진 능력을 의심</code>했음으로 어쩌면 그가 생목의 오류를 제일 먼저 말한 사람이라고 간주할 수도있다. <br /> p.398</p>
+  <p>느슨한 관계로 묶어보자!</p>
 </blockquote>
 
-<p><br /> <br /> <br /></p>
+<h6 id="asubject-와-observer-인터페이스-만들기">a.Subject 와 Observer 인터페이스 만들기!</h6>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">interface</span> <span class="nc">Observer</span><span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">update</span><span class="o">(</span><span class="kt">float</span> <span class="n">temp</span><span class="o">,</span> <span class="kt">float</span> <span class="n">humidity</span><span class="o">);</span>
+<span class="o">}</span>
 
-<h3 id="생목의-오류란">생목의 오류란?</h3>
-<p>한마디로 어떤 대상을 평가함에 있어서 , 평가하기가 까다롭다는 의미<br /><br />
-위의 토론에서는 단어의 의미와 정의를 한가지로 고정시키는 걸 지적하는 걸로 보인다.</p>
 
-<blockquote>
-  <p>책에서 나오는 크게 성공한 트레이더의 이야기인데, 해당 트레이더는 생목(green lumber)[건조시키기 전의 촉촉한 상태의 목재를 지칭하는 말] <br />
-실제 초록색(green)으로 칠한 목재로 알고있었다고 한다.</p>
-</blockquote>
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Subject</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">registerObserver</span><span class="o">(</span><span class="nc">Observer</span> <span class="n">observer</span><span class="o">);</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">removeObserver</span><span class="o">(</span><span class="nc">Observer</span> <span class="n">observer</span><span class="o">);</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">notifyObserver</span><span class="o">();</span>
+<span class="o">}</span>
 
-<blockquote>
-  <p>여기서 성공한 목재 전문가가’그린’ 처럼 중요한 사항의 의미를 몰랐다는 이야기를 할려는 것이 아니다. 그는 목재에 관해서는 비전문가가 중요하지 않다고 생각하는 것들을 많이 알고 있었다. 우리가 무식하다고 생각하는 사람은 무식하지 않을수도 있다.</p>
-</blockquote>
+<span class="c1">//자주 중복되는 Display부분도 인터페이스로 만들기</span>
+<span class="kd">interface</span> <span class="nc">DisplayElement</span><span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">display</span><span class="o">();</span>
+<span class="o">}</span>
+</code></pre></div></div>
 
-<blockquote>
-  <p>목재 주문의 흐름을 예측하고 보고하는 것은 비전문가들이 중요하다고 생각하는 목재의 구체적인 생김새와는 아무런 관계가 없다.<br /> 이 분야에서 일하는 사람들에게는 문답식 시험을 부과하지 않는다.<br /><br /> 그들은 화술과 상관없는 잣대로 평가된다.<br /> 뛰어난 언변은 크게 중요하지 않다.<br /> 진화는 화술이 아니라, 실적에 의존한다.<br />진화는 <code class="language-plaintext highlighter-rouge">파랑</code> 이라는 색을 나타내는 단어를 요구하지 않는다. <br /><br />p.316 ,14장 두 가지가 서로 같은 대상이 아닐때</p>
-</blockquote>
+<p><br /><br /><br /></p>
 
+<h6 id="bsubject-상속받기">b.Subject 상속받기</h6>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">WeatherData</span> <span class="kd">implements</span> <span class="nc">Subject</span><span class="o">{</span>
+    <span class="kd">private</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Observer</span><span class="o">&gt;</span> <span class="n">observers</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">float</span> <span class="n">temp</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">float</span> <span class="n">humidity</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="nf">WeatherData</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">observers</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;&gt;();</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">registerObserver</span><span class="o">(</span><span class="nc">Observer</span> <span class="n">observer</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">observers</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">observer</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">removeObserver</span><span class="o">(</span><span class="nc">Observer</span> <span class="n">observer</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">observers</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="n">observer</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">notifyObserver</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">for</span><span class="o">(</span> <span class="nc">Observer</span> <span class="n">observer</span> <span class="o">:</span> <span class="n">observers</span><span class="o">){</span>
+            <span class="n">observer</span><span class="o">.</span><span class="na">update</span><span class="o">(</span><span class="n">temp</span><span class="o">,</span><span class="n">humidity</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">measurementsChanged</span><span class="o">(){</span>
+        <span class="n">notifyObserver</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setMeasurements</span><span class="o">(</span><span class="kt">float</span> <span class="n">temp</span><span class="o">,</span> <span class="kt">float</span> <span class="n">humidity</span><span class="o">){</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">temp</span> <span class="o">=</span> <span class="n">temp</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">humidity</span> <span class="o">=</span> <span class="n">humidity</span><span class="o">;</span>
+        <span class="n">measurementsChanged</span><span class="o">();</span>
+    <span class="o">}</span>
+
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /><br /><br /></p>
+
+<h6 id="bobserver-상속받기display도">b.Observer 상속받기(Display도)</h6>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">CurrentConditionsDisplay</span> <span class="kd">implements</span> <span class="nc">Observer</span><span class="o">,</span> <span class="nc">DisplayElement</span><span class="o">{</span>
+    <span class="kd">private</span> <span class="kt">float</span> <span class="n">temp</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">float</span> <span class="n">humidity</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nc">Subject</span> <span class="n">weatherData</span><span class="o">;</span>
+
+    <span class="c1">//옵저버 등록하는 생성자</span>
+    <span class="kd">public</span> <span class="nf">CurrentConditionsDisplay</span><span class="o">(</span><span class="nc">Subject</span> <span class="n">weatherData</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">weatherData</span> <span class="o">=</span> <span class="n">weatherData</span><span class="o">;</span>
+        <span class="n">weatherData</span><span class="o">.</span><span class="na">registerObserver</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">update</span><span class="o">(</span><span class="kt">float</span> <span class="n">temp</span><span class="o">,</span> <span class="kt">float</span> <span class="n">humidity</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">temp</span> <span class="o">=</span> <span class="n">temp</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">humidity</span> <span class="o">=</span> <span class="n">humidity</span><span class="o">;</span>
+        <span class="n">display</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">display</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">"온도:"</span><span class="o">+</span><span class="k">this</span><span class="o">.</span><span class="na">temp</span><span class="o">);</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">"습도:"</span><span class="o">+</span><span class="k">this</span><span class="o">.</span><span class="na">humidity</span><span class="o">);</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h2 id="테스트">테스트</h2>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">WeatherData2</span> <span class="n">wd</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">WeatherData2</span><span class="o">();</span>
+
+        <span class="nc">CurrentConditionsDisplay</span> <span class="n">cd</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">CurrentConditionsDisplay</span><span class="o">(</span><span class="n">wd</span><span class="o">);</span>
+        <span class="n">wd</span><span class="o">.</span><span class="na">setMeasurements</span><span class="o">((</span><span class="kt">float</span><span class="o">)</span> <span class="mi">30</span><span class="o">,(</span><span class="kt">float</span><span class="o">)</span> <span class="mf">44.5</span><span class="o">);</span>
+        <span class="n">wd</span><span class="o">.</span><span class="na">setMeasurements</span><span class="o">((</span><span class="kt">float</span><span class="o">)</span> <span class="mi">20</span><span class="o">,(</span><span class="kt">float</span><span class="o">)</span> <span class="mf">24.5</span><span class="o">);</span>
+        <span class="n">wd</span><span class="o">.</span><span class="na">setMeasurements</span><span class="o">((</span><span class="kt">float</span><span class="o">)</span> <span class="mi">10</span><span class="o">,(</span><span class="kt">float</span><span class="o">)</span> <span class="mf">64.5</span><span class="o">);</span>
+    <span class="o">}</span>
+</code></pre></div></div>
+
+<h2 id="콘솔창">콘솔창</h2>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">온도:30.0습도:44.5
+온도:20.0습도:24.5
+온도:10.0습도:64.5
+</span></code></pre></div></div>
+
+<p><span class="table-of-contents-list">디자인 패턴 목록 </span></p>
+<ul class="table-of-contents-list">
+    <li><a href="./strategy">디자인 패턴(1) - Strategy 스트레티지 </a></li>
+    <li><a href="./strategy">디자인 패턴(2) - Observer 옵저버 </a></li>
+</ul>
 
                 </div>
             </section>
@@ -391,9 +448,9 @@ into the {body} of the default.hbs template -->
                     <div id="disqus_thread"></div>
                     <script>
                         var disqus_config = function () {
-                            var this_page_url = 'https://dongjea2.github.io/%EC%95%88%ED%8B%B0%ED%94%84%EB%9E%98%EC%A7%88';
-                            var this_page_identifier = '/안티프래질';
-                            var this_page_title = '안티프래질';
+                            var this_page_url = 'https://dongjea2.github.io/observer';
+                            var this_page_identifier = '/observer';
+                            var this_page_title = 'Observer Pattern(옵저버 패턴)';
                         };
                         (function() {
                             var d = document, s = d.createElement('script');
@@ -427,7 +484,7 @@ into the {body} of the default.hbs template -->
                         <header class="read-next-card-header">
                             <small class="read-next-card-header-sitetitle">&mdash; Lv0부터 시작하는 코딩생활 &mdash;</small>
                             
-                                <h3 class="read-next-card-header-title"><a href="/tag/book/">Book</a></h3>
+                                <h3 class="read-next-card-header-title"><a href="/tag/design-patterns/">Design-patterns</a></h3>
                             
                         </header>
                         <div class="read-next-divider"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 14.5s2 3 5 3 5.5-2.463 5.5-5.5S21 6.5 18 6.5c-5 0-7 11-12 11C2.962 17.5.5 15.037.5 12S3 6.5 6 6.5s4.5 3.5 4.5 3.5"/></svg>
@@ -437,19 +494,6 @@ into the {body} of the default.hbs template -->
                                 
                                 
                                   
-                                
-                                  
-                                
-                                  
-                                
-                                  
-                                
-                                  
-                                    
-                                        
-                                        
-                                            <li><a href="/%EB%B8%94%EB%9E%99%EC%8A%A4%EC%99%84">블랙스완</a></li>
-                                        
                                     
                                   
                                 
@@ -457,32 +501,7 @@ into the {body} of the default.hbs template -->
                                     
                                         
                                         
-                                            <li><a href="/%EC%A3%BD%EC%9D%8C%EC%9D%98%EC%97%90%ED%8B%B0%EC%BC%93">죽음의 에티켓</a></li>
-                                        
-                                    
-                                  
-                                
-                                  
-                                
-                                  
-                                
-                                  
-                                    
-                                  
-                                
-                                  
-                                
-                                  
-                                
-                                  
-                                
-                                  
-                                
-                                  
-                                    
-                                        
-                                        
-                                            <li><a href="/%EC%98%A4%EB%A6%AC%EC%A7%84">오리진</a></li>
+                                            <li><a href="/strategy">Strategy Pattern(스트레티지 패턴)</a></li>
                                         
                                     
                                   
@@ -500,18 +519,37 @@ into the {body} of the default.hbs template -->
                                   
                                 
                                   
-                                    
-                                        
-                                        
-                                    
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
                                   
                                 
                             </ul>
                         </div>
                         <footer class="read-next-card-footer">
-                            <a href="/tag/book/">
+                            <a href="/tag/design-patterns/">
                                 
-                                    See all 4 posts  →
+                                    See all 1 posts  →
                                 
                             </a>
                         </footer>
@@ -521,63 +559,6 @@ into the {body} of the default.hbs template -->
 
             <!-- If there's a next post, display it using the same markup included from - partials/post-card.hbs -->
             
-                
-
-    <article class="post-card post-template">
-        
-            <a class="post-card-image-link" href="/JPA%EC%8B%AC%ED%99%94">
-                <div class="post-card-image" style="background-image: url(/assets/built/images/jpa.png)"></div>
-            </a>
-        
-        <div class="post-card-content">
-            <a class="post-card-content-link" href="/JPA%EC%8B%AC%ED%99%94">
-                <header class="post-card-header">
-                    
-                        
-                            
-                               <span class="post-card-tags">Spring boot</span>
-                            
-                        
-                            
-                               <span class="post-card-tags">Spring</span>
-                            
-                        
-                            
-                                <span class="post-card-tags">Jpa</span>
-                            
-                        
-                    
-
-                    <h2 class="post-card-title">JPA 관계 심화</h2>
-                </header>
-                <section class="post-card-excerpt">
-                    
-                        <p>JPA 방향설정, 관계에 대한 심화 내용입니다.</p>
-                    
-                </section>
-            </a>
-            <footer class="post-card-meta">
-                
-                    
-                        
-                        <img class="author-profile-image" src="/assets/built/images/author-logo.jpg" alt="동재" />
-                        
-                        <span class="post-card-author">
-                            <a href="/author/dongjae/">동재</a>
-                        </span>
-                    
-                
-                <span class="reading-time">
-                    
-                    
-                      1 min read
-                    
-                </span>
-            </footer>
-        </div>
-    </article>
-
-            
 
             <!-- If there's a previous post, display it using the same markup included from - partials/post-card.hbs -->
             
@@ -585,34 +566,31 @@ into the {body} of the default.hbs template -->
 
     <article class="post-card post-template">
         
-            <a class="post-card-image-link" href="/JPA%EB%B0%A9%ED%96%A5%EC%84%A4%EC%A0%95">
-                <div class="post-card-image" style="background-image: url(/assets/built/images/jpa.png)"></div>
+            <a class="post-card-image-link" href="/strategy">
+                <div class="post-card-image" style="background-image: url(/assets/built/images/design.jpg)"></div>
             </a>
         
         <div class="post-card-content">
-            <a class="post-card-content-link" href="/JPA%EB%B0%A9%ED%96%A5%EC%84%A4%EC%A0%95">
+            <a class="post-card-content-link" href="/strategy">
                 <header class="post-card-header">
                     
                         
                             
-                               <span class="post-card-tags">Spring boot</span>
-                            
-                        
-                            
-                               <span class="post-card-tags">Spring</span>
-                            
-                        
-                            
-                                <span class="post-card-tags">Jpa</span>
+                                <span class="post-card-tags">Design-patterns</span>
                             
                         
                     
 
-                    <h2 class="post-card-title">JPA 관계, 방향 설정해보기</h2>
+                    <h2 class="post-card-title">Strategy Pattern(스트레티지 패턴)</h2>
                 </header>
                 <section class="post-card-excerpt">
                     
-                        <p>JPA의 양방향, 단방향 관계에 대한 내용입니다.</p>
+                        <p>스테리티지 패턴
+
+  자주 변하는 부분을 캡슐화 하여,코드의  유연성을 높인다.
+
+
+</p>
                     
                 </section>
             </a>
@@ -630,7 +608,7 @@ into the {body} of the default.hbs template -->
                 <span class="reading-time">
                     
                     
-                      3 min read
+                      2 min read
                     
                 </span>
             </footer>
@@ -652,18 +630,18 @@ into the {body} of the default.hbs template -->
         </a>
     </div>
     <span class="floating-header-divider">&mdash;</span>
-    <div class="floating-header-title">안티프래질</div>
+    <div class="floating-header-title">Observer Pattern(옵저버 패턴)</div>
     <div class="floating-header-share">
         <div class="floating-header-share-label">Share this <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
     <path d="M7.5 15.5V4a1.5 1.5 0 1 1 3 0v4.5h2a1 1 0 0 1 1 1h2a1 1 0 0 1 1 1H18a1.5 1.5 0 0 1 1.5 1.5v3.099c0 .929-.13 1.854-.385 2.748L17.5 23.5h-9c-1.5-2-5.417-8.673-5.417-8.673a1.2 1.2 0 0 1 1.76-1.605L7.5 15.5zm6-6v2m-3-3.5v3.5m6-1v2"/>
 </svg>
 </div>
-        <a class="floating-header-share-tw" href="https://twitter.com/share?text=%EC%95%88%ED%8B%B0%ED%94%84%EB%9E%98%EC%A7%88&amp;url=https://dongjea2.github.io/%EC%95%88%ED%8B%B0%ED%94%84%EB%9E%98%EC%A7%88"
+        <a class="floating-header-share-tw" href="https://twitter.com/share?text=Observer+Pattern%28%EC%98%B5%EC%A0%80%EB%B2%84+%ED%8C%A8%ED%84%B4%29&amp;url=https://dongjea2.github.io/observer"
             onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
 
         </a>
-        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://dongjea2.github.io/%EC%95%88%ED%8B%B0%ED%94%84%EB%9E%98%EC%A7%88"
+        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://dongjea2.github.io/observer"
             onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
 
