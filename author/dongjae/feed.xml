@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator>
   <link href="https://dongjea2.github.io/author/dongjae/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://dongjea2.github.io/" rel="alternate" type="text/html" />
-  <updated>2022-03-05T01:28:21+09:00</updated>
+  <updated>2022-03-06T00:29:05+09:00</updated>
   <id>https://dongjea2.github.io/author/dongjae/feed.xml</id>
 
   
@@ -30,6 +30,290 @@
   
   
 
+  
+    <entry>
+      <title type="html">Strategy Pattern(스트레티지 패턴)</title>
+      <link href="https://dongjea2.github.io/strategy" rel="alternate" type="text/html" title="Strategy Pattern(스트레티지 패턴)" />
+      <published>2022-03-05T09:00:00+09:00</published>
+      <updated>2022-03-05T09:00:00+09:00</updated>
+      <id>https://dongjea2.github.io/strategy</id>
+      <content type="html" xml:base="https://dongjea2.github.io/strategy">&lt;h2 id=&quot;스테리티지-패턴&quot;&gt;스테리티지 패턴&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;자주 변하는 부분을 캡슐화 하여,코드의  유연성을 높인다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;시나리오&quot;&gt;시나리오&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Head First 디자인패턴 참조 p.40~p.43&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;1오리-클래스&quot;&gt;1.오리 클래스&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;잘 돌아가고 있는 오리에 대한 클레스와 , 자식들&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+
+&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Duck&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;quack&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(){&lt;/span&gt;
+        &lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;꽥!&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;swim&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(){&lt;/span&gt;
+        &lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;수영하는 오리&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(){&lt;/span&gt;
+        &lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;저는 오리입니다.&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;//고무오리&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;RubberDuck&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Duck&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;저는 고무오리 입니다.&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;//청둥오리&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MallardDuck&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Duck&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;저는 청둥오리 입니다.&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;2고객의-기능-추가요청&quot;&gt;2.고객의 기능 추가요청&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;고객 : 오리가 날수있으면 좋겠어요 :)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;프로그래머 : 음, 최상위 클래스인 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Duck&lt;/code&gt; 에 나는 기능을 추가하면 자식들도 다같이 날수 있겠군.. 알겠습니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Duck&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+
+   &lt;span class=&quot;c1&quot;&gt;//1. add fly method&lt;/span&gt;
+   &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;fly&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(){&lt;/span&gt;
+        &lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;저이제 날수있어요.&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+   &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;3-예상치-못한-상속의-부작용&quot;&gt;3. 예상치 못한 상속의 부작용&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;고객:  러버덕은 장난감 인데요?..  어떻게 날수있는거죠?&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;프로그래머: …&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;//고무오리&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;RubberDcuk&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Duck&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; 
+
+   &lt;span class=&quot;c1&quot;&gt;//상속받은 Duck에 있는 fly method가 실행됩니다.&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;4-아-인터페이스가-있었지&quot;&gt;4. 아! 인터페이스가 있었지&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;프로그래머: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Flyable&lt;/code&gt; 인터페이스를 구현하고, 날수 있는 애들만 구현시키자!&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Flyable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;fly&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;//청둥오리&lt;/span&gt;
+                                                   &lt;span class=&quot;c1&quot;&gt;//구현 했어요!&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MallardDuck&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Duck&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Flyable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+   &lt;span class=&quot;c1&quot;&gt;//...기존코드(생략)&lt;/span&gt;
+
+    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;fly&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;저는 날수 있어요&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;//고무오리(저는 날 필요가 없기에 구현 안했어요.)&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;RubberDuck&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Duck&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+   &lt;span class=&quot;c1&quot;&gt;//...기존코드(생략)&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;5더-많은-자식-객체오리들이-있다면&quot;&gt;5.더 많은 자식 객체(오리)들이 있다면?..&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;시니어 : 아 MallardDuck 말고도 RedheadDuck, 가창오리 고방오리 발구지 비오리 원앙 청둥오리 점무늬오리 혹부리오리등등이 더있고, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;앞으로 더 추가할 예정이요&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;프로그래머: 아 기존에 Duck을 상속받은 자식객체가 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;50개&lt;/code&gt;가 넘게있군요&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;프로그래머: 흠.. 기존 50개의 클래스들에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;implements&lt;/code&gt;를 하나씩 수정하는건 좀 귀찮은데 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;다른 방법&lt;/code&gt;이 없을까.. 그리고 앞으로 생길 오리들을 위해서라도..&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;6스트레티지-패턴이-있습니다&quot;&gt;6.스트레티지 패턴이 있습니다!&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;사용법&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;변하는 부분 묶기&lt;/code&gt;(날기, 꽥 거리기) &lt;br /&gt;나무오리는 꽥 거리지 못하고 못날고, 러버덕은 누르면 꽥!소리는 내는데 날지못하니깐..&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;변하지 않는 부분 묶기(display 메소드)&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&quot;a-변하는-부분-인터페이스-만들어주기&quot;&gt;a. 변하는 부분 인터페이스 만들어주기&lt;/h4&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;이부분은 인터페이스로 선언해줍니다.(4번이랑 똑같다고요? 좀더 지켜봐주세요)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;kd&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;FlyBehavior&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;fly&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;interface&lt;/span&gt;  &lt;span class=&quot;nc&quot;&gt;QuackBehavior&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;quack&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;b상속받은-인터페이스의-구현클레스들-만들기&quot;&gt;b.상속받은 인터페이스의 구현클레스들 만들기&lt;/h4&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;FlyWithWing&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;FlyBehavior&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;fly&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;저 날고 있어요&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt; 
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;FlyNoWay&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;FlyBehavior&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;fly&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;저는 못날아요&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Quack&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;QuackBehavior&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;quack&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;꽥!&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Squeak&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;QuackBehavior&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;quack&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;//고무오리 소리&lt;/span&gt;
+        &lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;삑삑!&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MuteQuack&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;QuackBehavior&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;quack&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;아무 소리도 안남&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;c-인터페이스를-duck-안에-넣기&quot;&gt;c. 인터페이스를 Duck 안에 넣기&lt;/h4&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Duck&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;//변하는 부분&lt;/span&gt;
+    &lt;span class=&quot;nc&quot;&gt;FlyBehavior&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;flyBehavior&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nc&quot;&gt;QuackBehavior&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;quackBehavior&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+   &lt;span class=&quot;c1&quot;&gt;//구현 클레스에 행동 위임&lt;/span&gt;
+   &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;performFly&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(){&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;flyBehavior&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;fly&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+    
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;performQuack&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(){&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;quackBehavior&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;quack&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;//변하지 않는 부분&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;swim&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(){&lt;/span&gt;
+        &lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;수영하는 오리&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(){&lt;/span&gt;
+        &lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;저는 오리입니다.&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;d자식들-구현부분&quot;&gt;d.자식들 구현부분&lt;/h4&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MallardDuck&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Duck&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+
+   &lt;span class=&quot;c1&quot;&gt;//생성자로 행동들 연결해주기&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;MallardDuck&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;quackBehavior&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Quack&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;flyBehavior&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;FlyWithWing&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;디자인 패턴 목록 &lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;./strategy&quot;&gt;디자인 패턴(1) - Strategy 스트레티지 &lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./strategy&quot;&gt;디자인 패턴(2) - Observer 옵저버 &lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>동재</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="design-patterns" />
+      
+
+      
+        <summary type="html">스테리티지 패턴 자주 변하는 부분을 캡슐화 하여,코드의 유연성을 높인다.</summary>
+      
+
+      
+      
+    </entry>
   
     <entry>
       <title type="html">QueryDSL 적용해보기 (이클립스+Maven)</title>
@@ -461,60 +745,6 @@ maven과 eclipse 를 사용한 예제는 생각보다 적었기 때문에 글로
     </entry>
   
     <entry>
-      <title type="html">죽음의 에티켓</title>
-      <link href="https://dongjea2.github.io/%EC%A3%BD%EC%9D%8C%EC%9D%98%EC%97%90%ED%8B%B0%EC%BC%93" rel="alternate" type="text/html" title="죽음의 에티켓" />
-      <published>2022-02-05T09:00:00+09:00</published>
-      <updated>2022-02-05T09:00:00+09:00</updated>
-      <id>https://dongjea2.github.io/%EC%A3%BD%EC%9D%8C%EC%9D%98%EC%97%90%ED%8B%B0%EC%BC%93</id>
-      <content type="html" xml:base="https://dongjea2.github.io/%EC%A3%BD%EC%9D%8C%EC%9D%98%EC%97%90%ED%8B%B0%EC%BC%93">&lt;p&gt;&lt;img src=&quot;BookCover\죽음의에티켓.jpg&quot; alt=&quot;책 커버&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;간단한-평가&quot;&gt;간단한 평가&lt;/h2&gt;
-&lt;hr /&gt;
-&lt;p&gt;개인 평점 7/10&lt;/p&gt;
-
-&lt;p&gt;사람이라면 언젠간 마주해야하는 죽음에 대하여 초심자의 입장에서 알기쉽게 설명해주는 책이다.&lt;/p&gt;
-
-&lt;p&gt;우리는 언젠가 죽는다고 막연히 생각하지만 진지하게 죽는다고는 생각하지 않기 때문에, 한번 읽어보면 긴 여정의 끝을 진지하게 해볼 기회를 준다.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;내가 죽게되면 나의 장례는 어떤식으로 진행될지, 내 몸은 어떤식으로 관리되는지, 그리고 최후에는 어떻게 사라져 가는지에 대해 구체적인 사례와 예시를 들어 알려주고 , 남는 이들을 위해 어떤 일들을 하고 갈수 있는지도 구체적으로 알려준다.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;죽음은 죽은자의 일이지만, 장례는 산 사람들의 행사라는 말이&lt;br /&gt; 여러가지 생각을 하게 해주었다.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;어쨋든 우리는 정말로 죽는다.&lt;/p&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>동재</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="book" />
-      
-
-      
-        <summary type="html">죽음에도 에티켓이 있다.</summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
       <title type="html">블랙스완</title>
       <link href="https://dongjea2.github.io/%EB%B8%94%EB%9E%99%EC%8A%A4%EC%99%84" rel="alternate" type="text/html" title="블랙스완" />
       <published>2022-02-05T09:00:00+09:00</published>
@@ -562,6 +792,60 @@ maven과 eclipse 를 사용한 예제는 생각보다 적었기 때문에 글로
 
       
         <summary type="html">알려지지 않은, 예측할수 없는 것들.</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">죽음의 에티켓</title>
+      <link href="https://dongjea2.github.io/%EC%A3%BD%EC%9D%8C%EC%9D%98%EC%97%90%ED%8B%B0%EC%BC%93" rel="alternate" type="text/html" title="죽음의 에티켓" />
+      <published>2022-02-05T09:00:00+09:00</published>
+      <updated>2022-02-05T09:00:00+09:00</updated>
+      <id>https://dongjea2.github.io/%EC%A3%BD%EC%9D%8C%EC%9D%98%EC%97%90%ED%8B%B0%EC%BC%93</id>
+      <content type="html" xml:base="https://dongjea2.github.io/%EC%A3%BD%EC%9D%8C%EC%9D%98%EC%97%90%ED%8B%B0%EC%BC%93">&lt;p&gt;&lt;img src=&quot;BookCover\죽음의에티켓.jpg&quot; alt=&quot;책 커버&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;간단한-평가&quot;&gt;간단한 평가&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;p&gt;개인 평점 7/10&lt;/p&gt;
+
+&lt;p&gt;사람이라면 언젠간 마주해야하는 죽음에 대하여 초심자의 입장에서 알기쉽게 설명해주는 책이다.&lt;/p&gt;
+
+&lt;p&gt;우리는 언젠가 죽는다고 막연히 생각하지만 진지하게 죽는다고는 생각하지 않기 때문에, 한번 읽어보면 긴 여정의 끝을 진지하게 해볼 기회를 준다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;내가 죽게되면 나의 장례는 어떤식으로 진행될지, 내 몸은 어떤식으로 관리되는지, 그리고 최후에는 어떻게 사라져 가는지에 대해 구체적인 사례와 예시를 들어 알려주고 , 남는 이들을 위해 어떤 일들을 하고 갈수 있는지도 구체적으로 알려준다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;죽음은 죽은자의 일이지만, 장례는 산 사람들의 행사라는 말이&lt;br /&gt; 여러가지 생각을 하게 해주었다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;어쨋든 우리는 정말로 죽는다.&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>동재</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="book" />
+      
+
+      
+        <summary type="html">죽음에도 에티켓이 있다.</summary>
       
 
       
@@ -1625,100 +1909,6 @@ SELECT 할시에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;
 
       
         <summary type="html">JPA를 기존 스프링, 스프링 부트에 사용해보는 내용입니다.</summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">프론트 동적 설정</title>
-      <link href="https://dongjea2.github.io/%ED%94%84%EB%A1%A0%ED%8A%B8ContextPath%EB%8F%99%EC%A0%81%EC%84%A4%EC%A0%95" rel="alternate" type="text/html" title="프론트 동적 설정" />
-      <published>2022-01-24T09:00:00+09:00</published>
-      <updated>2022-01-24T09:00:00+09:00</updated>
-      <id>https://dongjea2.github.io/%ED%94%84%EB%A1%A0%ED%8A%B8ContextPath%EB%8F%99%EC%A0%81%EC%84%A4%EC%A0%95</id>
-      <content type="html" xml:base="https://dongjea2.github.io/%ED%94%84%EB%A1%A0%ED%8A%B8ContextPath%EB%8F%99%EC%A0%81%EC%84%A4%EC%A0%95">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;스프링 목록 &lt;/span&gt;&lt;/p&gt;
-&lt;ul class=&quot;table-of-contents-list&quot;&gt;
-    &lt;li&gt;&lt;a href=&quot;./백엔드초기설정&quot;&gt;Spring(1) - 백엔드 초기설정&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;./스프링파일업로드1&quot;&gt;Spring(2) -스프링 Client 파일 업로드(1)&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;./스프링파일업로드2&quot;&gt;Spring(3) -스프링 Client 파일 업로드(2)&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;./백엔드Restfull변경&quot;&gt;Spring(4) - 백엔드 RESTFULL 로 바꾸기&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;./게시판페이징&quot;&gt;Spring(5) - 게시판 페이징 기능 추가하기&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;./스프링검색기능추가&quot;&gt;Spring(6) - 검색 기능 추가&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;./프론트ContextPath동적설정&quot;&gt;Spring(7) - 프론트 ContextPath 동적 설정 &lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt; 스프링 부트 목록 &lt;/span&gt;&lt;/p&gt;
-&lt;ul class=&quot;table-of-contents-list&quot;&gt;
-    &lt;li&gt;&lt;a href=&quot;./스프링부트초기설정&quot;&gt;Spring Boot(1) - 스프링 부트 초기설정&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;./JPA사용해보기&quot;&gt;Spring Boot(2) - JPA 사용해 보기&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;./JPA방향설정&quot;&gt;Spring Boot(3) - JPA 방향설정, 관계설정&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;./JPA심화&quot;&gt;Spring Boot(4) - JPA 심화&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;./JPA일대일실습&quot;&gt;Spring Boot(5) - JPA 일대일 실습&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;동적으로-frontcontextpath-설정하는-이유&quot;&gt;동적으로 frontContextPath 설정하는 이유?&lt;/h2&gt;
-
-&lt;blockquote&gt;
-  &lt;ul&gt;
-    &lt;li&gt;실제 프로젝트 주소랑, ContextPath가 달라서 프로젝트가 꼬일때가 있음&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;이번에-해야할것&quot;&gt;이번에 해야할것&lt;/h2&gt;
-&lt;blockquote&gt;
-  &lt;ul&gt;
-    &lt;li&gt;basic.js의 frontContexPath 동적으로 얻게 하기(파싱)&lt;/li&gt;
-    &lt;li&gt;basic.js &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;로그인&lt;/code&gt; 정보도 동적으로 얻어오기&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;스프링 목록 &lt;/span&gt;&lt;/p&gt;
-&lt;ul class=&quot;table-of-contents-list&quot;&gt;
-    &lt;li&gt;&lt;a href=&quot;./백엔드초기설정&quot;&gt;Spring(1) - 백엔드 초기설정&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;./스프링파일업로드1&quot;&gt;Spring(2) -스프링 Client 파일 업로드(1)&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;./스프링파일업로드2&quot;&gt;Spring(3) -스프링 Client 파일 업로드(2)&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;./백엔드Restfull변경&quot;&gt;Spring(4) - 백엔드 RESTFULL 로 바꾸기&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;./게시판페이징&quot;&gt;Spring(5) - 게시판 페이징 기능 추가하기&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;./스프링검색기능추가&quot;&gt;Spring(6) - 검색 기능 추가&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;./프론트ContextPath동적설정&quot;&gt;Spring(7) - 프론트 ContextPath 동적 설정 &lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt; 스프링 부트 목록 &lt;/span&gt;&lt;/p&gt;
-&lt;ul class=&quot;table-of-contents-list&quot;&gt;
-    &lt;li&gt;&lt;a href=&quot;./스프링부트초기설정&quot;&gt;Spring Boot(1) - 스프링 부트 초기설정&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;./JPA사용해보기&quot;&gt;Spring Boot(2) - JPA 사용해 보기&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;./JPA방향설정&quot;&gt;Spring Boot(3) - JPA 방향설정, 관계설정&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;./JPA심화&quot;&gt;Spring Boot(4) - JPA 심화&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;./JPA일대일실습&quot;&gt;Spring Boot(5) - JPA 일대일 실습&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>동재</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="spring" />
-      
-
-      
-        <summary type="html">게시판 프로젝트의 프론트쪽 basic.js동적 설정을 추가하는 글입니다.</summary>
       
 
       
